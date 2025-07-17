@@ -13,7 +13,7 @@ const { src, alt = "", className = "", imageClass = "" } = Astro.props;
   <img src={src} alt={alt} class={imageClass} />
 
   <!-- Overlay naranja que se desliza primero -->
-  <div class="orange-overlay absolute inset-0 bg-orange-500 z-20"></div>
+  <div class="orange-overlay absolute inset-0 bg-background z-20"></div>
 
   <!-- Overlay negro que se desliza segundo -->
   <div class="black-overlay absolute inset-0 bg-black z-10"></div>
