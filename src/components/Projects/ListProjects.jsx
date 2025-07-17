@@ -181,8 +181,8 @@ const ProjectsPortfolio = () => {
               disabled={isAnimating}
               className={`relative px-8 py-4 font-semibold text-sm uppercase tracking-wide transition-all duration-300 rounded-full ${
                 activeTag === tag.id
-                  ? "text-white bg-orange-500 shadow-lg shadow-orange-500/30 transform scale-105"
-                  : "text-gray-700 bg-white hover:text-orange-500 hover:bg-orange-50 shadow-md hover:shadow-lg hover:transform hover:scale-105"
+                  ? "text-white bg-background shadow-lg shadow-background/30 transform scale-105"
+                  : "text-gray-700 bg-white hover:text-background hover:bg-orange-50 shadow-md hover:shadow-lg hover:transform hover:scale-105"
               } ${isAnimating ? "opacity-50 cursor-not-allowed" : ""}`}
             >
               {tag.name}
@@ -243,7 +243,7 @@ const ProjectsPortfolio = () => {
                   </div>
 
                   {/* Decorative corner */}
-                  <div className="absolute top-4 right-4 w-12 h-12 bg-orange-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="absolute top-4 right-4 w-12 h-12 bg-background rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <svg
                       className="w-6 h-6 text-white"
                       fill="none"
@@ -275,7 +275,7 @@ const ProjectsPortfolio = () => {
           <div className="fixed inset-0 bg-black/20 backdrop-blur-sm flex items-center justify-center z-50">
             <div className="bg-white rounded-2xl p-8 shadow-2xl">
               <div className="flex items-center space-x-3">
-                <div className="w-6 h-6 bg-orange-500 rounded-full animate-pulse"></div>
+                <div className="w-6 h-6 bg-background rounded-full animate-pulse"></div>
                 <span className="text-gray-700 font-medium">
                   Loading projects...
                 </span>

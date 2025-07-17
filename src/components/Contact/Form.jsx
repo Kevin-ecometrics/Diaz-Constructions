@@ -28,7 +28,7 @@ const Form = () => {
           {/* Left Section */}
           <div className="space-y-6">
             <div className="space-y-4">
-              <p className="text-orange-500 font-semibold text-sm uppercase tracking-wide">
+              <p className="text-background font-semibold text-sm uppercase tracking-wide">
                 GET IN TOUCH
               </p>
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
@@ -45,7 +45,7 @@ const Form = () => {
               <div className="bg-white rounded-2xl p-6 flex-1 shadow-sm">
                 <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4">
                   <svg
-                    className="w-6 h-6 text-orange-500"
+                    className="w-6 h-6 text-background"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -68,7 +68,7 @@ const Form = () => {
               <div className="bg-white rounded-2xl p-6 flex-1 shadow-sm">
                 <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4">
                   <svg
-                    className="w-6 h-6 text-orange-500"
+                    className="w-6 h-6 text-background"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -112,7 +112,7 @@ const Form = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your Name"
-                  className="flex-1 px-4 py-3 border text-black border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="flex-1 px-4 py-3 border text-black border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-background focus:border-transparent"
                 />
                 <input
                   type="tel"
@@ -120,7 +120,7 @@ const Form = () => {
                   value={formData.number}
                   onChange={handleChange}
                   placeholder="number"
-                  className="flex-1 px-4 py-3 border text-black border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="flex-1 px-4 py-3 border text-black border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-background focus:border-transparent"
                 />
               </div>
 
@@ -130,7 +130,7 @@ const Form = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Email Address..."
-                className="w-full px-4 py-3 border text-black border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                className="w-full px-4 py-3 border text-black border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-background focus:border-transparent"
               />
 
               <textarea
@@ -139,12 +139,12 @@ const Form = () => {
                 onChange={handleChange}
                 placeholder="Type Your Message"
                 rows={6}
-                className="w-full px-4 py-3 text-black border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
+                className="w-full px-4 py-3 text-black border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-background focus:border-transparent resize-none"
               ></textarea>
 
               <button
                 onClick={handleSubmit}
-                className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+                className="w-full bg-background hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
               >
                 Send Message
               </button>

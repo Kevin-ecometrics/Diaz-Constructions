@@ -189,7 +189,7 @@ const Accordion = () => {
                     </p>
 
                     {/* Button */}
-                    <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200">
+                    <button className="bg-background hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200">
                       Get A Free Quote
                     </button>
                   </div>

@@ -271,7 +271,7 @@ const ProjectSlider = () => {
           <>
             <button
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-orange-500 bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 border border-white border-opacity-30"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-background bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 border border-white border-opacity-30"
               disabled={isAnimating}
             >
               <IoChevronBack className="w-6 h-6 text-white" />
@@ -279,7 +279,7 @@ const ProjectSlider = () => {
 
             <button
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-orange-500 bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 border border-white border-opacity-30"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-background bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 border border-white border-opacity-30"
               disabled={isAnimating}
             >
               <IoChevronForward className="w-6 h-6 text-white" />

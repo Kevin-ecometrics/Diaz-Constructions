@@ -63,7 +63,7 @@ const Carousel = () => {
         {/* Flecha Izquierda Desktop */}
         <button
           onClick={prevSlide}
-          className="bg-orange-500/90 hover:bg-orange-500 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl flex-shrink-0"
+          className="bg-background/90 hover:bg-background text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl flex-shrink-0"
         >
           <span className="text-2xl">‹</span>
         </button>
@@ -116,7 +116,7 @@ const Carousel = () => {
                 onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? "bg-orange-500 scale-125 shadow-lg"
+                    ? "bg-background scale-125 shadow-lg"
                     : "bg-white/60 hover:bg-white/80"
                 }`}
               />
@@ -126,7 +126,7 @@ const Carousel = () => {
           {/* Progress Bar Desktop */}
           <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-200">
             <div
-              className="h-full bg-gradient-to-r from-orange-500 to-orange-600 transition-all duration-700 ease-out"
+              className="h-full bg-gradient-to-r from-background to-orange-600 transition-all duration-700 ease-out"
               style={{
                 width: `${((currentIndex + 1) / slides.length) * 100}%`,
               }}
@@ -137,7 +137,7 @@ const Carousel = () => {
         {/* Flecha Derecha Desktop */}
         <button
           onClick={nextSlide}
-          className="bg-orange-500/90 hover:bg-orange-500 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl flex-shrink-0"
+          className="bg-background/90 hover:bg-background text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl flex-shrink-0"
         >
           <span className="text-2xl">›</span>
         </button>
@@ -187,14 +187,14 @@ const Carousel = () => {
             {/* Flechas Mobile - Dentro de la card */}
             <button
               onClick={prevSlide}
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-orange-500/80 hover:bg-orange-500 text-white p-2 rounded-full shadow-lg transition-all duration-300"
+              className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-background/80 hover:bg-background text-white p-2 rounded-full shadow-lg transition-all duration-300"
             >
               <span className="text-lg">‹</span>
             </button>
 
             <button
               onClick={nextSlide}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-orange-500/80 hover:bg-orange-500 text-white p-2 rounded-full shadow-lg transition-all duration-300"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-background/80 hover:bg-background text-white p-2 rounded-full shadow-lg transition-all duration-300"
             >
               <span className="text-lg">›</span>
             </button>
@@ -208,7 +208,7 @@ const Carousel = () => {
                 onClick={() => goToSlide(index)}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? "bg-orange-500 scale-125 shadow-lg"
+                    ? "bg-background scale-125 shadow-lg"
                     : "bg-white/60 hover:bg-white/80"
                 }`}
               />
@@ -218,7 +218,7 @@ const Carousel = () => {
           {/* Progress Bar Mobile */}
           <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-200">
             <div
-              className="h-full bg-gradient-to-r from-orange-500 to-orange-600 transition-all duration-700 ease-out"
+              className="h-full bg-gradient-to-r from-background to-orange-600 transition-all duration-700 ease-out"
               style={{
                 width: `${((currentIndex + 1) / slides.length) * 100}%`,
               }}

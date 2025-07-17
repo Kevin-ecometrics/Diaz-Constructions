@@ -101,7 +101,7 @@ const blogPosts = [
             <span class="bg-white text-black p-4 font-bold text-sm">
               {post.timeAgo}
             </span>
-            <span class="bg-orange-500 text-white p-4 rounded-tr-2xl text-sm font-medium">
+            <span class="bg-background text-white p-4 rounded-tr-2xl text-sm font-medium">
               {post.category}
             </span>
           </div>
@@ -109,7 +109,7 @@ const blogPosts = [
 
         <!-- Content -->
         <div class="p-6">
-          <h3 class="text-xl font-bold text-gray-900 mb-3 leading-tight hover:text-orange-500 transition-colors duration-200">
+          <h3 class="text-xl font-bold text-gray-900 mb-3 leading-tight hover:text-background transition-colors duration-200">
             <a href={post.readMoreLink} class="block">
               {post.title}
             </a>
@@ -121,7 +121,7 @@ const blogPosts = [
           
           <a 
             href={post.readMoreLink}
-            class="inline-flex items-center text-gray-900 font-semibold hover:text-orange-500 transition-colors duration-200 group"
+            class="inline-flex items-center text-gray-900 font-semibold hover:text-background transition-colors duration-200 group"
           >
             Read More 
             <svg 

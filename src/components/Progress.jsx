@@ -56,7 +56,7 @@ const ScrollProgressCircle = () => {
         />
       </svg>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <FiArrowUp className="text-orange-500 text-xl group-hover:scale-110 transition-transform duration-200" />
+        <FiArrowUp className="text-background text-xl group-hover:scale-110 transition-transform duration-200" />
       </div>
     </div>
   );
