@@ -1,0 +1,110 @@
+---
+import Navbar from "@components/Navbar";
+import Footer from "@components/Footer.astro";
+import { ClientRouter } from "astro:transitions";
+import ScrollProgressCircle from "@components/Progress";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/national-park";
+import "@fontsource/anton";
+import "@fontsource/archivo-black";
+import "@styles/global.css";
+
+interface Props {
+  lang?: string;
+  title: string;
+  description?: string;
+  keywords?: string;
+  author?: string;
+  ogImage?: string;
+  ogType?: string;
+  ogUrl?: string;
+  canonical?: string;
+  noindex?: boolean;
+  nofollow?: boolean;
+  structuredData?: string;
+}
+
+const {
+  title,
+  lang = "es",
+  description = "",
+  keywords = "",
+  author = "",
+  ogImage = "/og-image.jpg",
+  ogType = "website",
+  ogUrl = Astro.url.href,
+  canonical = Astro.url.href,
+  noindex = false,
+  nofollow = false,
+  structuredData = "",
+} = Astro.props;
+
+// Generar robots meta tag
+const robotsContent = [
+  noindex ? "noindex" : "index",
+  nofollow ? "nofollow" : "follow",
+].join(", ");
+
+const actualUrl = Astro.url.href;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Básico -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    {author && <meta name="author" content={author} />}
+    <meta name="robots" content={robotsContent} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph  -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={ogUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content={title} />
+    <meta property="og:locale" content={lang} />
+
+    <!-- Datos Estructurados -->
+    {
+      structuredData && (
+        <script type="application/ld+json" set:html={structuredData} />
+      )
+    }
+
+    <!-- Preconnect para mejorar performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+
+    <!-- Otros meta tags importantes -->
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <ClientRouter />
+  </head>
+  <body class="text-white">
+    <Navbar url={actualUrl} client:visible />
+    <slot />
+    <ScrollProgressCircle client:visible />
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

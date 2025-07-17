@@ -1,0 +1,67 @@
+  @import "tailwindcss";
+
+  @theme {
+    --color-principal: #102f46;
+    --color-secundario: #C63A32;
+    --color-background: #E88632;
+/* 
+    --font-titulo-1: "Archivo Black", sans-serif;
+    --font-titulo-2: "Anton", sans-serif;
+    --font-subtitulos: "Inter Variable", sans-serif;
+    --font-contenido: "National Park Variable", sans-serif; */
+  }
+
+   h1 {
+    font-family: 'Archivo Black', sans-serif;
+  }
+
+  h2 {
+    font-family: 'Anton', sans-serif;
+  }
+
+  h3, h4, h5, h6 {
+    font-family: 'Inter Variable', sans-serif;
+  }
+
+  p {
+    font-family: 'National Park Variable', sans-serif;
+  }
+
+  span {
+    font-family: 'National Park Variable', sans-serif;
+  }
+
+  li {
+    font-family: 'National Park Variable', sans-serif;
+  }
+
+  a {
+    font-family: 'Inter Variable', sans-serif;
+  }
+
+  button {
+    font-family: 'Inter Variable', sans-serif;
+  }
+
+  input, textarea, select {
+    font-family: 'Inter Variable', sans-serif;
+  }
+
+  label {
+    font-family: 'Inter Variable', sans-serif;
+  }
+
+  code, pre {
+    font-family: 'National Park Variable', sans-serif;
+  }
+
+  blockquote {
+    font-family: 'National Park Variable', sans-serif;
+    font-style: italic;
+  }
+
+  table, th, td {
+    font-family: 'Inter Variable', sans-serif;
+  }
+
+  

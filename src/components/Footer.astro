@@ -1,0 +1,283 @@
+---
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
+
+const year = new Date().getFullYear();
+---
+
+<footer
+  class="bg-[url(https://html.themewant.com/elever/assets/images/footer/01.webp)] text-white relative overflow-hidden"
+>
+  <!-- Patrón de fondo sutil -->
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-gray-800/20 to-gray-900/20"
+  >
+  </div>
+
+  <div class="relative z-10">
+    <!-- Sección superior con iconos y información de contacto -->
+    <div class="border-b border-gray-700/50 py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Call Us Now -->
+          <div class="text-center group">
+            <div
+              class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-background transition-colors duration-300"
+            >
+              <svg
+                class="w-6 h-6 text-white group-hover:text-white transition-colors duration-300"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                ></path>
+              </svg>
+            </div>
+            <h4 class="text-lg font-semibold text-white mb-3">Call Us Now</h4>
+            <p class="text-gray-400 text-sm">(646) 555-0258</p>
+            <p class="text-gray-400 text-sm">(213) 555-0456, (503) 555-0666</p>
+          </div>
+
+          <!-- Office Time -->
+          <div class="text-center group">
+            <div
+              class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-background transition-colors duration-300"
+            >
+              <svg
+                class="w-6 h-6 text-white group-hover:text-white transition-colors duration-300"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z"
+                ></path>
+              </svg>
+            </div>
+            <h4 class="text-lg font-semibold text-white mb-3">Office Time</h4>
+            <p class="text-gray-400 text-sm">Mon-Fri: 9:00 am to 5:00 pm</p>
+            <p class="text-gray-400 text-sm">Sat: 9:00 am to 2:00 pm</p>
+          </div>
+
+          <!-- Need Support -->
+          <div class="text-center group">
+            <div
+              class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-background transition-colors duration-300"
+            >
+              <svg
+                class="w-6 h-6 text-white group-hover:text-white transition-colors duration-300"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                ></path>
+              </svg>
+            </div>
+            <h4 class="text-lg font-semibold text-white mb-3">Need Support</h4>
+            <p class="text-gray-400 text-sm">support@elever.com</p>
+            <p class="text-gray-400 text-sm">help-elver@gmail.com</p>
+          </div>
+
+          <!-- Our Address -->
+          <div class="text-center group">
+            <div
+              class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-background transition-colors duration-300"
+            >
+              <svg
+                class="w-6 h-6 text-white group-hover:text-white transition-colors duration-300"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                ></path>
+              </svg>
+            </div>
+            <h4 class="text-lg font-semibold text-white mb-3">Our Address</h4>
+            <p class="text-gray-400 text-sm">456 Elm Avenue, Floor 2</p>
+            <p class="text-gray-400 text-sm">San Francisco, CA 94103</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menú de navegación horizontal -->
+    <div class="border-b border-gray-700/50 py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-center gap-8 text-sm">
+          <a
+            href="/about"
+            class="bg-black px-6 py-3 rounded hover:bg-background transition-colors duration-300 text-gray-300 hover:text-white"
+            >ABOUT US</a
+          >
+          <a
+            href="/projects"
+            class="bg-black px-6 py-3 rounded hover:bg-background transition-colors duration-300 text-gray-300 hover:text-white"
+            >PROJECTS</a
+          >
+          <a
+            href="/blogs"
+            class="bg-black px-6 py-3 rounded hover:bg-background transition-colors duration-300 text-gray-300 hover:text-white"
+            >BLOGS</a
+          >
+
+          <a
+            href="/team"
+            class="bg-black px-6 py-3 rounded hover:bg-background transition-colors duration-300 text-gray-300 hover:text-white"
+            >TEAM</a
+          >
+          <a
+            href="/contact"
+            class="bg-black px-6 py-3 rounded hover:bg-background transition-colors duration-300 text-gray-300 hover:text-white"
+            >CONTACT</a
+          >
+          <a
+            href="/services"
+            class="bg-black px-6 py-3 rounded hover:bg-background transition-colors duration-300 text-gray-300 hover:text-white"
+            >SERVICES</a
+          >
+          <a
+            href="/company-history"
+            class="bg-black px-6 uppercase py-3 rounded hover:bg-background transition-colors duration-300 text-gray-300 hover:text-white"
+            >company history</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenido principal del footer -->
+    <div class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Logo y descripción -->
+          <div>
+            <div class="mb-6">
+              <img src="/logo.webp" class="w-32 h-32" alt="" />
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+              We're committed to elevating the construction experience for our
+              clients. With a passion for innovation and quality craftsmanship.
+            </p>
+            <!-- Redes sociales -->
+            <div class="flex space-x-3">
+              <a
+                href="#"
+                class="w-10 h-10 bg-black rounded-full flex items-center justify-center hover:bg-background transition-colors duration-300"
+              >
+                <FaFacebook className="text-white text-xl" />
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-black rounded-full flex items-center justify-center hover:bg-background transition-colors duration-300"
+              >
+                <FaInstagram className="text-white text-xl" />
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-black rounded-full flex items-center justify-center hover:bg-background transition-colors duration-300"
+              >
+                <FaLinkedin className="text-white text-xl" />
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-black rounded-full flex items-center justify-center hover:bg-background transition-colors duration-300"
+              >
+                <FaXTwitter className="text-white text-xl" />
+              </a>
+            </div>
+          </div>
+
+          <!-- Useful Links -->
+          <div>
+            <h4 class="text-white font-semibold text-lg mb-6">Useful Links</h4>
+            <ul class="space-y-3 text-gray-400 text-sm">
+              <li>
+                <a
+                  href="/about"
+                  class="flex items-center hover:text-background transition-colors duration-300"
+                >
+                  <i class="fas fa-arrow-right text-xs mr-2"></i>
+                  About Us
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/services"
+                  class="flex items-center hover:text-background transition-colors duration-300"
+                >
+                  <i class="fas fa-arrow-right text-xs mr-2"></i>
+                  Our Services
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/team"
+                  class="flex items-center hover:text-background transition-colors duration-300"
+                >
+                  <i class="fas fa-arrow-right text-xs mr-2"></i>
+                  Our Team
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/contact"
+                  class="flex items-center hover:text-background transition-colors duration-300"
+                >
+                  <i class="fas fa-arrow-right text-xs mr-2"></i>
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div>
+            <h4 class="text-white font-semibold text-lg mb-6">Newsletter</h4>
+            <p class="text-gray-400 text-sm mb-6">
+              Applications prodize before front end portals visualize front end
+            </p>
+            <div class="space-y-4">
+              <input
+                type="email"
+                placeholder="Email Address"
+                class="w-full p-3 rounded bg-black text-white text-sm placeholder-gray-500 border border-gray-700 focus:border-background focus:outline-none transition-colors duration-300"
+              />
+              <button
+                class="w-full bg-background text-white px-6 py-3 rounded text-sm font-semibold hover:bg-orange-600 transition-colors duration-300 uppercase"
+              >
+                Subscribe Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer bottom -->
+    <div class="border-t border-gray-700/50 py-6">
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
+        >
+          <p class="text-gray-400 text-sm">
+            Copyright &copy; {year} Diaz Constructions. All Rights Reserved.
+          </p>
+          <div class="flex space-x-6 text-sm">
+            <a
+              href="/terms-of-condition"
+              class="text-gray-400 hover:text-background transition-colors duration-300"
+              >Terms of use</a
+            >
+            <a
+              href="/privacy-policy"
+              class="text-gray-400 hover:text-background transition-colors duration-300"
+              >Privacy</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

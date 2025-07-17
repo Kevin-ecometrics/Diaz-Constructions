@@ -1,0 +1,140 @@
+---
+const blogPosts = [
+  {
+    id: 1,
+    image: "https://html.themewant.com/elever/assets/images/blog/01.webp",
+    timeAgo: "2 Years Ago",
+    category: "Office",
+    title: "Modern Construction Techniques Materials Changing",
+    excerpt: "Construction industry undergone transformations in recent years. With advancements technology & the introduction of new materials",
+    readMoreLink: "/blog-details/"
+  },
+  {
+    id: 2,
+    image: "https://html.themewant.com/elever/assets/images/blog/02.webp",
+    timeAgo: "2 Years Ago",
+    category: "Office",
+    title: "Streamlining Projects for Faster Cost Effective Results",
+    excerpt: "Construction industry undergone transformations in recent years. With advancements technology & the introduction of new materials",
+    readMoreLink: "/blog-details/"
+  },
+  {
+    id: 3,
+    image: "https://html.themewant.com/elever/assets/images/blog/03.webp",
+    timeAgo: "2 Years Ago",
+    category: "Office",
+    title: "Modern Construction Techniques Materials Changing",
+    excerpt: "Construction industry undergone transformations in recent years. With advancements technology & the introduction of new materials",
+    readMoreLink: "/blog-details/"
+  },
+  {
+    id: 4,
+    image: "https://html.themewant.com/elever/assets/images/blog/04.webp",
+    timeAgo: "2 Years Ago",
+    category: "Office",
+    title: "Safety Protocols in Modern Construction Sites",
+    excerpt: "Construction industry undergone transformations in recent years. With advancements technology & the introduction of new materials",
+    readMoreLink: "/blog-details/"
+  },
+  {
+    id: 5,
+    image: "https://html.themewant.com/elever/assets/images/blog/05.webp",
+    timeAgo: "2 Years Ago",
+    category: "Office",
+    title: "Project Management Excellence in Construction",
+    excerpt: "Construction industry undergone transformations in recent years. With advancements technology & the introduction of new materials",
+    readMoreLink: "/blog-details/"
+  },
+  {
+    id: 6,
+    image: "https://html.themewant.com/elever/assets/images/blog/06.webp",
+    timeAgo: "2 Years Ago",
+    category: "Office",
+    title: "Building Materials Innovation and Technology",
+    excerpt: "Construction industry undergone transformations in recent years. With advancements technology & the introduction of new materials",
+    readMoreLink: "/blog-details/"
+  },
+  {
+    id: 7,
+    image: "https://html.themewant.com/elever/assets/images/blog/07.webp",
+    timeAgo: "2 Years Ago",
+    category: "Office",
+    title: "Sustainable Construction Practices Today",
+    excerpt: "Construction industry undergone transformations in recent years. With advancements technology & the introduction of new materials",
+    readMoreLink: "/blog-details/"
+  },
+  {
+    id: 8,
+    image: "https://html.themewant.com/elever/assets/images/blog/08.webp",
+    timeAgo: "2 Years Ago",
+    category: "Office",
+    title: "Digital Tools Transforming Construction",
+    excerpt: "Construction industry undergone transformations in recent years. With advancements technology & the introduction of new materials",
+    readMoreLink: "/blog-details/"
+  },
+  {
+    id: 9,
+    image: "https://html.themewant.com/elever/assets/images/blog/09.webp",
+    timeAgo: "2 Years Ago",
+    category: "Office",
+    title: "Future of Construction Industry Trends",
+    excerpt: "Construction industry undergone transformations in recent years. With advancements technology & the introduction of new materials",
+    readMoreLink: "/blog-details/"
+  }
+];
+---
+
+<section class="container mx-auto px-8 py-16">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {blogPosts.map((post) => (
+      <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+        <!-- Image Container -->
+        <div class="relative overflow-hidden">
+          <img 
+            src={post.image} 
+            alt={post.title}
+            class="w-full h-64 object-cover transition-transform duration-300 hover:scale-105"
+          />
+          
+          <!-- Overlay badges -->
+          <div class="absolute bottom-0 left-0 flex items-center">
+            <span class="bg-white text-black p-4 font-bold text-sm">
+              {post.timeAgo}
+            </span>
+            <span class="bg-orange-500 text-white p-4 rounded-tr-2xl text-sm font-medium">
+              {post.category}
+            </span>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-3 leading-tight hover:text-orange-500 transition-colors duration-200">
+            <a href={post.readMoreLink} class="block">
+              {post.title}
+            </a>
+          </h3>
+          
+          <p class="text-gray-600 mb-4 overflow-hidden text-ellipsis line-clamp-3">
+            {post.excerpt}
+          </p>
+          
+          <a 
+            href={post.readMoreLink}
+            class="inline-flex items-center text-gray-900 font-semibold hover:text-orange-500 transition-colors duration-200 group"
+          >
+            Read More 
+            <svg 
+              class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

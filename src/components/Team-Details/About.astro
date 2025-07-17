@@ -1,0 +1,96 @@
+---
+import { FiPhone, FiMail } from "react-icons/fi";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaYoutube,
+} from "react-icons/fa";
+import ImageCover from "@components/Utils/ImageCover.astro";
+---
+
+<section class="mx-auto container px-8 py-16">
+  <div
+    class="flex flex-col lg:flex-row gap-8 bg-white rounded-2xl items-center lg:items-start"
+  >
+    <!-- Imagen -->
+    <div class="flex-shrink-0">
+      <ImageCover
+        className="w-full h-96"
+        imageClass="w-full h-full rounded-2xl"
+        src="https://html.themewant.com/elever/assets/images/team/15.webp"
+      />
+    </div>
+
+    <!-- Contenido -->
+    <div class="flex-1 lg:ml-8 py-4 px-4">
+      <!-- Título y nombre -->
+      <div class="mb-6">
+        <p
+          class="text-orange-500 text-sm font-medium uppercase tracking-wide mb-2"
+        >
+          Founder & CEO
+        </p>
+        <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          Charles Alexander
+        </h1>
+      </div>
+
+      <!-- Descripción -->
+      <p class="text-gray-600 text-lg leading-relaxed mb-8">
+        Charles Alexander is a highly skilled and experienced construction
+        expert, known for his deep expertise in managing large-scale
+        construction projects. With over 10+ years in the industry, Charles has
+        developed a reputation for excellence in project management.
+      </p>
+
+      <!-- Información de contacto -->
+      <div class="flex flex-col sm:flex-row gap-4 mb-8">
+        <div
+          class="flex items-center gap-3 bg-white px-4 py-3 rounded-lg shadow-sm"
+        >
+          <FiPhone className="w-5 h-5 text-orange-500" />
+          <span class="text-gray-900 font-medium">(212) 229-6490</span>
+        </div>
+
+        <div
+          class="flex items-center gap-3 bg-white px-4 py-3 rounded-lg shadow-sm"
+        >
+          <FiMail className="w-5 h-5 text-orange-500" />
+          <span class="text-gray-900 font-medium">support@user.com</span>
+        </div>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="flex gap-4">
+        <a
+          href="#"
+          class="w-10 h-10 bg-white rounded-lg shadow-sm flex items-center justify-center hover:bg-gray-50 transition-colors"
+        >
+          <FaFacebookF className="w-5 h-5 text-gray-600" />
+        </a>
+
+        <a
+          href="#"
+          class="w-10 h-10 bg-white rounded-lg shadow-sm flex items-center justify-center hover:bg-gray-50 transition-colors"
+        >
+          <FaTwitter className="w-5 h-5 text-gray-600" />
+        </a>
+
+        <a
+          href="#"
+          class="w-10 h-10 bg-white rounded-lg shadow-sm flex items-center justify-center hover:bg-gray-50 transition-colors"
+        >
+          <FaLinkedinIn className="w-5 h-5 text-gray-600" />
+        </a>
+
+        <a
+          href="#"
+          class="w-10 h-10 bg-white rounded-lg shadow-sm flex items-center justify-center hover:bg-gray-50 transition-colors"
+        >
+          <FaYoutube className="w-5 h-5 text-gray-600" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,153 @@
+---
+import ImageCover from "@components/Utils/ImageCover.astro";
+---
+
+<section class="px-8 py-16 mx-auto container">
+  <div
+    class="md:grid grid-cols-2 gap-12 items-center text-black p-8 bg-white rounded-2xl shadow-lg"
+  >
+    <!-- Contenido de Habilidades -->
+    <div class="space-y-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 leading-tight">
+        Professional Skills
+      </h2>
+
+      <p class="text-gray-600 text-base leading-relaxed">
+        Completely evisculate stand alone expertise through revolutionary
+        strategic theme areas fashion imatful digms process centric
+        relationships with whiteboard seamless intellectual.
+      </p>
+
+      <!-- Lista de Habilidades -->
+      <div class="space-y-6">
+        <!-- Diseño Interior -->
+        <div class="skill-item">
+          <div class="flex justify-between items-center mb-2">
+            <span
+              class="text-sm font-semibold text-gray-800 uppercase tracking-wide"
+            >
+              Interior Design
+            </span>
+            <span class="text-lg font-bold text-gray-800">94%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div
+              class="bg-gradient-to-r from-orange-500 to-orange-400 h-2 rounded-full transition-all duration-1000 ease-out skill-bar"
+              data-width="94"
+            >
+            </div>
+          </div>
+        </div>
+
+        <!-- Renovación -->
+        <div class="skill-item">
+          <div class="flex justify-between items-center mb-2">
+            <span
+              class="text-sm font-semibold text-gray-800 uppercase tracking-wide"
+            >
+              Renovation
+            </span>
+            <span class="text-lg font-bold text-gray-800">85%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div
+              class="bg-gradient-to-r from-orange-500 to-orange-400 h-2 rounded-full transition-all duration-1000 ease-out skill-bar"
+              data-width="85"
+            >
+            </div>
+          </div>
+        </div>
+
+        <!-- Análisis de Crecimiento -->
+        <div class="skill-item">
+          <div class="flex justify-between items-center mb-2">
+            <span
+              class="text-sm font-semibold text-gray-800 uppercase tracking-wide"
+            >
+              Growth Analysis
+            </span>
+            <span class="text-lg font-bold text-gray-800">98%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-2">
+            <div
+              class="bg-gradient-to-r from-orange-500 to-orange-400 h-2 rounded-full transition-all duration-1000 ease-out skill-bar"
+              data-width="98"
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Imagen -->
+    <div class="mt-8 md:mt-0 justify-self-end">
+      <ImageCover
+        src="https://html.themewant.com/elever/assets/images/team/16.webp"
+        className="w-full h-96"
+        imageClass="w-full h-full rounded-2xl "
+      />
+    </div>
+  </div>
+</section>
+
+<script>
+  // Animación de las barras de habilidades
+  document.addEventListener("DOMContentLoaded", function () {
+    const skillBars = document.querySelectorAll(".skill-bar");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const bar = entry.target as HTMLElement;
+            const width = bar.getAttribute("data-width");
+            if (width) {
+              bar.style.width = width + "%";
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    skillBars.forEach((bar) => {
+      // Inicialmente sin ancho
+      (bar as HTMLElement).style.width = "0%";
+      observer.observe(bar);
+    });
+  });
+</script>
+
+<style>
+  .skill-bar {
+    width: 0%;
+  }
+
+  /* Animación de entrada opcional */
+  .skill-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.6s ease-out forwards;
+  }
+
+  .skill-item:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+
+  .skill-item:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+
+  .skill-item:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

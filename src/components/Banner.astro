@@ -1,0 +1,45 @@
+---
+import Button from "./Button";
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2">
+  <!-- Imagen -->
+  <div class="relative">
+    <img
+      src="/diaz9.webp"
+      alt="Equipo de construcción profesional"
+      class="w-full md:h-[500px]"
+    />
+  </div>
+
+  <!-- Contenido -->
+  <div
+    class="bg-gradient-to-br from-background to-red-600 text-white p-8 flex items-center"
+  >
+    <div class="w-full">
+      <h2 class="text-4xl font-bold mb-4">Quick Remodel. Next-Level Home.</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Take your home to the next level without any extra hassle.
+      </p>
+
+      <div class="flex gap-4">
+        <Button
+          titulo="More About Us"
+          background="white"
+          textColor="orange"
+          href="/about"
+          hoverTextColor="white"
+          backgroundHover="black"
+        />
+        <Button
+          titulo="Our Services"
+          background="white"
+          textColor="orange"
+          href="/services"
+          hoverTextColor="white"
+          backgroundHover="black"
+        />
+      </div>
+    </div>
+  </div>
+</div>

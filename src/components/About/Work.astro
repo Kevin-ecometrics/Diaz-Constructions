@@ -1,0 +1,177 @@
+---
+// Component script
+---
+
+<section id="work" class="py-20 text-white px-8 bg-[#1E1E20]">
+  <div
+    class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start"
+  >
+    <!-- Columna izquierda: Imagen + botón -->
+    <div
+      class="image-reveal-container relative w-full bg-gray-300 rounded-lg flex items-center justify-center overflow-hidden"
+    >
+      <img
+        src="https://html.themewant.com/elever/assets/images/service/01.webp"
+        alt=""
+        class="w-full h-auto block"
+      />
+
+      <!-- Overlay naranja que se desliza primero -->
+      <div class="orange-overlay absolute inset-0 bg-orange-500 z-20"></div>
+
+      <!-- Overlay negro que se desliza segundo -->
+      <div class="black-overlay absolute inset-0 bg-black z-10"></div>
+    </div>
+
+    <!-- Columna derecha: Texto -->
+    <div class="space-y-6">
+      <h2 class="text-orange-500 text-[16px] font-bold uppercase">
+        How We Works
+      </h2>
+      <h3 class="text-[44px] font-bold">
+        How To Work With Elever Construction Builder
+      </h3>
+
+      <!-- Service 1 -->
+      <div class="flex items-start gap-4">
+        <div class="flex-shrink-0 relative">
+          <!-- Número circular -->
+          <div
+            class="absolute -top-2 -left-2 w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold z-10"
+          >
+            1
+          </div>
+          <!-- Contenedor del ícono -->
+          <div
+            class="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center"
+          >
+            <img
+              src="https://html.themewant.com/elever/assets/images/service/07.svg"
+              alt=""
+              class="w-8 h-8"
+            />
+          </div>
+        </div>
+        <div class="flex-1">
+          <h5 class="text-xl font-semibold mb-2">Consultation & Planning</h5>
+          <p class="text-gray-400">
+            We begin with a thorough consultation to understand your vision,
+            budget, and project goals. Our team works with you to develop a
+            tailored plan
+          </p>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="flex items-start gap-4">
+        <div class="flex-shrink-0 relative">
+          <!-- Número circular -->
+          <div
+            class="absolute -top-2 -left-2 w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold z-10"
+          >
+            2
+          </div>
+          <!-- Contenedor del ícono -->
+          <div
+            class="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center"
+          >
+            <img
+              src="https://html.themewant.com/elever/assets/images/service/08.svg"
+              alt=""
+              class="w-8 h-8"
+            />
+          </div>
+        </div>
+        <div class="flex-1">
+          <h5 class="text-xl font-semibold mb-2">Design & Pre-Construction</h5>
+          <p class="text-gray-400">
+            We begin with a thorough consultation to understand your vision,
+            budget, and project goals. Our team works with you to develop a
+            tailored plan
+          </p>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="flex items-start gap-4">
+        <div class="flex-shrink-0 relative">
+          <!-- Número circular -->
+          <div
+            class="absolute -top-2 -left-2 w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold z-10"
+          >
+            3
+          </div>
+          <!-- Contenedor del ícono -->
+          <div
+            class="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center"
+          >
+            <img
+              src="https://html.themewant.com/elever/assets/images/service/09.svg"
+              alt=""
+              class="w-8 h-8"
+            />
+          </div>
+        </div>
+        <div class="flex-1">
+          <h5 class="text-xl font-semibold mb-2">Construction & Delivery</h5>
+          <p class="text-gray-400">
+            We begin with a thorough consultation to understand your vision,
+            budget, and project goals. Our team works with you to develop a
+            tailored plan
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  // Registrar el plugin ScrollTrigger
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Función para inicializar las animaciones
+  function initRevealAnimation() {
+    // Seleccionar elementos
+    const container = document.querySelector(".image-reveal-container");
+    const orangeOverlay = document.querySelector(".orange-overlay");
+    const blackOverlay = document.querySelector(".black-overlay");
+
+    if (!container || !orangeOverlay || !blackOverlay) return;
+
+    // Crear timeline
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: "top 80%", // Inicia cuando el top del elemento está al 80% del viewport
+        end: "bottom 20%",
+        toggleActions: "play none none none", // Solo reproduce una vez
+        // markers: true, // Descomenta para ver los marcadores de debug
+      },
+    });
+
+    // Secuencia de animaciones
+    tl
+      // 1. Overlay naranja se desliza hacia la izquierda
+      .to(orangeOverlay, {
+        duration: 1.2,
+        x: "-100%",
+        ease: "power2.out",
+      })
+      // 2. Overlay negro se desliza hacia la izquierda (inicia 0.2s antes de que termine el naranja)
+      .to(
+        blackOverlay,
+        {
+          duration: 1.2,
+          x: "-100%",
+          ease: "power2.out",
+        },
+        "-=0.2"
+      );
+  }
+
+  // Inicializar cuando el DOM esté cargado
+  document.addEventListener("DOMContentLoaded", initRevealAnimation);
+</script>

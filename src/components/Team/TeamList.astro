@@ -1,0 +1,116 @@
+---
+import { FaShareAlt } from "react-icons/fa";
+import { FaBehance, FaYoutube, FaLinkedin, FaFacebookF } from "react-icons/fa";
+
+const team = [
+  {
+    id: 1,
+    name: "Samuel Daniel",
+    position: "Designer",
+    image: "https://html.themewant.com/elever/assets/images/team/08.webp",
+  },
+  {
+    id: 2,
+    name: "Mekail Shen",
+    position: "Designer",
+    image: "https://html.themewant.com/elever/assets/images/team/09.webp",
+  },
+  {
+    id: 3,
+    name: "William Daniel",
+    position: "Developer",
+    image: "https://html.themewant.com/elever/assets/images/team/10.webp",
+  },
+  {
+    id: 4,
+    name: "Edward Thomas",
+    position: "Designer",
+    image: "https://html.themewant.com/elever/assets/images/team/11.webp",
+  },
+  {
+    id: 5,
+    name: "Lisa Grey",
+    position: "UX Researcher",
+    image: "https://html.themewant.com/elever/assets/images/team/12.webp",
+  },
+  {
+    id: 6,
+    name: "David Smith",
+    position: "Lead Developer",
+    image: "https://html.themewant.com/elever/assets/images/team/13.webp",
+  },
+  {
+    id: 7,
+    name: "Sophia Turner",
+    position: "Project Manager",
+    image: "https://html.themewant.com/elever/assets/images/team/14.webp",
+  },
+  {
+    id: 8,
+    name: "James Wilson",
+    position: "UI Designer",
+    image: "https://html.themewant.com/elever/assets/images/team/12.webp",
+  },
+];
+---
+
+<section
+  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-[90%] mx-auto py-8"
+>
+  {
+    team.map((tm) => (
+      <div class="group flex bg-white rounded-2xl text-black flex-col">
+        <a href="/team-details/">
+          <figure class="overflow-hidden relative">
+            <img
+              src={tm.image}
+              alt={tm.name}
+              class="transition-transform group-hover:scale-105 duration-300"
+              title={tm.name}
+            />
+
+            <div class="absolute right-8 bottom-0">
+              <div class="relative">
+                <img
+                  src="https://html.themewant.com/elever/assets/images/team/01.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </figure>{" "}
+        </a>
+
+        <div class="px-4 py-8 relative">
+          {/* Íconos de redes sociales - aparecen con animación de abajo hacia arriba */}
+          <div class="absolute right-16 bottom-24 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div class="bg-orange-500 rounded-full px-2 py-4 shadow-lg overflow-hidden transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-300">
+              <div class="flex flex-col space-y-4">
+                <div class="w-8 h-8 grid place-items-center rounded-full bg-white hover:bg-gray-100  cursor-pointer transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                  <FaBehance className="text-orange-500 text-sm" />
+                </div>
+                <div class="w-8 h-8 grid place-items-center rounded-full bg-white hover:bg-gray-100  cursor-pointer transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 delay-150">
+                  <FaYoutube className="text-red-500 text-sm" />
+                </div>
+                <div class="w-8 h-8 grid place-items-center rounded-full bg-white hover:bg-gray-100  cursor-pointer transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 delay-225">
+                  <FaLinkedin className="text-blue-600 text-sm" />
+                </div>
+                <div class="w-8 h-8 grid place-items-center rounded-full bg-white hover:bg-gray-100  cursor-pointer transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 delay-300">
+                  <FaFacebookF className="text-blue-500 text-sm" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute right-18 top-[-16px]">
+            <div class="bg-orange-500 w-10 h-10 grid place-items-center rounded-3xl">
+              <FaShareAlt className="text-white" />
+            </div>
+          </div>
+          <a href="/team-details/">
+            <h2 class="text-2xl font-bold">{tm.name}</h2>
+          </a>
+          <p class="text-lg text-gray-500">{tm.position}</p>
+        </div>
+      </div>
+    ))
+  }
+</section>

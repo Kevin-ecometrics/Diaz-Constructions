@@ -1,0 +1,16 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Hero from "@components/Utils/Hero.astro";
+import ListProject from "@components/Projects/ListProjects";
+---
+
+<Layout title="Diaz Constructions | Projects">
+  <main class="text-white overflow-x-hidden bg-[#EFEBE7]">
+    <Hero
+      title="Our Projects"
+      text="Our Projects"
+      image="https://html.themewant.com/elever/assets/images/banner/breadcrumb-6.webp"
+    />
+    <ListProject client:visible />
+  </main>
+</Layout>

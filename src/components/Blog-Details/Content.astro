@@ -1,0 +1,229 @@
+---
+import Form from "@components/Blog-Details/Form";
+import Aside from "./Aside.astro";
+import { FaUser, FaClock, FaTag } from "react-icons/fa";
+import {
+  FaCheck,
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa";
+
+const tags = ["Services", "Business", "Growth"];
+const features = [
+  "How will activities traditional manufacturing",
+  "All these digital and projects aim to enhance",
+  "I monitor my software that takes screenshots",
+  "Laoreet dolore niacin sodium glutimate",
+  "Minim veniam sodium glutimate nostrud",
+];
+---
+
+<section class="container mx-auto px-8 py-16">
+  <div class="md:grid grid-cols-3 gap-4 space-y-8">
+    <article class="col-span-2 bg-white rounded-2xl overflow-hidden shadow-lg">
+      <figure class="relative">
+        <img
+          src="https://html.themewant.com/elever/assets/images/blog/28.webp"
+          alt="Blog post image"
+          class="object-cover"
+        />
+      </figure>
+      <section class="p-8 text-black">
+        <div
+          class="flex flex-wrap gap-4 items-center text-sm text-gray-500 mb-4"
+        >
+          <span class="flex items-center gap-2">
+            <FaUser className="w-4 h-4 text-orange-500" />
+            by David Smith
+          </span>
+          <span class="flex items-center gap-2">
+            <FaClock className="w-4 h-4 text-orange-500" />
+            by David Smith
+          </span>
+          <span class="flex items-center gap-2">
+            <FaTag className="w-4 h-4 text-orange-500" />
+            by David Smith
+          </span>
+        </div>
+        <h2 class="text-3xl font-black mb-4">
+          Profitable business makes your profit
+        </h2>
+        <p class="mb-2">
+          Collaboratively pontificate bleeding edge resources with inexpensive
+          methodologies globally initiate multidisciplinary compatible
+          architectures pidiously repurpose leading edge growth strategies with
+          just in time web readiness communicate timely meta services
+        </p>
+        <p class="mb-2">
+          Onubia semper vel donec torquent fusce mauris felis aptent lacinia
+          nisl, lectus himenaeos euismod molestie iaculis interdum in laoreet
+          condimentum dictum, quisque quam risus sollicitudin gravida ut odio
+          per a et. Gravida maecenas lobortis suscipit mus sociosqu convallis,
+          mollis vestibulum donec aliquam risus sapien ridiculus, nulla
+          sollicitudin eget in venenatis. Tortor montes platea iaculis posuere
+          per mauris, eros porta blandit curabitur ullamcorper varius
+        </p>
+        <p
+          class="text-2xl font-black mx-auto text-center py-8 text-black max-w-3xl"
+        >
+          “Placerat pretium tristique mattis tellus accuan metus dictumst
+          vivamus odio nulla fusce auctor into suscipit habitasse class congue
+          potenti iaculis”
+        </p>
+        <p class="text-orange-500 text-center font-bold text-xl">
+          Daniel X. Horrar
+        </p>
+        <p class="text-gray-500 text-center mb-4">Author</p>
+        <p class="mb-4">
+          Ultrices iaculis commodo parturient euismod pulvinar donec cum eget a,
+          accumsan viverra cras praesent cubilia dignissim ad rhoncus. Gravida
+          maecenas lobortis suscipit mus sociosqu convallis, mollis vestibulum
+          donec aliquam risus sapien ridiculus, nulla sollicitudin eget in
+          venenatis. Tortor montes platea iaculis posuere per mauris, eros porta
+          blandit curabitur ullamcorper varius, nostra ante risus egestas
+          suscipit. Quisque interdum nec parturient facilisis nunc ac quam, ad
+          est cubilia mauris himenaeos nascetur vestibulum.
+        </p>
+        <div class="flex gap-4 mb-4">
+          <figure>
+            <img
+              src="https://html.themewant.com/elever/assets/images/blog/details/01.webp"
+              alt=""
+            />
+          </figure>
+          <figure>
+            <img
+              src="https://html.themewant.com/elever/assets/images/blog/details/02.webp"
+              alt=""
+            />
+          </figure>
+        </div>
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold text-gray-800 mb-4">
+            Ultimate Business Strategy Solution
+          </h3>
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Gravida maecenas lobortis suscipit mus sociosqu convallis, mollis
+            vestibulum donec aliquam risus sapien ridiculus, nulla sollicitudin
+            eget in venenatis. Tortor montes platea iaculis posuere per mauris,
+            eros porta blandit curabitur ullamcorper varius nostra ante risus
+            egestas.
+          </p>
+
+          <div class="flex flex-col md:flex-row gap-6 items-start">
+            <figure class="flex-shrink-0">
+              <img
+                src="https://html.themewant.com/elever/assets/images/blog/details/03.webp"
+                alt="Business Strategy"
+                class="object-cover"
+              />
+            </figure>
+
+            <div class="flex-1">
+              <h4 class="text-xl font-semibold text-gray-800 mb-4">
+                Key Features & Benefits
+              </h4>
+
+              <div class="space-y-3">
+                {
+                  features.map((feature, index) => (
+                    <div class="flex items-start gap-3">
+                      <div class="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <FaCheck className="w-3 h-3 text-white" />
+                      </div>
+                      <p class="text-gray-700">{feature}</p>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lorem ipsum text -->
+        <div class="text-gray-600 leading-relaxed">
+          <p>
+            Cubilia hendrerit luctus sem aptent curae gravida maecenas eleifend
+            nunc nec vitae morbi sodales fusce tristique aenean habitasse mattis
+            sociis feugiat conubia mus auctor praesent urna tincidunt taciti dui
+            lobortis nullam. Mattis placerat feugiat ridiculus sed a per curae
+            fermentum aenean facilisi, vitae urna imperdiet ac mauris non
+            inceptos luctus hac odio.
+          </p>
+        </div>
+
+        <!-- Tags and Share section -->
+        <div class="flex flex-wrap items-center justify-between mt-8 pt-6">
+          <div class="flex items-center gap-2 mb-4 sm:mb-0">
+            <span class="text-gray-700 font-medium">Tags:</span>
+            <div class="flex gap-2">
+              {
+                tags.map((tag, index) => (
+                  <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-orange-500 hover:text-white border transition-colors cursor-pointer">
+                    {tag}
+                  </span>
+                ))
+              }
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <span class="text-gray-700 font-medium">Share:</span>
+            <div class="flex gap-2">
+              <a
+                href="#"
+                class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
+              >
+                <FaFacebookF className="w-4 h-4" />
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+              >
+                <FaTwitter className="w-4 h-4" />
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors"
+              >
+                <FaInstagram className="w-4 h-4" />
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 bg-blue-700 text-white rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors"
+              >
+                <FaLinkedinIn className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <hr class="text-gray-400 mt-4 mb-4" />
+        <div class="md:flex gap-4">
+          <figure>
+            <img
+              src="https://html.themewant.com/elever/assets/images/blog/details/author/avatar.webp"
+              alt=""
+            />
+          </figure>
+          <div class="flex-1">
+            <p class="text-gray-500">Brand Designer</p>
+            <p class="text-2xl text-black font-bold mb-2">Angelina H. Dekato</p>
+            <p class="text-gray-500">
+              Nullam varius luctus pharetra ultrices volpat facilisis donec
+              tortor, nibhkisys habitant curabitur at nunc nisl magna ac rhoncus
+              vehicula sociis tortor nist hendrerit molestie integer.
+            </p>
+          </div>
+        </div>
+        <hr class="text-gray-400 mt-4 mb-4" />
+        <div class="text-black">
+          <h4 class="text-2xl font-bold mb-4">Leave a Reply</h4>
+          <Form client:visible />
+        </div>
+      </section>
+    </article>
+    <Aside />
+  </div>
+</section>

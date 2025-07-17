@@ -1,0 +1,147 @@
+<div class="w-full py-16 overflow-hidden select-none">
+  <div class="container mx-auto px-4">
+    <div
+      class="relative w-full overflow-hidden cursor-grab active:cursor-grabbing"
+      id="carouselContainer"
+    >
+      <div
+        id="logoSlider"
+        class="flex gap-16 transition-transform duration-1000 ease-in-out"
+        style="transform: translateX(0);"
+      >
+        <!-- Logos duplicados para loop infinito -->
+        <img
+          src="https://html.themewant.com/elever/assets/images/brand/01.svg"
+          class="h-12 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+        />
+        <img
+          src="https://html.themewant.com/elever/assets/images/brand/02.svg"
+          class="h-12 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+        />
+        <img
+          src="https://html.themewant.com/elever/assets/images/brand/03.svg"
+          class="h-12 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+        />
+        <img
+          src="https://html.themewant.com/elever/assets/images/brand/04.svg"
+          class="h-12 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+        />
+        <img
+          src="https://html.themewant.com/elever/assets/images/brand/05.svg"
+          class="h-12 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+        />
+        <img
+          src="https://html.themewant.com/elever/assets/images/brand/06.svg"
+          class="h-12 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+        />
+        <!-- Duplicados -->
+        <img
+          src="https://html.themewant.com/elever/assets/images/brand/01.svg"
+          class="h-12 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+        />
+        <img
+          src="https://html.themewant.com/elever/assets/images/brand/02.svg"
+          class="h-12 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+        />
+        <img
+          src="https://html.themewant.com/elever/assets/images/brand/03.svg"
+          class="h-12 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+        />
+        <img
+          src="https://html.themewant.com/elever/assets/images/brand/04.svg"
+          class="h-12 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+        />
+        <img
+          src="https://html.themewant.com/elever/assets/images/brand/05.svg"
+          class="h-12 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+        />
+        <img
+          src="https://html.themewant.com/elever/assets/images/brand/06.svg"
+          class="h-12 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const slider = document.getElementById("logoSlider") as HTMLElement | null;
+  const container = document.getElementById(
+    "carouselContainer"
+  ) as HTMLElement | null;
+
+  if (!slider || !container) {
+    throw new Error("slider o container no encontrados en el DOM");
+  }
+
+  let position: number = 0;
+  const firstChild = slider.children[0] as HTMLElement;
+  const step: number = firstChild.offsetWidth + 64;
+
+  // Auto-scroll cada 5s
+  function autoMove(): void {
+    if (!slider) return;
+
+    position += step;
+
+    if (position >= slider.scrollWidth / 3) {
+      position = 0;
+      slider.style.transition = "none";
+      slider.style.transform = `translateX(0px)`;
+
+      // Forzar reflow para reiniciar transición correctamente
+      void slider.offsetWidth;
+    }
+
+    setTimeout(() => {
+      slider.style.transition = "transform 1s ease-in-out";
+      slider.style.transform = `translateX(-${position}px)`;
+    }, 20);
+  }
+
+  let interval = setInterval(autoMove, 5000);
+
+  // Drag manual
+  let isDragging: boolean = false;
+  let startX: number = 0;
+  let currentTranslate: number = 0;
+  let prevTranslate: number = 0;
+
+  container.addEventListener("mousedown", (e: MouseEvent) => {
+    isDragging = true;
+    startX = e.clientX;
+    clearInterval(interval);
+    slider.style.transition = "none";
+  });
+
+  container.addEventListener("mousemove", (e: MouseEvent) => {
+    if (!isDragging) return;
+    const delta = e.clientX - startX;
+    slider.style.transform = `translateX(${currentTranslate + delta}px)`;
+  });
+
+  container.addEventListener("mouseup", (e: MouseEvent) => {
+    if (!isDragging) return;
+    isDragging = false;
+    const delta = e.clientX - startX;
+
+    if (Math.abs(delta) > 50) {
+      position -= Math.sign(delta) * step;
+      if (position < 0) {
+        position = slider.scrollWidth / 2 - step;
+      }
+    }
+
+    slider.style.transition = "transform 0.5s ease";
+    slider.style.transform = `translateX(-${position}px)`;
+    currentTranslate = -position;
+    interval = setInterval(autoMove, 5000);
+  });
+
+  container.addEventListener("mouseleave", () => {
+    if (isDragging) container.dispatchEvent(new MouseEvent("mouseup"));
+  });
+
+  // Inicializar currentTranslate
+  currentTranslate = 0;
+</script>

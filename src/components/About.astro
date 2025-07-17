@@ -1,0 +1,210 @@
+---
+import Button from "@components/Button";
+import Letters from "./Letters";
+import Services from "./Services";
+---
+
+<section
+  id="about"
+  class="py-12 sm:py-16 lg:py-20 text-black bg-[url(https://html.themewant.com/elever/assets/images/about/about-1-bg.webp)] bg-cover bg-center bg-no-repeat"
+>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <!-- Columna de imagen -->
+      <div
+        class="about-image-container w-full flex items-center justify-center relative text-white order-2 lg:order-1 overflow-hidden"
+      >
+        <div class="relative w-full max-w-md lg:max-w-none">
+          <img
+            src="/diaz5.webp"
+            alt="About us"
+            class="w-full h-[600px] rounded-2xl object-cover"
+          />
+
+          <!-- Cards de estadísticas -->
+          <div
+            class="about-stats absolute px-8 -bottom-4 sm:bottom-4 lg:bottom-10 left-1/2 transform -translate-x-1/2 lg:translate-x-0 lg:left-auto flex flex-col sm:flex-row w-full max-w-xs sm:max-w-none opacity-0"
+          >
+            <div
+              class="bg-[#1F1F25] rounded-tl-2xl rounded-tr-2xl sm:rounded-tr-none rounded-bl-none sm:rounded-bl-2xl p-3 sm:p-4 lg:p-6 flex-1 sm:w-32 lg:w-64 flex flex-col justify-center items-start min-h-[120px] sm:min-h-[140px] lg:min-h-[160px]"
+            >
+              <p class="font-bold text-2xl sm:text-3xl mb-2 lg:mb-4">
+                Top – quality products
+              </p>
+              <p
+                class="text-sm sm:text-lg font-semibold text-balance leading-tight"
+              >
+                We deliver spaces that are both beautiful and built to last.
+              </p>
+            </div>
+            <div
+              class="bg-background rounded-bl-2xl rounded-br-2xl sm:rounded-bl-none rounded-tr-none sm:rounded-tr-2xl p-3 sm:p-4 lg:p-6 flex-1 sm:w-32 lg:w-64 flex flex-col justify-center items-start min-h-[120px] sm:min-h-[140px] lg:min-h-[160px]"
+            >
+              <p class="font-bold text-2xl sm:text-3xl mb-2 lg:mb-4">
+                Tailor solutions
+              </p>
+              <p
+                class="text-sm sm:text-lg font-semibold text-balance leading-tight"
+              >
+                Exceptional customer service from start to finish.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Overlays de animación -->
+        <!-- Overlay naranja que se desliza primero -->
+        <div class="about-orange-overlay absolute inset-0 bg-background z-20">
+        </div>
+
+        <!-- Overlay negro que se desliza segundo -->
+        <div class="about-black-overlay absolute inset-0 bg-black z-10"></div>
+      </div>
+
+      <!-- Columna de contenido -->
+      <div
+        class="space-y-4 sm:space-y-6 text-white order-1 lg:order-2 text-center lg:text-left"
+      >
+        <h2 class="text-background text-lg font-semibold tracking-wide">
+          About Diaz construction
+        </h2>
+        <h3
+          class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight"
+        >
+          We're a small business with big pride and values, delivering
+          exceptional craftsmanship and the care your project deserves.
+        </h3>
+        <div class="space-y-3 sm:space-y-4">
+          <p
+            class="text-gray-300 sm:text-gray-400 text-sm sm:text-base leading-relaxed"
+          >
+            Our core values of quality, efficiency and integrity drive us to
+            provide tailor made solutions for each client, completing projects
+            60% faster without compromising excellence and quality focus.
+          </p>
+          <p
+            class="text-gray-300 sm:text-gray-400 text-sm sm:text-base leading-relaxed"
+          >
+            Specializing in both soft and general construction, we handle very
+            aspect from permits and project management to safety permits and
+            final inspections, ensuring a seamless stress-free experience. Our
+            team works with meticulous attention to detail to guarantee your
+            satisfaction and high-quality results.
+          </p>
+          <p
+            class="text-gray-300 sm:text-gray-400 text-sm sm:text-base leading-relaxed"
+          >
+            Let's bring your vision to life through honest communication at
+            every step, with efficient execution and flawless finishes. Feel
+            free to get a quote or schedule a consultation. We´re fully
+            committed to helping make your new home or project an unforgettable
+            experience understanding your needs and making your dream space a
+            reality.
+          </p>
+          <p
+            class="text-gray-300 sm:text-gray-400 text-sm sm:text-base leading-relaxed"
+          >
+            We are here to help make your new home build an unforgettable
+            experience. We have 15 years of experience working with several
+            homeowners and have developed several projects ranging from kitchen
+            & bathroom remodels, landscaping, additions & more. Our team is
+            ready to tackle every part of your home.
+          </p>
+          <p
+            class="text-gray-300 sm:text-gray-400 text-sm sm:text-base leading-relaxed"
+          >
+            With a deep understanding of San Francsico and Bay Area styles and
+            building codes, we are commitment to help homeowners improve their
+            living spaces with top-quality materials and aesthetic results and
+            log lasting
+          </p>
+        </div>
+
+        <!-- Botón responsive -->
+        <div class="pt-2 sm:pt-4">
+          <Button
+            titulo="Explore More"
+            background="transparent"
+            textColor="white"
+            hoverTextColor="white"
+            href="/about/"
+            border={true}
+            client:load
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <Letters client:visible />
+  </div>
+  <div>
+    <Services client:visible />
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  // Registrar el plugin ScrollTrigger
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Función para inicializar las animaciones del About
+  function initAboutRevealAnimation() {
+    // Seleccionar elementos
+    const container = document.querySelector(".about-image-container");
+    const orangeOverlay = document.querySelector(".about-orange-overlay");
+    const blackOverlay = document.querySelector(".about-black-overlay");
+    const stats = document.querySelector(".about-stats");
+
+    if (!container || !orangeOverlay || !blackOverlay || !stats) return;
+
+    // Crear timeline
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: "top 80%", // Inicia cuando el top del elemento está al 80% del viewport
+        end: "bottom 20%",
+        toggleActions: "play none none none", // Solo reproduce una vez
+        // markers: true, // Descomenta para ver los marcadores de debug
+      },
+    });
+
+    // Secuencia de animaciones
+    tl
+      // 1. Overlay naranja se desliza hacia la izquierda
+      .to(orangeOverlay, {
+        duration: 1.2,
+        x: "-100%",
+        ease: "power2.out",
+      })
+      // 2. Overlay negro se desliza hacia la izquierda (inicia 0.2s antes de que termine el naranja)
+      .to(
+        blackOverlay,
+        {
+          duration: 1.2,
+          x: "-100%",
+          ease: "power2.out",
+        },
+        "-=0.2"
+      )
+      // 3. Cards de estadísticas aparecen con fade-in
+      .to(
+        stats,
+        {
+          duration: 0.5,
+          opacity: 1,
+          y: 0,
+          ease: "power2.out",
+        },
+        "-=0.3"
+      ); // Inicia 0.3 segundos antes de que termine la animación anterior
+  }
+
+  // Inicializar cuando el DOM esté cargado
+  document.addEventListener("DOMContentLoaded", initAboutRevealAnimation);
+
+  // Para compatibilidad con navegación SPA (si usas ViewTransitions)
+  document.addEventListener("astro:page-load", initAboutRevealAnimation);
+</script>

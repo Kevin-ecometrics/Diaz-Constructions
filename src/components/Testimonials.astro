@@ -1,0 +1,58 @@
+---
+import TestimoniosCarrousel from "@components/TestimoniosCarrousel";
+const testimonials = [
+  {
+    id: 1,
+    text: "I had been dragging out my kitchen remodel because of the cost and hassle i imagined it would be, but i gotta say it was the best experience I've had with a contractor. ",
+    name: "Rebecca S ",
+    position: "Kitchen Remodel ",
+    rating: 4.8,
+    image:
+      "https://html.themewant.com/elever/assets/images/testimonials/01.webp",
+  },
+  {
+    id: 2,
+    text: "Everything went really smooth and easy. He made sure we had everything organized and available before he started. ",
+    name: "Peter Lewis ",
+    position: "Property Manager at Green Valley Realty",
+    rating: 4.8,
+    image:
+      "https://html.themewant.com/elever/assets/images/testimonials/02.webp",
+  },
+  {
+    id: 3,
+    text: "From the initial consultation to the final walk-through, every step was handled with the utmost professionalism and care. Their team listened closely to our needs and created a plan that fit our vision perfectly, all while keeping us within budget and on schedule.",
+    name: "Sophia Anne Harris",
+    position: "Property Manager at Green Valley Realty",
+    rating: 4.8,
+    image:
+      "https://html.themewant.com/elever/assets/images/testimonials/01.webp",
+  },
+  {
+    id: 4,
+    text: "The team's commitment to quality and timely delivery was impressive. The end result exceeded our expectations and left our clients thrilled with their new space. Elever provided exceptional guidance and craftsmanship, creating a building we are proud to call ours.",
+    name: "Alena Joe Harris",
+    position: "Property Manager at Green Valley Realty",
+    rating: 4.8,
+    image:
+      "https://html.themewant.com/elever/assets/images/testimonials/02.webp",
+  },
+];
+---
+
+<section id="testimonials" class="py-20">
+  <div class="container mx-auto px-4 space-y-12">
+    <!-- Encabezado -->
+    <div class="text-center">
+      <h2 class="text-background text-lg font-semibold tracking-wide">
+        Client's testimonials
+      </h2>
+      <h3 class="text-4xl font-bold mt-4 text-gray-900 max-w-2xl mx-auto">
+        What our work says
+      </h3>
+    </div>
+
+    <!-- Grid de testimonios -->
+    <TestimoniosCarrousel testimonials={testimonials} client:visible />
+  </div>
+</section>

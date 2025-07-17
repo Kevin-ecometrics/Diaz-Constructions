@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Hero from "@components/Utils/Hero.astro";
+import Form from "@components/Contact/Form";
+import Map from "@components/Contact/Map.astro";
+---
+
+<Layout title="Diaz Constructions | Contact">
+  <main class="text-white overflow-x-hidden bg-[#EFEBE7]">
+    <Hero
+      title="Contact Us"
+      text="Contact"
+      image="https://html.themewant.com/elever/assets/images/banner/breadcrumb-13.webp"
+    />
+    <Form client:visible />
+    <Map />
+  </main>
+</Layout>

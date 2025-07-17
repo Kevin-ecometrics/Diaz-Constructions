@@ -1,0 +1,65 @@
+---
+const articles = [
+  {
+    id: 1,
+    image: "https://html.themewant.com/elever/assets/images/blog/07.webp",
+    title: "This Schemata Approach Was Later Adopted For Services",
+    authorImage: "https://html.themewant.com/elever/assets/images/blog/10.webp",
+    author: "Thomas Arthur",
+  },
+  {
+    id: 2,
+    image: "https://html.themewant.com/elever/assets/images/blog/08.webp",
+    title: "What Projects Provide the Best Return on Investment?",
+    authorImage: "https://html.themewant.com/elever/assets/images/blog/11.webp",
+    author: "Oliver Edward",
+  },
+  {
+    id: 3,
+    image: "https://html.themewant.com/elever/assets/images/blog/09.webp",
+    title:
+      "Max Space in Small Homes Renovation Tips for More Storage and Style",
+    authorImage: "https://html.themewant.com/elever/assets/images/blog/12.webp",
+    author: "Thomas Arthur",
+  },
+];
+---
+
+<section class="py-16 px-8">
+  <h1 class="text-black text-center font-bold text-4xl mb-4">
+    Articles & Blog Posts
+  </h1>
+  <p class="text-center text-gray-400 font-semibold mb-8">
+    Quis nulla blandit vulputate morbi adipiscing sem vestibulum. Nulla turpis
+    integer dui sed posuere sem. Id molestie mi arcu gravida lorem potenti.
+  </p>
+  <div
+    class="md:flex space-y-4 md:space-y-0 items-center container mx-auto gap-5 text-black mb-8"
+  >
+    {
+      articles.map((art) => (
+        <div class="flex flex-col bg-white rounded-2xl">
+          <img src={art.image} alt={art.author} title={art.author} />
+          <div class="p-4">
+            <div class="flex gap-4 items-center">
+              <p class="text-lg text-gray-400 font-semibold">Solutions</p>
+              <p class="text-lg text-gray-400 font-semibold">05 Comments</p>
+            </div>
+            <h2 class="text-black font-bold text-lg mb-4 w-96">{art.title}</h2>
+            <hr class="text-gray-400" />
+            <div class="flex justify-between items-center gap-4 mt-4">
+              <img src={art.authorImage} alt="" />
+              <div class="flex flex-col gap-2">
+                <p>{art.author}</p>
+                <p>autor</p>
+              </div>
+              <button class="bg-orange-500 text-white text-center rounded-2xl px-4 py-2">
+                Read Details
+              </button>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

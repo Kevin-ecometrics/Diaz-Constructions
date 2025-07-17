@@ -1,0 +1,20 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Hero from "@components/Utils/Hero.astro";
+import Carrousel from "@components/Company-History/Carrousel";
+import TimeLine from "@components/Company-History/TimeLine.astro";
+import Features from "@components/Company-History/Features.astro";
+---
+
+<Layout title="Diaz Constructions | Company History">
+  <main class="text-white overflow-x-hidden bg-[#EFEBE7]">
+    <Hero
+      title="A Legacy of Growth, Innovation, and Excellence in Construction"
+      text="Company History"
+      image="https://html.themewant.com/elever/assets/images/banner/breadcrumb.webp"
+    />
+    <Carrousel client:visible />
+    <Features />
+    <TimeLine />
+  </main>
+</Layout>

@@ -1,0 +1,74 @@
+---
+import Team from "@components/Team.astro";
+import ProjectCarrousel from "@components/ProjectCarrousel";
+
+const projectList = [
+  {
+    id: 1,
+    projectImage: "/diaz6.webp",
+    title: "Sunset Meadows Housing",
+    description:
+      "Residential complex with 150 family homes in quiet neighborhood",
+    specifications: [
+      "3 bedrooms",
+      "2.5 bathrooms",
+      "1,290 sq ft",
+      "Private backyard",
+    ],
+    category: "Residential Housing",
+    location: "Outer Sunset, San Francisco",
+    year: "2024",
+    status: "Under construction",
+  },
+  {
+    id: 2,
+    projectImage: "/diaz7.webp",
+    title: "Richmond Professional Center",
+    description: "25-story office building with modern workspace solutions",
+    specifications: [
+      "25 floors",
+      "Executive suites",
+      "Parking structure",
+      "24/7 security",
+    ],
+    category: "Commercial",
+    location: "Richmond District, San Francisco",
+    year: "2023",
+    status: "Completed",
+  },
+  {
+    id: 3,
+    projectImage: "/diaz8.webp",
+    title: "Balboa Park Marketplace",
+    description:
+      "Neighborhood shopping center with 80 local businesses and dining",
+    specifications: [
+      "80 retail units",
+      "Food hall",
+      "Community theater",
+      "1,200 parking spots",
+    ],
+    category: "Retail",
+    location: "Balboa Park, San Francisco",
+    year: "2023",
+    status: "Operational",
+  },
+];
+---
+
+<div
+  class="bg-[url(https://html.themewant.com/elever/assets/images/portfolio/01.webp)]"
+>
+  <section id="projects" class="py-20 text-white">
+    <div class="container mx-auto space-y-12">
+      <div class="text-center">
+        <h2 class="text-background text-lg font-semibold">
+          Get to know all the process
+        </h2>
+        <h3 class="text-3xl font-bold mt-2">Our Home Remodeling & Additions</h3>
+      </div>
+      <ProjectCarrousel projectList={projectList} client:visible />
+    </div>
+  </section>
+  <Team />
+</div>

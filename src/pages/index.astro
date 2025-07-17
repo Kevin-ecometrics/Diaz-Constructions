@@ -1,0 +1,28 @@
+---
+import Navbar from "@components/Navbar";
+import Layout from "@layouts/Layout.astro";
+import HeroCarrousel from "@components/HeroCarrousel";
+import Stats from "@components/Stats.astro";
+import About from "@components/About.astro";
+import Work from "@components/Work.astro";
+import Projects from "@components/Projects.astro";
+import Testimonials from "@components/Testimonials.astro";
+import Banner from "@components/Banner.astro";
+import Blogs from "@components/Blogs.astro";
+import Companies from "@components/Companies.astro";
+import Footer from "@components/Footer.astro";
+---
+
+<Layout title="Diaz Constructions | Home">
+  <main class="text-white overflow-x-hidden bg-[#EFEBE7]">
+    <HeroCarrousel client:load />
+    <Stats />
+    <About />
+    <Work />
+    <Projects />
+    <Testimonials />
+    <Banner />
+    <Blogs />
+    <Companies />
+  </main>
+</Layout>

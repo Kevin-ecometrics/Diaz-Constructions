@@ -1,0 +1,77 @@
+---
+interface Props {
+  src: string;
+  alt?: string;
+  className?: string;
+  imageClass?: string;
+}
+
+const { src, alt = "", className = "", imageClass = "" } = Astro.props;
+---
+
+<div class={`image-reveal-container relative overflow-hidden ${className}`}>
+  <img src={src} alt={alt} class={imageClass} />
+
+  <!-- Overlay naranja que se desliza primero -->
+  <div class="orange-overlay absolute inset-0 bg-orange-500 z-20"></div>
+
+  <!-- Overlay negro que se desliza segundo -->
+  <div class="black-overlay absolute inset-0 bg-black z-10"></div>
+</div>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  // Registrar el plugin ScrollTrigger
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Función para inicializar las animaciones
+  function initRevealAnimation() {
+    // Seleccionar todos los contenedores de imagen reveal
+    const containers = document.querySelectorAll(".image-reveal-container");
+
+    containers.forEach((container) => {
+      const orangeOverlay = container.querySelector(".orange-overlay");
+      const blackOverlay = container.querySelector(".black-overlay");
+
+      if (!orangeOverlay || !blackOverlay) return;
+
+      // Crear timeline para cada contenedor
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container,
+          start: "top 80%", // Inicia cuando el top del elemento está al 80% del viewport
+          end: "bottom 20%",
+          toggleActions: "play none none none", // Solo reproduce una vez
+          // markers: true, // Descomenta para ver los marcadores de debug
+        },
+      });
+
+      // Secuencia de animaciones
+      tl
+        // 1. Overlay naranja se desliza hacia la izquierda
+        .to(orangeOverlay, {
+          duration: 1.2,
+          x: "-100%",
+          ease: "power2.out",
+        })
+        // 2. Overlay negro se desliza hacia la izquierda (inicia 0.2s antes de que termine el naranja)
+        .to(
+          blackOverlay,
+          {
+            duration: 1.2,
+            x: "-100%",
+            ease: "power2.out",
+          },
+          "-=0.2"
+        );
+    });
+  }
+
+  // Inicializar cuando el DOM esté cargado
+  document.addEventListener("DOMContentLoaded", initRevealAnimation);
+
+  // Para compatibilidad con navegación SPA (si usas ViewTransitions)
+  document.addEventListener("astro:page-load", initRevealAnimation);
+</script>
