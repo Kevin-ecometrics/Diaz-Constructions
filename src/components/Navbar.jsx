@@ -195,15 +195,15 @@ const Navbar = ({ url }) => {
           {/* Contact Info */}
           <div className="col-span-3 flex items-center text-sm text-gray-300">
             <div className="flex flex-wrap gap-4">
-              <span className="flex items-center gap-2 hover:text-background transition-colors duration-300">
+              <span className="flex cursor-pointer items-center gap-2 hover:text-background transition-colors duration-300">
                 <FiPhone className="text-background" />
                 (555) 123-4567
               </span>
-              <span className="flex items-center gap-2 hover:text-background transition-colors duration-300">
+              <span className="flex cursor-pointer items-center gap-2 hover:text-background transition-colors duration-300">
                 <FiPhone className="text-background" />
                 (555) 123-4567
               </span>
-              <span className="flex items-center gap-2 hover:text-background transition-colors duration-300">
+              <span className="flex cursor-pointer items-center gap-2 hover:text-background transition-colors duration-300">
                 <FiMail className="text-background" />
                 info@diazconstructions.com
               </span>

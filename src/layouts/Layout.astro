@@ -26,17 +26,60 @@ interface Props {
 
 const {
   title,
-  lang = "es",
-  description = "",
-  keywords = "",
-  author = "",
+  lang = "en",
+  description = "Diaz Construction - Small business with big pride delivering exceptional craftsmanship in San Francisco & Bay Area. Kitchen & bathroom remodels, landscaping, additions & more with 15 years of experience.",
+  keywords = "construction San Francisco, Bay Area contractor, kitchen remodel, bathroom remodel, landscaping, home additions, general construction, permits, project management, craftsmanship, home improvement",
+  author = "Diaz Construction",
   ogImage = "/og-image.jpg",
   ogType = "website",
   ogUrl = Astro.url.href,
   canonical = Astro.url.href,
   noindex = false,
   nofollow = false,
-  structuredData = "",
+  structuredData = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Diaz Construction",
+    description:
+      "Small business with big pride delivering exceptional craftsmanship and quality construction services in San Francisco & Bay Area. Specializing in kitchen & bathroom remodels, landscaping, additions and general construction.",
+    url: Astro.url.href,
+    serviceArea: {
+      "@type": "Place",
+      name: "San Francisco Bay Area",
+    },
+    areaServed: ["San Francisco", "Bay Area"],
+    founder: {
+      "@type": "Person",
+      name: "Diaz Construction Team",
+    },
+    foundingDate: "2009",
+    yearsInOperation: "15",
+    specialties: [
+      "Kitchen Remodeling",
+      "Bathroom Remodeling",
+      "Landscaping",
+      "Home Additions",
+      "General Construction",
+      "Permits & Project Management",
+    ],
+    values: ["Quality", "Efficiency", "Integrity"],
+    telephone: "+1-XXX-XXX-XXXX",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "San Francisco",
+      addressRegion: "CA",
+      addressCountry: "US",
+    },
+    priceRange: "$",
+    paymentAccepted: ["Cash", "Credit Card", "Check"],
+    openingHours: "Mo-Fr 08:00-17:00",
+    image: Astro.url.href + "/og-image.jpg",
+    logo: Astro.url.href + "/logo.png",
+    sameAs: [
+      "https://www.facebook.com/DiazConstruction",
+      "https://www.instagram.com/DiazConstruction",
+    ],
+  }),
 } = Astro.props;
 
 // Generar robots meta tag
@@ -61,6 +104,8 @@ const actualUrl = Astro.url.href;
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     {author && <meta name="author" content={author} />}
+    <meta name="publisher" content="Ecommetrica" />
+
     <meta name="robots" content={robotsContent} />
     <link rel="canonical" href={canonical} />
 
