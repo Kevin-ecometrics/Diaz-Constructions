@@ -285,7 +285,8 @@ const ProjectCarrousel = ({ projectList }) => {
 
           return (
             <a
-              href="/project-details"
+              href="/project-details/"
+              title={project.title}
               key={`${project.id}-${currentIndex}-${index}`}
               ref={(el) => (cardRefs.current[index] = el)}
               className={`relative group cursor-pointer ${visibilityClasses}`}
@@ -305,6 +306,7 @@ const ProjectCarrousel = ({ projectList }) => {
                 <img
                   src={project.projectImage}
                   alt={project.title}
+                  title={project.title}
                   className="project-image object-cover h-full transform transition-transform duration-700 group-hover:scale-110 "
                   loading="eager"
                 />

@@ -172,6 +172,7 @@ const Accordion = () => {
                     <img
                       src="https://html.themewant.com/elever/assets/images/faq/02.webp"
                       alt="Construction work"
+                      title="Construction work"
                       className="w-full object-cover rounded-lg"
                     />
                   </div>

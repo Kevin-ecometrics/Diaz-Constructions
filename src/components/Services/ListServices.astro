@@ -73,6 +73,7 @@ const services = [
                         <img 
                             src={service.image} 
                             alt={service.title}
+                            title={service.title}
                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                         />
                     </div>
@@ -98,17 +99,6 @@ const services = [
                                 </li>
                             ))}
                         </ul>
-                        
-                        {/* <!-- Read More Button -->
-                        <a 
-                            href="#" 
-                            class="inline-flex items-center text-orange-600 hover:text-orange-800 font-medium text-sm transition-colors duration-200"
-                        >
-                            Read More
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </a> */}
                     </div>
                 </div>
             ))}

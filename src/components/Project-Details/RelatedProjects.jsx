@@ -199,6 +199,7 @@ const ProjectSlider = () => {
                 <img
                   src={project.image}
                   alt={project.title}
+                  title={project.title}
                   className="w-full h-full object-cover"
                 />
               </div>

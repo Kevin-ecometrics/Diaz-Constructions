@@ -10,7 +10,7 @@ const ProjectsPortfolio = () => {
       title: "Vehicle Manufacturing",
       text: "Building, Renovation",
       tags: ["all-works", "construction-project"],
-      href: "/project-details",
+      href: "/project-details/",
     },
     {
       id: 2,
@@ -19,7 +19,7 @@ const ProjectsPortfolio = () => {
       title: "Advanced Engineering",
       text: "Industrial, Technology",
       tags: ["all-works", "alfa-project"],
-      href: "/project-details",
+      href: "/project-details/",
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ const ProjectsPortfolio = () => {
       title: "Modern Architecture",
       text: "Design, Construction",
       tags: ["all-works", "lorence-project"],
-      href: "/project-details",
+      href: "/project-details/",
     },
     {
       id: 4,
@@ -37,7 +37,7 @@ const ProjectsPortfolio = () => {
       title: "Infrastructure Development",
       text: "Building, Planning",
       tags: ["all-works", "construction-project"],
-      href: "/project-details",
+      href: "/project-details/",
     },
     {
       id: 5,
@@ -46,7 +46,7 @@ const ProjectsPortfolio = () => {
       title: "Innovation Hub",
       text: "Technology, Research",
       tags: ["all-works", "alfa-project"],
-      href: "/project-details",
+      href: "/project-details/",
     },
     {
       id: 6,
@@ -55,7 +55,7 @@ const ProjectsPortfolio = () => {
       title: "Sustainable Design",
       text: "Green, Environment",
       tags: ["all-works", "lorence-project"],
-      href: "/project-details",
+      href: "/project-details/",
     },
     {
       id: 7,
@@ -64,7 +64,7 @@ const ProjectsPortfolio = () => {
       title: "Urban Planning",
       text: "City, Development",
       tags: ["all-works", "construction-project"],
-      href: "/project-details",
+      href: "/project-details/",
     },
     {
       id: 8,
@@ -73,7 +73,7 @@ const ProjectsPortfolio = () => {
       title: "Smart Solutions",
       text: "Digital, Innovation",
       tags: ["all-works", "alfa-project"],
-      href: "/project-details",
+      href: "/project-details/",
     },
     {
       id: 9,
@@ -82,7 +82,7 @@ const ProjectsPortfolio = () => {
       title: "Creative Spaces",
       text: "Art, Culture",
       tags: ["all-works", "lorence-project"],
-      href: "/project-details",
+      href: "/project-details/",
     },
   ];
 
@@ -204,11 +204,12 @@ const ProjectsPortfolio = () => {
               ref={(el) => (projectRefs.current[index] = el)}
               className="group relative overflow-hidden rounded-2xl shadow-xl bg-white hover:shadow-2xl transition-shadow duration-300"
             >
-              <a href={project.href} className="block">
+              <a href={project.href} title={project.title} className="block">
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
+                    title={project.title}
                     className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
                   />
 

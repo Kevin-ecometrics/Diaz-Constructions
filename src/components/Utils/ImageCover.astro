@@ -10,7 +10,7 @@ const { src, alt = "", className = "", imageClass = "" } = Astro.props;
 ---
 
 <div class={`image-reveal-container relative overflow-hidden ${className}`}>
-  <img src={src} alt={alt} class={imageClass} />
+  <img src={src} alt={alt} class={imageClass} title={alt} />
 
   <!-- Overlay naranja que se desliza primero -->
   <div class="orange-overlay absolute inset-0 bg-background z-20"></div>

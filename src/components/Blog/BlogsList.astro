@@ -93,6 +93,7 @@ const blogPosts = [
           <img 
             src={post.image} 
             alt={post.title}
+            title={post.title}
             class="w-full h-64 object-cover transition-transform duration-300 hover:scale-105"
           />
           
@@ -110,7 +111,7 @@ const blogPosts = [
         <!-- Content -->
         <div class="p-6">
           <h3 class="text-xl font-bold text-gray-900 mb-3 leading-tight hover:text-background transition-colors duration-200">
-            <a href={post.readMoreLink} class="block">
+            <a href={post.readMoreLink} class="block" title={post.title}>
               {post.title}
             </a>
           </h3>
@@ -120,10 +121,10 @@ const blogPosts = [
           </p>
           
           <a 
-            href={post.readMoreLink}
+            href={post.readMoreLink} title={post.title}
             class="inline-flex items-center text-gray-900 font-semibold hover:text-background transition-colors duration-200 group"
           >
-            Read More 
+  Read more about "{post.title}"
             <svg 
               class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" 
               fill="none" 

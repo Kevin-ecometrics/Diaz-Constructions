@@ -103,6 +103,7 @@ const TestimoniosCarrousel = ({ testimonials }) => {
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
+                      title={testimonial.name}
                       className="w-16 h-16 rounded-full object-cover"
                     />
                     <div>

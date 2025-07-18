@@ -190,6 +190,7 @@ const HeroCarrousel = () => {
             ref={imageRef}
             src={slides[activeSlide].image}
             alt={`Slide ${activeSlide + 1}`}
+            title={`Slide ${activeSlide + 1}`}
             className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] object-cover"
             onLoad={() => {
               // Asegurar que la animación se ejecute después de que la imagen cargue
@@ -228,7 +229,7 @@ const HeroCarrousel = () => {
               background="white"
               textColor="orange"
               hoverTextColor="white"
-              href="/services"
+              href="/services/"
               border={false}
             />
           </div>

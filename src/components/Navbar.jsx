@@ -16,13 +16,13 @@ const Navbar = ({ url }) => {
 
   const links = [
     { id: 1, label: "Home", href: "/" },
-    { id: 2, label: "About", href: "/about" },
-    { id: 3, label: "Services", href: "/services" },
-    { id: 4, label: "Projects", href: "/projects" },
-    { id: 5, label: "Team", href: "/team" },
-    { id: 6, label: "Company History", href: "/company-history" },
-    { id: 7, label: "Blogs", href: "/blogs" },
-    { id: 8, label: "Contact", href: "/contact" },
+    { id: 2, label: "About", href: "/about/" },
+    { id: 3, label: "Services", href: "/services/" },
+    { id: 4, label: "Projects", href: "/projects/" },
+    { id: 5, label: "Team", href: "/team/" },
+    { id: 6, label: "Company History", href: "/company-history/" },
+    { id: 7, label: "Blogs", href: "/blogs/" },
+    { id: 8, label: "Contact", href: "/contact/" },
   ];
 
   const socialLinks = [
@@ -183,11 +183,16 @@ const Navbar = ({ url }) => {
         {/* Desktop Navigation */}
         <div className="hidden lg:grid lg:grid-cols-5 lg:gap-6 lg:py-6">
           {/* Logo */}
-          <a href="/" className="flex justify-center items-center row-span-2">
+          <a
+            title="Go to Page"
+            href="/"
+            className="flex justify-center items-center row-span-2"
+          >
             <img
               ref={logoRef}
               src="/logo.webp"
-              alt="Elever Logo"
+              alt="Diaz Construction"
+              title="Diaz Construction"
               className="w-32 h-32 cursor-pointer"
             />
           </a>
@@ -220,6 +225,7 @@ const Navbar = ({ url }) => {
                   <a
                     key={index}
                     ref={(el) => (socialIconsRef.current[index] = el)}
+                    title="Go to Page"
                     href={social.href}
                     className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center cursor-pointer"
                     aria-label={social.label}
@@ -239,6 +245,7 @@ const Navbar = ({ url }) => {
               <a
                 key={link.id}
                 ref={(el) => (navLinksRef.current[index] = el)}
+                title="Go to Page"
                 href={link.href}
                 className={`text-sm font-medium transition-colors duration-300 relative group ${
                   activeLink === link.href
@@ -262,6 +269,7 @@ const Navbar = ({ url }) => {
           <div className="flex items-center justify-end gap-3">
             {/* <FiSearch className="text-gray-400 hover:text-background cursor-pointer transition-colors duration-300 w-5 h-5 hover:scale-110" /> */}
             <a
+              title="Go to Page"
               href="/contact"
               className="bg-background hover:bg-orange-600 py-2 px-6 text-sm font-semibold transition-colors duration-300 rounded cursor-pointer"
               onMouseEnter={(e) => handleButtonHover(e, true)}
@@ -277,7 +285,12 @@ const Navbar = ({ url }) => {
           <div className="flex items-center justify-between py-4">
             {/* Mobile Logo */}
             <div className="flex items-center">
-              <img src="/logo.webp" alt="Elever Logo" className="h-24 w-24" />
+              <img
+                src="/logo.webp"
+                alt="Diaz Construction"
+                title="Diaz Construction"
+                className="h-24 w-24"
+              />
             </div>
 
             {/* Mobile Menu Button */}
@@ -321,6 +334,7 @@ const Navbar = ({ url }) => {
                 {links.map((link) => (
                   <a
                     key={link.id}
+                    title="Go to Page"
                     href={link.href}
                     onClick={closeMobileMenu}
                     className="block py-2 text-sm font-medium hover:text-background transition-colors duration-300 hover:translate-x-2 transform"
@@ -340,6 +354,7 @@ const Navbar = ({ url }) => {
                       return (
                         <a
                           key={index}
+                          title="Go to Page"
                           href={social.href}
                           className="w-7 h-7 bg-gray-800 rounded-full flex items-center justify-center hover:bg-background transition-all duration-300 hover:scale-110 cursor-pointer"
                           aria-label={social.label}

@@ -64,7 +64,12 @@ const Button = ({
 
   if (href) {
     return (
-      <a href={href} className={baseClasses} style={{ textDecoration: "none" }}>
+      <a
+        href={href}
+        title={titulo}
+        className={baseClasses}
+        style={{ textDecoration: "none" }}
+      >
         {content}
       </a>
     );

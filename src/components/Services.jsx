@@ -264,7 +264,8 @@ const ServicesCarousel = () => {
                     {service.description}
                   </p>
                   <a
-                    href="/services"
+                    href="/services/"
+                    title="Explore More"
                     onClick={(e) => e.stopPropagation()}
                     className="text-background font-semibold hover:text-background transition-all duration-300 flex items-center gap-2"
                   >

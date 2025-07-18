@@ -60,7 +60,7 @@ const team = [
   {
     team.map((tm) => (
       <div class="group flex bg-white rounded-2xl text-black flex-col">
-        <a href="/team-details/">
+        <a href="/team-details/" title={tm.name}>
           <figure class="overflow-hidden relative">
             <img
               src={tm.image}
@@ -73,7 +73,8 @@ const team = [
               <div class="relative">
                 <img
                   src="https://html.themewant.com/elever/assets/images/team/01.png"
-                  alt=""
+                  alt={tm.name}
+                  title={tm.name}
                 />
               </div>
             </div>
@@ -105,7 +106,7 @@ const team = [
               <FaShareAlt className="text-white" />
             </div>
           </div>
-          <a href="/team-details/">
+          <a href="/team-details/" title={tm.name}>
             <h2 class="text-2xl font-bold">{tm.name}</h2>
           </a>
           <p class="text-lg text-gray-500">{tm.position}</p>

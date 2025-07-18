@@ -87,6 +87,7 @@ const Carousel = () => {
                     <img
                       src="https://html.themewant.com/elever/assets/images/about/01.jpg"
                       alt={slide.title}
+                      title={slide.title}
                       className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/20"></div>
@@ -164,6 +165,7 @@ const Carousel = () => {
                     <img
                       src="https://html.themewant.com/elever/assets/images/about/01.jpg"
                       alt={slide.title}
+                      title={slide.title}
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
