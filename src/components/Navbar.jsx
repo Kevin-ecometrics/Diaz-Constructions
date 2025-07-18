@@ -367,6 +367,7 @@ const Navbar = ({ url }) => {
                 </div>
 
                 <button
+                  aria-label="Get a Quote"
                   onClick={closeMobileMenu}
                   className="w-full bg-background hover:bg-orange-600 py-3 text-sm font-semibold transition-all duration-300 rounded hover:shadow-lg transform hover:scale-105"
                 >

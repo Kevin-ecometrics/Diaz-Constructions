@@ -176,6 +176,7 @@ const ProjectsPortfolio = () => {
         <div className="flex flex-wrap justify-center gap-8 mb-12">
           {availableTags.map((tag) => (
             <button
+              aria-label="Filter Projects"
               key={tag.id}
               onClick={() => handleTagChange(tag.id)}
               disabled={isAnimating}

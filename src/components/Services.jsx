@@ -199,6 +199,7 @@ const ServicesCarousel = () => {
         <div className="relative">
           {/* Botón Izquierda */}
           <button
+            aria-label="Previous Slide"
             className="absolute left-[-80px] top-1/2 transform -translate-y-1/2 z-10 bg-background bg-opacity-50 hover:bg-opacity-80 p-3 rounded-full"
             onClick={handlePrev}
           >
@@ -219,6 +220,7 @@ const ServicesCarousel = () => {
 
           {/* Botón Derecha */}
           <button
+            aria-label="Next Slide"
             className="absolute right-[-80px] top-1/2 transform -translate-y-1/2 z-10 bg-background bg-opacity-50 hover:bg-opacity-80 p-3 rounded-full"
             onClick={handleNext}
           >
@@ -322,6 +324,7 @@ const ServicesCarousel = () => {
                 <div className="flex justify-center mt-6 gap-2">
                   {services.map((_, idx) => (
                     <button
+                      aria-label="Go to Slide"
                       key={idx}
                       onClick={() => setCurrentIndex(idx)}
                       className={`w-3 h-3 rounded-full transition-all duration-300 ${

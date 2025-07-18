@@ -75,7 +75,11 @@ const Button = ({
     );
   }
 
-  return <button className={baseClasses}>{content}</button>;
+  return (
+    <button aria-label="Button" className={baseClasses}>
+      {content}
+    </button>
+  );
 };
 
 export default Button;

@@ -428,6 +428,7 @@ const ProjectCarrousel = ({ projectList }) => {
       {/* Controles del carrusel */}
       <div className="flex justify-center gap-4 mb-8">
         <button
+          aria-label="Previous Slide"
           onClick={goToPrev}
           className="group bg-white/20 backdrop-blur-md border border-white/20 p-3 rounded-full shadow-lg hover:bg-white/30 transition-all duration-300 hover:scale-110"
         >
@@ -447,6 +448,7 @@ const ProjectCarrousel = ({ projectList }) => {
         </button>
 
         <button
+          aria-label="Play/Pause Carousel"
           onClick={togglePlayPause}
           className="group bg-white/20 backdrop-blur-md border border-white/20 p-3 rounded-full shadow-lg hover:bg-white/30 transition-all duration-300 hover:scale-110"
         >
@@ -482,6 +484,7 @@ const ProjectCarrousel = ({ projectList }) => {
         </button>
 
         <button
+          aria-label="Next Slide"
           onClick={goToNext}
           className="group bg-white/20 backdrop-blur-md border border-white/20 p-3 rounded-full shadow-lg hover:bg-white/30 transition-all duration-300 hover:scale-110"
         >
@@ -505,6 +508,7 @@ const ProjectCarrousel = ({ projectList }) => {
       <div className="flex justify-center gap-2 mb-8">
         {projectList.map((_, index) => (
           <button
+            aria-label="Go to Slide"
             key={index}
             onClick={() => {
               setDirection(index > currentIndex ? 1 : -1);

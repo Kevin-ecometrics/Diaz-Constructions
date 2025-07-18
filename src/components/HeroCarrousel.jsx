@@ -239,6 +239,7 @@ const HeroCarrousel = () => {
         <div className="hidden sm:flex absolute bottom-4 sm:bottom-[40%] right-4 sm:right-10 flex-row sm:flex-col space-x-3 sm:space-x-0 sm:space-y-3 z-30">
           {slides.map((slide, index) => (
             <button
+              aria-label="Go to Slide"
               key={slide.id}
               onClick={() => handleSlideChange(index)}
               onMouseEnter={(e) => {

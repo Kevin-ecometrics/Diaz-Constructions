@@ -143,6 +143,7 @@ const Form = () => {
               ></textarea>
 
               <button
+                aria-label="Send Message"
                 onClick={handleSubmit}
                 className="w-full bg-background hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
               >

@@ -271,6 +271,7 @@ const ProjectSlider = () => {
         {!isMobile && (
           <>
             <button
+              aria-label="Previous Slide"
               onClick={prevSlide}
               className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-background bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 border border-white border-opacity-30"
               disabled={isAnimating}
@@ -279,6 +280,7 @@ const ProjectSlider = () => {
             </button>
 
             <button
+              aria-label="Next Slide"
               onClick={nextSlide}
               className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-background bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm rounded-full p-3 transition-all duration-300 border border-white border-opacity-30"
               disabled={isAnimating}
@@ -293,6 +295,7 @@ const ProjectSlider = () => {
       <div className="flex justify-center mt-4 sm:mt-8 gap-2 sm:gap-3 mb-8 md:hidden">
         {projects.map((_, index) => (
           <button
+            aria-label="Go to Slide"
             key={index}
             onClick={() => goToSlide(index)}
             className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${

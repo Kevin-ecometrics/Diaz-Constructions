@@ -130,6 +130,7 @@ const Accordion = () => {
           >
             {/* Header */}
             <button
+              aria-label="Toggle Accordion"
               onClick={() => toggleAccordion(index)}
               className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors duration-200"
             >
@@ -190,7 +191,10 @@ const Accordion = () => {
                     </p>
 
                     {/* Button */}
-                    <button className="bg-background hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200">
+                    <button
+                      className="bg-background hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200"
+                      aria-label="Get A Free Quote"
+                    >
                       Get A Free Quote
                     </button>
                   </div>

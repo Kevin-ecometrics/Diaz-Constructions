@@ -62,6 +62,7 @@ const Carousel = () => {
       <div className="hidden md:flex items-center gap-8">
         {/* Flecha Izquierda Desktop */}
         <button
+          aria-label="Previous Slide"
           onClick={prevSlide}
           className="bg-background/90 hover:bg-background text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl flex-shrink-0"
         >
@@ -113,6 +114,7 @@ const Carousel = () => {
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3">
             {slides.map((_, index) => (
               <button
+                aria-label="Go to Slide"
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
@@ -137,6 +139,7 @@ const Carousel = () => {
 
         {/* Flecha Derecha Desktop */}
         <button
+          aria-label="Next Slide"
           onClick={nextSlide}
           className="bg-background/90 hover:bg-background text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl flex-shrink-0"
         >
@@ -188,6 +191,7 @@ const Carousel = () => {
 
             {/* Flechas Mobile - Dentro de la card */}
             <button
+              aria-label="Previous Slide"
               onClick={prevSlide}
               className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-background/80 hover:bg-background text-white p-2 rounded-full shadow-lg transition-all duration-300"
             >
@@ -195,6 +199,7 @@ const Carousel = () => {
             </button>
 
             <button
+              aria-label="Next Slide"
               onClick={nextSlide}
               className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-background/80 hover:bg-background text-white p-2 rounded-full shadow-lg transition-all duration-300"
             >
@@ -206,6 +211,7 @@ const Carousel = () => {
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
             {slides.map((_, index) => (
               <button
+                aria-label="Go to Slide"
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
