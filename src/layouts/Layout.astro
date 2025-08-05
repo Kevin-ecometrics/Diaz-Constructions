@@ -153,3 +153,11 @@ const actualUrl = Astro.url.href;
     scroll-behavior: smooth;
   }
 </style>
+
+<script>
+  document.querySelectorAll("a").forEach((a) => {
+    a.setAttribute("href", "#");
+    // Opcional: prevenir el comportamiento por defecto al hacer clic
+    a.addEventListener("click", (e) => e.preventDefault());
+  });
+</script>
