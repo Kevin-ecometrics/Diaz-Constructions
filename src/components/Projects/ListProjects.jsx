@@ -5,92 +5,43 @@ const ProjectsPortfolio = () => {
   const projectsList = [
     {
       id: 1,
-      image:
-        "https://html.themewant.com/elever/assets/images/portfolio/20.webp",
-      title: "Vehicle Manufacturing",
-      text: "Building, Renovation",
-      tags: ["all-works", "construction-project"],
-      href: "/project-details/",
+      image: "/diaz-project1.webp",
+      title: "Modern Bathroom 1",
+      text: "Bathroom Design",
+      tags: ["all-works", "bathroom"],
+      href: "/project-details/project1",
     },
     {
       id: 2,
-      image:
-        "https://html.themewant.com/elever/assets/images/portfolio/19.webp",
-      title: "Advanced Engineering",
-      text: "Industrial, Technology",
-      tags: ["all-works", "alfa-project"],
-      href: "/project-details/",
+      image: "/diaz-project2.webp",
+      title: "Modern Bathroom 2",
+      text: "Bathroom Renovation",
+      tags: ["all-works", "bathroom"],
+      href: "/project-details/project2",
     },
     {
       id: 3,
-      image:
-        "https://html.themewant.com/elever/assets/images/portfolio/18.webp",
-      title: "Modern Architecture",
-      text: "Design, Construction",
-      tags: ["all-works", "lorence-project"],
-      href: "/project-details/",
+      image: "/diaz-project3.webp",
+      title: "Luxury Kitchen",
+      text: "Kitchen Renovation",
+      tags: ["all-works", "kitchen"],
+      href: "/project-details/project3",
     },
     {
       id: 4,
-      image:
-        "https://html.themewant.com/elever/assets/images/portfolio/17.webp",
-      title: "Infrastructure Development",
-      text: "Building, Planning",
-      tags: ["all-works", "construction-project"],
-      href: "/project-details/",
-    },
-    {
-      id: 5,
-      image:
-        "https://html.themewant.com/elever/assets/images/portfolio/16.webp",
-      title: "Innovation Hub",
-      text: "Technology, Research",
-      tags: ["all-works", "alfa-project"],
-      href: "/project-details/",
-    },
-    {
-      id: 6,
-      image:
-        "https://html.themewant.com/elever/assets/images/portfolio/15.webp",
-      title: "Sustainable Design",
-      text: "Green, Environment",
-      tags: ["all-works", "lorence-project"],
-      href: "/project-details/",
-    },
-    {
-      id: 7,
-      image:
-        "https://html.themewant.com/elever/assets/images/portfolio/14.webp",
-      title: "Urban Planning",
-      text: "City, Development",
-      tags: ["all-works", "construction-project"],
-      href: "/project-details/",
-    },
-    {
-      id: 8,
-      image:
-        "https://html.themewant.com/elever/assets/images/portfolio/13.webp",
-      title: "Smart Solutions",
-      text: "Digital, Innovation",
-      tags: ["all-works", "alfa-project"],
-      href: "/project-details/",
-    },
-    {
-      id: 9,
-      image:
-        "https://html.themewant.com/elever/assets/images/portfolio/12.webp",
-      title: "Creative Spaces",
-      text: "Art, Culture",
-      tags: ["all-works", "lorence-project"],
-      href: "/project-details/",
+      image: "/diaz-project4.webp",
+      title: "Custom Closet",
+      text: "Closet Custom Build",
+      tags: ["all-works", "closet"],
+      href: "/project-details/project4",
     },
   ];
 
   const availableTags = [
     { id: "all-works", name: "ALL WORKS" },
-    { id: "alfa-project", name: "ALFA PROJECT" },
-    { id: "construction-project", name: "CONSTRUCTION PROJECT" },
-    { id: "lorence-project", name: "LORENCE PROJECT" },
+    { id: "bathroom", name: "BATHROOM" },
+    { id: "kitchen", name: "KITCHEN" },
+    { id: "closet", name: "CLOSET" },
   ];
 
   const [activeTag, setActiveTag] = useState("all-works");
@@ -99,23 +50,17 @@ const ProjectsPortfolio = () => {
   const projectRefs = useRef([]);
 
   const filterProjectsByTag = (tag) => {
-    if (tag === "all-works") {
-      return projectsList;
-    }
+    if (tag === "all-works") return projectsList;
     return projectsList.filter((project) => project.tags.includes(tag));
   };
 
   const filteredProjects = filterProjectsByTag(activeTag);
 
-  // Animación inicial cuando el componente se monta
+  // Animación inicial
   useEffect(() => {
     gsap.fromTo(
       projectRefs.current,
-      {
-        opacity: 0,
-        y: 50,
-        scale: 0.8,
-      },
+      { opacity: 0, y: 50, scale: 0.8 },
       {
         opacity: 1,
         y: 0,
@@ -127,16 +72,12 @@ const ProjectsPortfolio = () => {
     );
   }, []);
 
-  // Animación cuando cambia el filtro
+  // Animación al cambiar filtro
   useEffect(() => {
     if (projectRefs.current.length > 0) {
       gsap.fromTo(
         projectRefs.current,
-        {
-          opacity: 0,
-          y: 30,
-          scale: 0.9,
-        },
+        { opacity: 0, y: 30, scale: 0.9 },
         {
           opacity: 1,
           y: 0,
@@ -154,7 +95,6 @@ const ProjectsPortfolio = () => {
 
     setIsAnimating(true);
 
-    // Animación de salida
     gsap.to(projectRefs.current, {
       opacity: 0,
       y: -20,
@@ -213,7 +153,6 @@ const ProjectsPortfolio = () => {
                     title={project.title}
                     className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">

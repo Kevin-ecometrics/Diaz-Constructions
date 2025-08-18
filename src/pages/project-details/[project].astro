@@ -1,0 +1,169 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Hero from "@components/Utils/Hero.astro";
+import About from "@components/Project-Details/About.astro";
+import Content from "@components/Project-Details/Content.astro";
+import Stats from "@components/Project-Details/Stats";
+import Accordion from "@components/Project-Details/Accordion";
+import Related from "@components/Project-Details/Related.astro";
+import RelatedProjects from "@components/Project-Details/RelatedProjects";
+
+export function getStaticPaths() {
+  return [
+    { params: { project: "project1" } },
+    { params: { project: "project2" } },
+    { params: { project: "project3" } },
+    { params: { project: "project4" } },
+  ];
+}
+
+const { project } = Astro.params;
+
+const projectsList = {
+  project1: {
+    id: 1,
+    title: "Project 1",
+    subtitle: "Project 1",
+    location: "Project 1",
+    price: "Project 1",
+    client: "Project 1",
+    projectYear: "Project 1",
+    duration: "Project 1",
+    image: "/diaz-project1.webp",
+    images: [
+      {
+        src: "/diaz-project1.1.webp",
+        alt: "Imagen principal",
+        title: "Project 1",
+      },
+      {
+        src: "/diaz-project1.2.webp",
+        alt: "Segunda imagen",
+        title: "Project 1",
+      },
+      {
+        src: "/diaz-project1.3.webp",
+        alt: "Tercera imagen",
+        title: "Project 1",
+      },
+      {
+        src: "/diaz-project1.4.webp",
+        alt: "Cuarta imagen",
+        title: "Project 1",
+      },
+      {
+        src: "/diaz-project1.5.webp",
+        alt: "Quinta imagen",
+        title: "Project 1",
+      },
+    ],
+  },
+  project2: {
+    id: 2,
+    title: "Project 2",
+    subtitle: "Project 2",
+    location: "Project 2",
+    price: "Project 2",
+    client: "Project 2",
+    projectYear: "Project 2",
+    duration: "Project 2",
+    image: "/diaz-project2.webp",
+    images: [
+      {
+        src: "/diaz-project2.1.webp",
+        alt: "Imagen principal",
+        title: "Project 2",
+      },
+      {
+        src: "/diaz-project2.2.webp",
+        alt: "Segunda imagen",
+        title: "Project 2",
+      },
+      {
+        src: "/diaz-project2.3.webp",
+        alt: "Tercera imagen",
+        title: "Project 2",
+      },
+      {
+        src: "/diaz-project2.4.webp",
+        alt: "Cuarta imagen",
+        title: "Project 2",
+      },
+      {
+        src: "/diaz-project2.5.webp",
+        alt: "Quinta imagen",
+        title: "Project 2",
+      },
+      {
+        src: "/diaz-project2.6.webp",
+        alt: "Sexta imagen",
+        title: "Project 2",
+      },
+    ],
+  },
+  project3: {
+    id: 3,
+    title: "Project 3",
+    subtitle: "Project 3",
+    location: "Project 3",
+    price: "Project 3",
+    client: "Project 3",
+    projectYear: "Project 3",
+    duration: "Project 3",
+    image: "/diaz-project3.webp",
+    images: [
+      {
+        src: "/diaz-project3.1.webp",
+        alt: "Imagen principal",
+        title: "Project 3",
+      },
+      {
+        src: "/diaz-project3.2.webp",
+        alt: "Segunda imagen",
+        title: "Project 3",
+      },
+    ],
+  },
+
+  project4: {
+    id: 4,
+    title: "Project 4",
+    subtitle: "Project 4",
+    location: "Project 4",
+    price: "Project 4",
+    client: "Project 4",
+    projectYear: "Project 4",
+    duration: "Project 4",
+    image: "/diaz-project4.webp",
+    images: [
+      {
+        src: "/diaz-project4.1.webp",
+        alt: "Imagen principal",
+        title: "Project 4",
+      },
+    ],
+  },
+};
+
+const currentProject = projectsList[project];
+---
+
+<Layout title={`Diaz Constructions | ${currentProject.title}`}>
+  <main class="text-white overflow-x-hidden bg-[#EFEBE7]">
+    <Hero
+      title="Dedicated to Building Dreams, Crafting Quality"
+      text="Project Details"
+      image="https://html.themewant.com/elever/assets/images/banner/breadcrumb-7.webp"
+    />
+    <About images={currentProject.images} />
+    <Content />
+    <Stats client:visible />
+    <Accordion client:visible />
+    <Related />
+    <RelatedProjects
+      client:visible
+      projectsList={projectsList}
+      currentProjectId={currentProject.id}
+    />
+  </main>
+</Layout>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Button from "./Button";
-
+import Home from "@assets/Home";
 const HeroCarrousel = () => {
   const slides = [
     {
@@ -257,8 +257,8 @@ const HeroCarrousel = () => {
               }}
               className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full text-sm sm:text-lg font-bold transition-colors duration-300 flex items-center justify-center ${
                 activeSlide === index
-                  ? "bg-background text-white shadow-lg scale-110"
-                  : "bg-white text-background hover:bg-orange-500 hover:text-white"
+                  ? "bg-orange-500 shadow-lg scale-110"
+                  : "bg-orange-400"
               }`}
               style={{
                 // Asegurar que los botones sean visibles desde el inicio
@@ -266,7 +266,7 @@ const HeroCarrousel = () => {
                 transition: "opacity 0.3s ease",
               }}
             >
-              {slide.id}
+              <Home width={20} height={20} />
             </button>
           ))}
         </div>

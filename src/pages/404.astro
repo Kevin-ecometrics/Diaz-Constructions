@@ -1,0 +1,36 @@
+---
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Diaz Constructions | 404">
+  <main
+    class="min-h-[70vh] grid place-items-center px-6 py-24 sm:py-32 text-black"
+  >
+    <div class="text-center">
+      <p class="text-4xl font-semibold text-orange-600">404</p>
+      <h1
+        class="mt-4 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl"
+      >
+        Page not found
+      </h1>
+      <p class="mt-6 text-base leading-7 text-gray-600">
+        Sorry, we couldn’t find the page you’re looking for.
+      </p>
+
+      <div class="mt-10 flex items-center justify-center gap-x-6">
+        <a
+          href="/"
+          class="rounded-2xl px-5 py-3 text-sm font-semibold ring-1 ring-inset ring-orange-600 hover:bg-orange-600 hover:text-white transition"
+        >
+          Back to Home
+        </a>
+        <a
+          href="/contact/"
+          class="text-sm font-semibold text-gray-900 hover:underline"
+        >
+          Contact <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>

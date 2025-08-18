@@ -8,7 +8,6 @@ const ProjectCarrousel = ({ projectList }) => {
   const containerRef = useRef(null);
   const cardRefs = useRef([]);
   const intervalRef = useRef(null);
-  const overlayRef = useRef(null);
 
   // Función para iniciar/pausar el carrusel
   const togglePlayPause = () => {
@@ -285,7 +284,7 @@ const ProjectCarrousel = ({ projectList }) => {
 
           return (
             <a
-              href="/project-details/"
+              href={project.projectUrl}
               title={project.title}
               key={`${project.id}-${currentIndex}-${index}`}
               ref={(el) => (cardRefs.current[index] = el)}

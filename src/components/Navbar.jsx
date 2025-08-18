@@ -26,7 +26,11 @@ const Navbar = ({ url }) => {
   ];
 
   const socialLinks = [
-    { icon: FaFacebook, href: "#", label: "Facebook" },
+    {
+      icon: FaFacebook,
+      href: "https://www.facebook.com/DiazConstructionCo",
+      label: "Facebook",
+    },
     { icon: FaXTwitter, href: "#", label: "Twitter" },
     { icon: FaInstagram, href: "#", label: "Instagram" },
     { icon: FaLinkedin, href: "#", label: "LinkedIn" },
@@ -175,11 +179,13 @@ const Navbar = ({ url }) => {
     <nav
       className={`
         ${isFixed ? "fixed top-0 left-0" : "sticky md:top-10"}
-        z-50 w-full bg-black md:bg-transparent px-4 sm:px-6 lg:px-8 transition-all duration-300
-
+        z-50 w-full bg-black px-0 sm:px-6 lg:px-8 transition-all duration-300 md:bg-transparent 
       `}
     >
-      <div className="max-w-8xl bg-black mx-auto lg:rounded-xl px-4 sm:px-6 lg:px-8">
+      <div
+        className={`max-w-8xl mx-auto lg:rounded-xl px-4 sm:px-6 lg:px-8 
+    bg-black bg-[url(/background-navbar.png)] bg-no-repeat bg-bottom`}
+      >
         {/* Desktop Navigation */}
         <div className="hidden lg:grid lg:grid-cols-5 lg:gap-6 lg:py-6">
           {/* Logo */}
@@ -188,30 +194,38 @@ const Navbar = ({ url }) => {
             href="/"
             className="flex justify-center items-center row-span-2"
           >
-            <img
-              ref={logoRef}
-              src="/logo.webp"
-              alt="Diaz Construction"
-              title="Diaz Construction"
-              className="w-32 h-32 cursor-pointer"
-            />
+            <div className="flex flex-col mb-2">
+              <img
+                ref={logoRef}
+                src="/logo.webp"
+                alt="Diaz Construction"
+                title="Diaz Construction"
+                className="cursor-pointer"
+              />
+              <span className="logo text-3xl tracking-widest">
+                Construction
+              </span>
+            </div>
           </a>
 
           {/* Contact Info */}
           <div className="col-span-3 flex items-center text-sm text-gray-300">
             <div className="flex flex-wrap gap-4">
-              <span className="flex cursor-pointer items-center gap-2 hover:text-background transition-colors duration-300">
+              <a
+                href="tel:+16504549122"
+                className="flex cursor-pointer items-center gap-2 hover:text-background transition-colors duration-300"
+              >
                 <FiPhone className="text-background" />
-                (555) 123-4567
-              </span>
-              <span className="flex cursor-pointer items-center gap-2 hover:text-background transition-colors duration-300">
-                <FiPhone className="text-background" />
-                (555) 123-4567
-              </span>
-              <span className="flex cursor-pointer items-center gap-2 hover:text-background transition-colors duration-300">
+                +1 650 454 9122
+              </a>
+
+              <a
+                href="mailto:service@diazconstructions.com"
+                className="flex cursor-pointer items-center gap-2 hover:text-background transition-colors duration-300"
+              >
                 <FiMail className="text-background" />
-                info@diazconstructions.com
-              </span>
+                service@diazconstructions.com
+              </a>
             </div>
           </div>
 
@@ -240,7 +254,7 @@ const Navbar = ({ url }) => {
           </div>
 
           {/* Navigation Links */}
-          <div className="col-span-3 flex gap-6 items-center">
+          <div className="col-span-3 flex gap-6 items-center mb-4">
             {links.map((link, index) => (
               <a
                 key={link.id}
@@ -266,7 +280,7 @@ const Navbar = ({ url }) => {
           </div>
 
           {/* Quote Button */}
-          <div className="flex items-center justify-end gap-3">
+          <div className="flex items-center justify-end gap-3 mb-4">
             {/* <FiSearch className="text-gray-400 hover:text-background cursor-pointer transition-colors duration-300 w-5 h-5 hover:scale-110" /> */}
             <a
               title="Go to Page"
@@ -285,12 +299,18 @@ const Navbar = ({ url }) => {
           <div className="flex items-center justify-between py-4">
             {/* Mobile Logo */}
             <div className="flex items-center">
-              <img
-                src="/logo.webp"
-                alt="Diaz Construction"
-                title="Diaz Construction"
-                className="h-24 w-24"
-              />
+              <div className="mb-4">
+                <img
+                  ref={logoRef}
+                  src="/logo.webp"
+                  alt="Diaz Construction"
+                  title="Diaz Construction"
+                  className="cursor-pointer"
+                />
+                <span className="logo text-3xl tracking-widest">
+                  Construction
+                </span>
+              </div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -318,14 +338,21 @@ const Navbar = ({ url }) => {
               <div className="border-b border-gray-800 pb-4">
                 <div className="text-xs text-gray-400 mb-2">Contact Info:</div>
                 <div className="space-y-2 text-sm text-gray-300">
-                  <div className="flex items-center gap-2 hover:text-background transition-colors duration-300">
-                    <FiPhone className="text-background w-4 h-4" />
-                    (555) 123-4567
-                  </div>
-                  <div className="flex items-center gap-2 hover:text-background transition-colors duration-300">
-                    <FiMail className="text-background w-4 h-4" />
-                    info@diazconstructions.com
-                  </div>
+                  <a
+                    href="tel:+16504549122"
+                    className="flex cursor-pointer items-center gap-2 hover:text-background transition-colors duration-300"
+                  >
+                    <FiPhone className="text-background" />
+                    +1 650 454 9122
+                  </a>
+
+                  <a
+                    href="mailto:service@diazconstructions.com"
+                    className="flex cursor-pointer items-center gap-2 hover:text-background transition-colors duration-300"
+                  >
+                    <FiMail className="text-background" />
+                    service@diazconstructions.com
+                  </a>
                 </div>
               </div>
 
