@@ -1,6 +1,23 @@
 ---
-const { images } = Astro.props;
+import ProjectImage from "@components/Project-Details/Image";
 
+interface ImageItem {
+  src: string;
+  alt?: string;
+  title?: string;
+}
+
+interface Props {
+  images: {
+    src: string;
+    alt?: string;
+    title?: string;
+    galleryId?: string;
+    images?: ImageItem[];
+  }[];
+}
+
+const { images } = Astro.props as Props;
 const gridClasses = [
   "col-span-4 row-span-2 col-start-1",
   "col-span-2 col-start-5 row-span-1",
@@ -18,13 +35,15 @@ const gridClasses = [
     class="md:grid grid-cols-6 grid-rows-2 space-y-4 md:space-y-0 gap-4 mb-8"
   >
     {
-      images.slice(0, 8).map((img, index) => (
+      images.map((img, index) => (
         <div class={gridClasses[index]}>
-          <img
+          <ProjectImage
             src={img.src}
             alt={img.alt || `Imagen ${index + 1}`}
             title={img.title || `Imagen ${index + 1}`}
-            class="h-full w-full object-cover rounded-lg"
+            className="h-full w-full object-cover rounded-lg"
+            images={images as any}
+            client:load
           />
         </div>
       ))

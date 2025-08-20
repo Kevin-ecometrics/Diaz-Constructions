@@ -145,7 +145,7 @@ const projectsList = {
   },
 };
 
-const currentProject = projectsList[project];
+const currentProject = projectsList[project as keyof typeof projectsList];
 ---
 
 <Layout title={`Diaz Constructions | ${currentProject.title}`}>
