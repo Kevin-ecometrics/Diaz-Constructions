@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
 const TestimoniosCarrousel = ({ testimonials }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -56,24 +55,52 @@ const TestimoniosCarrousel = ({ testimonials }) => {
             <button
               onClick={prevSlide}
               disabled={currentIndex === 0}
-              className={`absolute left-[-100px] top-1/2 transform -translate-y-1/2 z-10 p-3 bg-white rounded-full shadow-lg hover:bg-orange-50 group transition ${
-                currentIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
+              className={`absolute left-[-80px] top-1/2 transform -translate-y-1/2 z-10 p-3 bg-white rounded-full shadow-lg hover:bg-orange-50 hover:shadow-xl group transition-all duration-300 ${
+                currentIndex === 0
+                  ? "opacity-50 cursor-not-allowed"
+                  : "hover:scale-105"
               }`}
               aria-label="Anterior"
             >
-              <IoChevronBack className="w-6 h-6 text-gray-600 group-hover:text-background" />
+              <svg
+                className="w-6 h-6 text-gray-600 group-hover:text-orange-600 transition-colors"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
             </button>
 
             {/* Botón Derecha */}
             <button
               onClick={nextSlide}
               disabled={currentIndex === maxIndex}
-              className={`absolute right-[-100px] top-1/2 transform -translate-y-1/2 z-10 p-3 bg-white rounded-full shadow-lg hover:bg-orange-50 group transition ${
-                currentIndex === maxIndex ? "opacity-50 cursor-not-allowed" : ""
+              className={`absolute right-[-80px] top-1/2 transform -translate-y-1/2 z-10 p-3 bg-white rounded-full shadow-lg hover:bg-orange-50 hover:shadow-xl group transition-all duration-300 ${
+                currentIndex === maxIndex
+                  ? "opacity-50 cursor-not-allowed"
+                  : "hover:scale-105"
               }`}
               aria-label="Siguiente"
             >
-              <IoChevronForward className="w-6 h-6 text-gray-600 group-hover:text-background" />
+              <svg
+                className="w-6 h-6 text-gray-600 group-hover:text-orange-600 transition-colors"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
             </button>
           </>
         )}
@@ -95,29 +122,70 @@ const TestimoniosCarrousel = ({ testimonials }) => {
                   width: `${100 / testimonials.length}%`,
                 }}
               >
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 h-full">
-                  <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                    "{testimonial.text}"
-                  </p>
-                  <div className="flex items-center gap-4">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      title={testimonial.name}
-                      className="w-16 h-16 rounded-full object-cover"
-                    />
-                    <div>
-                      <h4 className="font-bold text-lg text-gray-900">
-                        {testimonial.name}
-                      </h4>
-                      <p className="text-sm text-gray-600 mb-2">
-                        {testimonial.position}
-                      </p>
-                      <div className="flex items-center gap-2 text-yellow-400">
-                        <span className="text-lg">⭐⭐⭐⭐⭐</span>
-                        <span className="text-sm font-semibold text-gray-700">
-                          {testimonial.rating} Ratings
-                        </span>
+                {/* Card mejorada con estructura de footer */}
+                <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col overflow-hidden group">
+                  {/* Contenido principal */}
+                  <div className="flex-1 p-8">
+                    {/* Quote icon */}
+                    <div className="mb-4">
+                      <svg
+                        className="w-8 h-8 text-orange-200"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
+                      </svg>
+                    </div>
+
+                    {/* Texto del testimonio */}
+                    <p className="text-gray-700 text-lg leading-relaxed font-medium">
+                      "{testimonial.text}"
+                    </p>
+                  </div>
+
+                  {/* Footer con información del autor */}
+                  <div className="bg-gradient-to-r from-gray-50 to-orange-50 px-8 py-6 border-t border-gray-100">
+                    <div className="flex items-center gap-4">
+                      {/* Avatar */}
+                      <div className="relative">
+                        <img
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          className="w-14 h-14 rounded-full object-cover border-3 border-white shadow-md"
+                        />
+                        <div className="absolute -bottom-1 -right-1 bg-green-500 w-4 h-4 rounded-full border-2 border-white"></div>
+                      </div>
+
+                      {/* Información del autor */}
+                      <div className="flex-1">
+                        <h4 className="font-bold text-lg text-gray-900 mb-1">
+                          {testimonial.name}
+                        </h4>
+                        <p className="text-sm text-gray-600 mb-2">
+                          {testimonial.position}
+                        </p>
+
+                        {/* Rating con estrellas */}
+                        <div className="flex items-center gap-2">
+                          <div className="flex items-center">
+                            {[...Array(5)].map((_, i) => (
+                              <svg
+                                key={i}
+                                className={`w-4 h-4 ${
+                                  i < testimonial.rating
+                                    ? "text-yellow-400 fill-current"
+                                    : "text-gray-200 fill-current"
+                                }`}
+                                viewBox="0 0 24 24"
+                              >
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                              </svg>
+                            ))}
+                          </div>
+                          <span className="text-sm font-semibold text-gray-700 ml-1">
+                            {testimonial.rating} Ratings
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -133,37 +201,65 @@ const TestimoniosCarrousel = ({ testimonials }) => {
             <button
               onClick={prevSlide}
               disabled={currentIndex === 0}
-              className={`p-3 rounded-full bg-white shadow-lg hover:shadow-xl transition hover:bg-orange-50 group ${
-                currentIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
+              className={`p-3 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-orange-50 group ${
+                currentIndex === 0
+                  ? "opacity-50 cursor-not-allowed"
+                  : "hover:scale-105"
               }`}
               aria-label="Anterior"
             >
-              <IoChevronBack className="w-6 h-6 text-gray-600 group-hover:text-background" />
+              <svg
+                className="w-6 h-6 text-gray-600 group-hover:text-orange-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
             </button>
             <button
               onClick={nextSlide}
               disabled={currentIndex === maxIndex}
-              className={`p-3 rounded-full bg-white shadow-lg hover:shadow-xl transition hover:bg-orange-50 group ${
-                currentIndex === maxIndex ? "opacity-50 cursor-not-allowed" : ""
+              className={`p-3 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-orange-50 group ${
+                currentIndex === maxIndex
+                  ? "opacity-50 cursor-not-allowed"
+                  : "hover:scale-105"
               }`}
               aria-label="Siguiente"
             >
-              <IoChevronForward className="w-6 h-6 text-gray-600 group-hover:text-background" />
+              <svg
+                className="w-6 h-6 text-gray-600 group-hover:text-orange-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
             </button>
           </div>
         )}
       </div>
 
-      {/* Indicadores de puntos */}
+      {/* Indicadores de puntos mejorados */}
       <div className="flex justify-center gap-2 mt-6">
         {Array.from({ length: maxIndex + 1 }, (_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            className={`h-2 rounded-full transition-all duration-300 ${
               currentIndex === index
-                ? "bg-background scale-110"
-                : "bg-gray-300 hover:bg-gray-400"
+                ? "bg-orange-500 w-8 shadow-lg"
+                : "bg-gray-300 w-2 hover:bg-gray-400"
             }`}
             aria-label={`Ir al slide ${index + 1}`}
           />
@@ -171,7 +267,7 @@ const TestimoniosCarrousel = ({ testimonials }) => {
       </div>
 
       {/* Contador */}
-      <div className="text-center mt-3 text-sm text-gray-500">
+      <div className="text-center mt-3 text-sm text-gray-500 font-medium">
         {currentIndex + 1} de {maxIndex + 1}
       </div>
     </div>
