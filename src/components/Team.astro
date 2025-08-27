@@ -82,8 +82,10 @@ import {
       <!-- Columna derecha: Cards más pequeñas -->
       <div class="flex flex-col gap-8">
         <!-- Card de Thomas Bryant -->
-        <div class="bg-[#1C1C1F] rounded-lg shadow-lg overflow-hidden flex">
-          <div class="flex-1 p-6">
+        <div
+          class="bg-[#1C1C1F] rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row"
+        >
+          <div class="flex-1 p-6 md:order-1 order-2">
             <a title="Go to Team Details Page" href="/team-details/">
               <h4
                 class="text-xl font-bold text-white mb-2 hover:text-background"
@@ -133,20 +135,22 @@ import {
           <a
             title="Go to Team Details Page"
             href="/team-details/"
-            class="w-72 h-72 flex-shrink-0 m-6"
+            class="md:w-72 md:h-72 flex-shrink-0 m-6 md:order-2 order-1"
           >
             <img
               src="/diaz12.webp"
               alt="Thomas Bryant"
               title="Thomas Bryant"
-              class="rounded-lg h-full w-full object-cover"
+              class="rounded-lg md:h-full md:w-full h-52 w-full object-cover"
             />
           </a>
         </div>
 
         <!-- Card de Benjamin Clarke -->
-        <div class="bg-[#1C1C1F] rounded-lg shadow-lg overflow-hidden flex">
-          <div class="flex-1 p-6">
+        <div
+          class="bg-[#1C1C1F] rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row"
+        >
+          <div class="flex-1 p-6 md:order-1 order-2">
             <a title="Go to Team Details Page" href="/team-details/">
               <h4
                 class="text-xl font-bold text-white mb-2 hover:text-background"
@@ -196,7 +200,7 @@ import {
           <a
             title="Go to Team Details Page"
             href="/team-details/"
-            class="w-72 h-72 flex-shrink-0 m-6"
+            class="md:w-72 md:h-72 flex-shrink-0 m-6 md:order-2 order-1"
           >
             <img
               src="/diaz13.webp"

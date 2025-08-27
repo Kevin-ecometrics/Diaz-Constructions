@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -64,9 +65,9 @@ const Carousel = () => {
         <button
           aria-label="Previous Slide"
           onClick={prevSlide}
-          className="bg-background/90 hover:bg-background text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl flex-shrink-0"
+          className="bg-orange-800/90 hover:bg-orange-800 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl flex-shrink-0"
         >
-          <span className="text-2xl">‹</span>
+          <FaChevronLeft className="text-2xl" />
         </button>
 
         {/* Card del Carrusel Desktop */}
@@ -79,7 +80,7 @@ const Carousel = () => {
             {/* Slides Container Desktop */}
             <div
               className="flex transition-transform duration-700 ease-in-out h-full"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              style={{ transform: `tranorangeX(-${currentIndex * 100}%)` }}
             >
               {slides.map((slide, index) => (
                 <div key={index} className="w-full flex-shrink-0 flex">
@@ -111,7 +112,7 @@ const Carousel = () => {
           </div>
 
           {/* Indicators Desktop */}
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3">
+          <div className="absolute bottom-4 left-1/2 transform -tranorange-x-1/2 flex space-x-3">
             {slides.map((_, index) => (
               <button
                 aria-label="Go to Slide"
@@ -119,7 +120,7 @@ const Carousel = () => {
                 onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? "bg-background scale-125 shadow-lg"
+                    ? "bg-orange-800 scale-125 shadow-lg"
                     : "bg-white/60 hover:bg-white/80"
                 }`}
               />
@@ -129,7 +130,7 @@ const Carousel = () => {
           {/* Progress Bar Desktop */}
           <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-200">
             <div
-              className="h-full bg-gradient-to-r from-background to-orange-600 transition-all duration-700 ease-out"
+              className="h-full bg-gradient-to-r from-orange-800 to-orange-600 transition-all duration-700 ease-out"
               style={{
                 width: `${((currentIndex + 1) / slides.length) * 100}%`,
               }}
@@ -141,16 +142,16 @@ const Carousel = () => {
         <button
           aria-label="Next Slide"
           onClick={nextSlide}
-          className="bg-background/90 hover:bg-background text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl flex-shrink-0"
+          className="bg-orange-800/90 hover:bg-orange-800 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl flex-shrink-0"
         >
-          <span className="text-2xl">›</span>
+          <FaChevronRight className="text-2xl" />
         </button>
       </div>
 
       {/* Mobile Layout */}
-      <div className="md:hidden relative">
-        {/* Card del Carrusel Mobile */}
-        <div className="relative w-full bg-white rounded-2xl shadow-2xl overflow-hidden">
+      <div className="md:hidden">
+        {/* Card del Carrusel Mobile - Sin flechas */}
+        <div className="relative w-full bg-white rounded-2xl shadow-2xl overflow-hidden mb-6">
           <div
             className="relative w-full h-80 overflow-hidden"
             onTouchStart={handleMouseEnter}
@@ -159,7 +160,7 @@ const Carousel = () => {
             {/* Slides Container Mobile */}
             <div
               className="flex transition-transform duration-700 ease-in-out h-full"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              style={{ transform: `tranorangeX(-${currentIndex * 100}%)` }}
             >
               {slides.map((slide, index) => (
                 <div key={index} className="w-full flex-shrink-0 flex flex-col">
@@ -188,50 +189,54 @@ const Carousel = () => {
                 </div>
               ))}
             </div>
-
-            {/* Flechas Mobile - Dentro de la card */}
-            <button
-              aria-label="Previous Slide"
-              onClick={prevSlide}
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-background/80 hover:bg-background text-white p-2 rounded-full shadow-lg transition-all duration-300"
-            >
-              <span className="text-lg">‹</span>
-            </button>
-
-            <button
-              aria-label="Next Slide"
-              onClick={nextSlide}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-background/80 hover:bg-background text-white p-2 rounded-full shadow-lg transition-all duration-300"
-            >
-              <span className="text-lg">›</span>
-            </button>
-          </div>
-
-          {/* Indicators Mobile */}
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            {slides.map((_, index) => (
-              <button
-                aria-label="Go to Slide"
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index === currentIndex
-                    ? "bg-background scale-125 shadow-lg"
-                    : "bg-white/60 hover:bg-white/80"
-                }`}
-              />
-            ))}
           </div>
 
           {/* Progress Bar Mobile */}
           <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-200">
             <div
-              className="h-full bg-gradient-to-r from-background to-orange-600 transition-all duration-700 ease-out"
+              className="h-full bg-gradient-to-r from-orange-800 to-orange-600 transition-all duration-700 ease-out"
               style={{
                 width: `${((currentIndex + 1) / slides.length) * 100}%`,
               }}
             />
           </div>
+        </div>
+
+        {/* Controles Mobile - Abajo del carrusel */}
+        <div className="flex items-center justify-center gap-6">
+          {/* Flecha Izquierda Mobile */}
+          <button
+            aria-label="Previous Slide"
+            onClick={prevSlide}
+            className="bg-orange-800/90 hover:bg-orange-800 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
+          >
+            <FaChevronLeft className="text-xl" />
+          </button>
+
+          {/* Indicators Mobile */}
+          <div className="flex space-x-3">
+            {slides.map((_, index) => (
+              <button
+                aria-label={`Go to Slide ${index + 1}`}
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? "bg-orange-800 scale-125 shadow-lg"
+                    : "bg-gray-400 hover:bg-gray-600"
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* Flecha Derecha Mobile */}
+          <button
+            aria-label="Next Slide"
+            onClick={nextSlide}
+            className="bg-orange-800/90 hover:bg-orange-800 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
+          >
+            <FaChevronRight className="text-xl" />
+          </button>
         </div>
       </div>
     </div>

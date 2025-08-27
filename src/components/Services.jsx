@@ -97,7 +97,7 @@ const ServicesCarousel = () => {
           <h2 className="text-background text-lg  font-semibold tracking-wide">
             What We Offer
           </h2>
-          <h3 className="text-2xl font-bold mt-2 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+          <h3 className="md:text-2xl text-xl font-bold mt-2 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
             We have a deep understanding of San Francisco and Bay Area styles
             and building codes, and we're committed to helping homeowners
             enhance their living spaces with top-quality materials and
@@ -211,9 +211,9 @@ const ServicesCarousel = () => {
                     <div key={service.id} className="w-full flex-shrink-0 p-4">
                       <div className="p-6 rounded-xl shadow-2xl border border-background bg-[#1E1E20]">
                         <div className="flex items-center justify-between mb-4">
-                          <div className="w-12 h-12 bg-gradient-to-br from-background to-background rounded-xl flex items-center justify-center shadow-lg">
+                          {/* <div className="w-12 h-12 bg-gradient-to-br from-background to-background rounded-xl flex items-center justify-center shadow-lg">
                             {service.icon}
-                          </div>
+                          </div> */}
                           <span className="text-xs font-semibold text-gray-400 bg-gray-800 px-3 py-1 rounded-full border border-gray-600">
                             {service.label}
                           </span>
@@ -221,9 +221,30 @@ const ServicesCarousel = () => {
                         <h3 className="text-xl font-bold mb-3 text-background">
                           {service.title}
                         </h3>
-                        <p className="text-gray-300 text-sm leading-relaxed">
+                        <p className="text-gray-300 text-sm leading-relaxed mb-4">
                           {service.description}
                         </p>
+                        <a
+                          href="/services/"
+                          title="Explore More"
+                          onClick={(e) => e.stopPropagation()}
+                          className="text-background font-semibold hover:text-background transition-all duration-300 flex items-center gap-2"
+                        >
+                          Explore More
+                          <svg
+                            className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </a>
                       </div>
                     </div>
                   ))}
