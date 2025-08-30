@@ -7,6 +7,15 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import ImageCover from "@components/Utils/ImageCover.astro";
+
+interface Props {
+  Name: string;
+  Role: string;
+  Description: string;
+  Image?: string;
+}
+
+const { Name, Role, Description, Image } = Astro.props;
 ---
 
 <section class="mx-auto container px-8 py-16">
@@ -18,7 +27,9 @@ import ImageCover from "@components/Utils/ImageCover.astro";
       <ImageCover
         className="w-full h-96"
         imageClass="w-full h-full rounded-2xl"
-        src="https://html.themewant.com/elever/assets/images/team/15.webp"
+        src={Image
+          ? Image
+          : "https://html.themewant.com/elever/assets/images/team/15.webp"}
         alt="Team Member"
       />
     </div>
@@ -30,20 +41,18 @@ import ImageCover from "@components/Utils/ImageCover.astro";
         <p
           class="text-background text-sm font-medium uppercase tracking-wide mb-2"
         >
-          Founder & CEO
+          {Role}
         </p>
         <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-          Charles Alexander
+          {Name}
         </h1>
       </div>
 
       <!-- Descripción -->
-      <p class="text-gray-600 text-lg leading-relaxed mb-8">
-        Charles Alexander is a highly skilled and experienced construction
-        expert, known for his deep expertise in managing large-scale
-        construction projects. With over 10+ years in the industry, Charles has
-        developed a reputation for excellence in project management.
-      </p>
+      <p
+        class="text-gray-600 text-lg leading-relaxed mb-8"
+        set:html={Description}
+      />
 
       <!-- Información de contacto -->
       <div class="flex flex-col sm:flex-row gap-4 mb-8">

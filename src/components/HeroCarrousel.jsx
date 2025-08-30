@@ -6,7 +6,7 @@ const HeroCarrousel = () => {
   const slides = [
     {
       id: 1,
-      image: "/diaz1.webp",
+      image: "/diaz-hero.webp",
       subtitle: "BUILDING THE BETTER FUTURE",
       title: "Construction beyond projects",
       description:
@@ -14,7 +14,7 @@ const HeroCarrousel = () => {
     },
     {
       id: 2,
-      image: "/diaz2.webp",
+      image: "/diaz-project3.webp",
       subtitle: "INNOVATIVE SOLUTIONS",
       title:
         "Unlock a remarkable 60% reduction in time while enjoying seamless results",
@@ -23,7 +23,7 @@ const HeroCarrousel = () => {
     },
     {
       id: 3,
-      image: "/diaz3.webp",
+      image: "/diaz-project9.3.webp",
       subtitle: "EXPERT CRAFTSMANSHIP",
       title: "15+ Years of turning visions into reality",
       description:

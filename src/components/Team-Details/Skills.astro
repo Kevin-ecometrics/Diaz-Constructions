@@ -1,5 +1,14 @@
 ---
 import ImageCover from "@components/Utils/ImageCover.astro";
+
+interface Props {
+  Name: string;
+  Skill1?: string;
+  Skill2?: string;
+  Skill3?: string;
+}
+
+const { Name, Skill1, Skill2, Skill3 } = Astro.props;
 ---
 
 <section class="px-8 py-16 mx-auto container">
@@ -9,7 +18,7 @@ import ImageCover from "@components/Utils/ImageCover.astro";
     <!-- Contenido de Habilidades -->
     <div class="space-y-6">
       <h2 class="text-3xl md:text-4xl font-bold text-gray-800 leading-tight">
-        Professional Skills
+        Professional Skills {Name}
       </h2>
 
       <p class="text-gray-600 text-base leading-relaxed">
@@ -26,7 +35,7 @@ import ImageCover from "@components/Utils/ImageCover.astro";
             <span
               class="text-sm font-semibold text-gray-800 uppercase tracking-wide"
             >
-              Interior Design
+              {Skill1 ? Skill1 : "Interior Design"}
             </span>
             <span class="text-lg font-bold text-gray-800">94%</span>
           </div>
@@ -45,7 +54,7 @@ import ImageCover from "@components/Utils/ImageCover.astro";
             <span
               class="text-sm font-semibold text-gray-800 uppercase tracking-wide"
             >
-              Renovation
+              {Skill2 ? Skill2 : "Renovation"}
             </span>
             <span class="text-lg font-bold text-gray-800">85%</span>
           </div>
@@ -64,7 +73,7 @@ import ImageCover from "@components/Utils/ImageCover.astro";
             <span
               class="text-sm font-semibold text-gray-800 uppercase tracking-wide"
             >
-              Growth Analysis
+              {Skill3 ? Skill3 : "Extension & Remodeling"}
             </span>
             <span class="text-lg font-bold text-gray-800">98%</span>
           </div>

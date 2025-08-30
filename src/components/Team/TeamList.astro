@@ -2,56 +2,51 @@
 import { FaShareAlt } from "react-icons/fa";
 import { FaBehance, FaYoutube, FaLinkedin, FaFacebookF } from "react-icons/fa";
 
-const team = [
-  {
-    id: 1,
-    name: "Samuel Daniel",
-    position: "Designer",
-    image: "https://html.themewant.com/elever/assets/images/team/08.webp",
+// Tu teamList
+const teamList = {
+  "Edgar-Diaz": {
+    Name: "Edgar Diaz",
+    Role: "Founder & CEO (General Contractor)",
+    Image: "https://html.themewant.com/elever/assets/images/team/08.webp",
   },
-  {
-    id: 2,
-    name: "Mekail Shen",
-    position: "Designer",
-    image: "https://html.themewant.com/elever/assets/images/team/09.webp",
+  "Ivonne-Sanchez": {
+    Name: "Ivonne Sanchez",
+    Role: "Project Manager & Sales Representative",
+    Image: "https://html.themewant.com/elever/assets/images/team/09.webp",
   },
-  {
-    id: 3,
-    name: "William Daniel",
-    position: "Developer",
-    image: "https://html.themewant.com/elever/assets/images/team/10.webp",
+  "Gustavo-Arreola": {
+    Name: "Gustavo Arreola",
+    Role: "Foreman",
+    Image: "https://html.themewant.com/elever/assets/images/team/10.webp",
   },
-  {
-    id: 4,
-    name: "Edward Thomas",
-    position: "Designer",
-    image: "https://html.themewant.com/elever/assets/images/team/11.webp",
+  "Antonio-Garcia": {
+    Name: "Antonio Garcia",
+    Role: "Foreman",
+    Image: "https://html.themewant.com/elever/assets/images/team/11.webp",
   },
-  {
-    id: 5,
-    name: "Lisa Grey",
-    position: "UX Researcher",
-    image: "https://html.themewant.com/elever/assets/images/team/12.webp",
+  "Juan-Gonzalez": {
+    Name: "Juan Gonzalez",
+    Role: "Master Plumber",
+    Image: "https://html.themewant.com/elever/assets/images/team/12.webp",
   },
-  {
-    id: 6,
-    name: "David Smith",
-    position: "Lead Developer",
-    image: "https://html.themewant.com/elever/assets/images/team/13.webp",
+  "Gilberto-Garcia": {
+    Name: "Gilberto Garcia",
+    Role: "Master Carpenter",
+    Image: "https://html.themewant.com/elever/assets/images/team/13.webp",
   },
-  {
-    id: 7,
-    name: "Sophia Turner",
-    position: "Project Manager",
-    image: "https://html.themewant.com/elever/assets/images/team/14.webp",
+  "Adrian-Cortes": {
+    Name: "Adrian Cortes",
+    Role: "Electrician",
+    Image: "https://html.themewant.com/elever/assets/images/team/14.webp",
   },
-  {
-    id: 8,
-    name: "James Wilson",
-    position: "UI Designer",
-    image: "https://html.themewant.com/elever/assets/images/team/12.webp",
-  },
-];
+};
+
+// Convertir objeto a array con id
+const team = Object.entries(teamList).map(([key, value], index) => ({
+  id: index + 1,
+  ...value,
+  url: `http://localhost:4321/team-details/${key}/`,
+}));
 ---
 
 <section
@@ -60,56 +55,57 @@ const team = [
   {
     team.map((tm) => (
       <div class="group flex bg-white rounded-2xl text-black flex-col">
-        <a href="/team-details/" title={tm.name}>
+        <a href={tm.url} title={tm.Name}>
           <figure class="overflow-hidden relative">
             <img
-              src={tm.image}
-              alt={tm.name}
+              src={tm.Image}
+              alt={tm.Name}
               class="transition-transform group-hover:scale-105 duration-300"
-              title={tm.name}
+              title={tm.Name}
             />
-
             <div class="absolute right-8 bottom-0">
               <div class="relative">
                 <img
                   src="https://html.themewant.com/elever/assets/images/team/01.png"
-                  alt={tm.name}
-                  title={tm.name}
+                  alt={tm.Name}
+                  title={tm.Name}
                 />
               </div>
             </div>
-          </figure>{" "}
+          </figure>
         </a>
 
         <div class="px-4 py-8 relative">
-          {/* Íconos de redes sociales - aparecen con animación de abajo hacia arriba */}
+          {/* Íconos de redes sociales */}
           <div class="absolute right-16 bottom-24 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div class="bg-background rounded-full px-2 py-4 shadow-lg overflow-hidden transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-300">
               <div class="flex flex-col space-y-4">
-                <div class="w-8 h-8 grid place-items-center rounded-full bg-white hover:bg-gray-100  cursor-pointer transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                <div class="w-8 h-8 grid place-items-center rounded-full bg-white hover:bg-gray-100 cursor-pointer transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 delay-75">
                   <FaBehance className="text-background text-sm" />
                 </div>
-                <div class="w-8 h-8 grid place-items-center rounded-full bg-white hover:bg-gray-100  cursor-pointer transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 delay-150">
+                <div class="w-8 h-8 grid place-items-center rounded-full bg-white hover:bg-gray-100 cursor-pointer transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 delay-150">
                   <FaYoutube className="text-red-500 text-sm" />
                 </div>
-                <div class="w-8 h-8 grid place-items-center rounded-full bg-white hover:bg-gray-100  cursor-pointer transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 delay-225">
+                <div class="w-8 h-8 grid place-items-center rounded-full bg-white hover:bg-gray-100 cursor-pointer transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 delay-225">
                   <FaLinkedin className="text-blue-600 text-sm" />
                 </div>
-                <div class="w-8 h-8 grid place-items-center rounded-full bg-white hover:bg-gray-100  cursor-pointer transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 delay-300">
+                <div class="w-8 h-8 grid place-items-center rounded-full bg-white hover:bg-gray-100 cursor-pointer transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300 delay-300">
                   <FaFacebookF className="text-blue-500 text-sm" />
                 </div>
               </div>
             </div>
           </div>
+
           <div class="absolute right-18 top-[-16px]">
             <div class="bg-background w-10 h-10 grid place-items-center rounded-3xl">
               <FaShareAlt className="text-white" />
             </div>
           </div>
-          <a href="/team-details/" title={tm.name}>
-            <h2 class="text-2xl font-bold">{tm.name}</h2>
+
+          <a href={tm.url} title={tm.Name}>
+            <h2 class="text-2xl font-bold">{tm.Name}</h2>
           </a>
-          <p class="text-lg text-gray-500">{tm.position}</p>
+          <p class="text-lg text-gray-500">{tm.Role}</p>
         </div>
       </div>
     ))

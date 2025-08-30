@@ -35,7 +35,7 @@ const Letters = () => {
     <div className="flex items-center justify-center overflow-hidden mt-16">
       <span
         ref={textRef}
-        className="uppercase text-[160px] text-nowrap text-[#1B1B1E] font-black"
+        className="uppercase text-[160px] text-nowrap text-background/20 font-black"
       >
         Diaz Constructions&nbsp;
       </span>

@@ -1,0 +1,97 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Hero from "@components/Utils/Hero.astro";
+import About from "@components/Team-Details/About.astro";
+import Skills from "@components/Team-Details/Skills.astro";
+
+export function getStaticPaths() {
+  return [
+    { params: { team: "Edgar-Diaz" } },
+    { params: { team: "Ivonne-Sanchez" } },
+    { params: { team: "Gustavo-Arreola" } },
+    { params: { team: "Antonio-Garcia" } },
+    { params: { team: "Juan-Gonzalez" } },
+    { params: { team: "Gilberto-Garcia" } },
+    { params: { team: "Adrian-Cortes" } },
+  ];
+}
+
+const { team } = Astro.params;
+
+const teamList = {
+  "Edgar-Diaz": {
+    Name: "Edgar Diaz",
+    Role: "Founder & CEO (General Contractor) ",
+    Description:
+      "Edgar has dedicated his life to building not only a successful company but also a close-knit family within it—a vision he has proudly achieved. With a hands-on approach, he remains deeply involved in every project, paying careful attention to each detail of the craft. He values the hard-earned investments his clients make and takes great pride in helping turn their house visions into reality. <br><br>Fun Facts: Outside of work, Edgar enjoys traveling the world, attending concerts, and spending time with his kids at amusement parks. ",
+    Image: "/diaz11.webp",
+  },
+  "Ivonne-Sanchez": {
+    Name: "Ivonne Sanchez",
+    Role: "Project Manager & Sales Representative",
+    Description:
+      "Ivonne takes every project to the next level with innovative solutions and meticulous attention to detail. She listens carefully to each client, ensuring their needs are fully understood and their expectations are exceeded. <br><br>Fun Facts: Outside of work, Ivonne enjoys traveling, exploring ancient architecture, learning about different cultures, and spending time on outdoor adventures with friends and family. ",
+    Skill1: "Customer service ",
+    Skill2: "Quality control  ",
+    Skill3: "Price negotiation  ",
+    Image: "",
+  },
+  "Gustavo-Arreola": {
+    Name: "Gustavo Arreola",
+    Role: "(Foreman) ",
+    Description:
+      "With over 20 years of experience in all aspects of construction, Gustavo ensures every project is executed flawlessly from start to finish. He minimizes downtime, keeps projects running smoothly, and maintains direct communication with homeowners to efficiently coordinate timelines.<br><br> Fun Facts: Outside of work, Gustavo enjoys camping with family and friends and riding off-road vehicles. ",
+    Image: "/diaz-team2.webp",
+  },
+  "Antonio-Garcia": {
+    Name: "Antonio Garcia",
+    Role: "(Foreman) ",
+    Description:
+      "Antonio is extremely hardworking and consistently exceeds client expectations, often completing projects ahead of schedule. With his positive and energetic attitude, he keeps projects fun, fast-paced, and efficient. He ensures homeowners and local owners enjoy the process of transforming their spaces. <br><br>Fun Fact: Outside of work, Antonio enjoys dancing, hunting, and exploring new places on long road trips. ",
+    Image: "/diaz-team1.webp",
+  },
+  "Juan-Gonzalez": {
+    Name: "Juan Gonzalez",
+    Role: "(Master plumber) ",
+    Description:
+      " Juan brings over 20 years of experience in residential and commercial plumbing, ensuring every project is done correctly and up to code. Plumbing mistakes can be costly, so having a master plumber like Juan ensures the job is done right the first time with long lasting results with extremely attention to detail. <br><br> Fun Facts: Outside of work, Juan enjoys dancing, camping, and volunteering with nonprofits such as Habitat for Humanity. ",
+    Image: "",
+  },
+  "Gilberto-Garcia": {
+    Name: "Gilberto Garcia",
+    Role: " ( Master Carpenter)",
+    Description:
+      " Expert in finishes the most time-consuming yet crucial part of any project homeowners With exceptional skill and attention to detail, he ensures every finish looks impeccable, taking pride in doing things right the first time.<br><br> Fun Facts: Outside of work, Gilberto enjoys playing soccer, traveling for tournaments, and watching  sports. ",
+    Skills1: "Installing windows ",
+    Skills2: "Doors, boards and trim ",
+    Skills3: "Cabinets ",
+    Image: "",
+  },
+  "Adrian-Cortes": {
+    Name: "Adrian Cortes",
+    Role: "(Electrician)  ",
+    Description:
+      "Adrian ensures the homeowners and local owners are safe, and that all electrical work meets current California codes. He will make sure you have the correct main panel size to support both present and future needs. <br><br>Fun fact: Adrian enjoys traveling the world, exploring different types of construction around the world, he is fascinated by ancient architecture. ",
+    Image: "",
+  },
+};
+
+const currentTeam = teamList[team as keyof typeof teamList];
+---
+
+<Layout title="Diaz Constructions | Team Details">
+  <main class="text-white overflow-x-hidden bg-[#EFEBE7]">
+    <Hero
+      title="Team Details"
+      text="Team Details"
+      image="https://html.themewant.com/elever/assets/images/banner/breadcrumb.webp"
+    />
+    <About
+      Name={currentTeam.Name}
+      Role={currentTeam.Role}
+      Description={currentTeam.Description}
+      Image={currentTeam.Image}
+    />
+    <Skills Name={currentTeam.Name} />
+  </main>
+</Layout>

@@ -35,6 +35,70 @@ const ProjectsPortfolio = () => {
       tags: ["all-works", "closet"],
       href: "/project-details/project4",
     },
+    {
+      id: 5,
+      image: "/diaz-project5.webp",
+      title: "Laundry Room",
+      text: "Utility Space",
+      tags: ["all-works", "laundry-room"],
+      href: "/project-details/project5",
+    },
+    {
+      id: 6,
+      image: "/diaz-project6.webp",
+      title: "Bathroom Suite",
+      text: "Outdoor Patio",
+      tags: ["all-works", "bathroom"],
+      href: "/project-details/project6",
+    },
+    {
+      id: 7,
+      image: "/diaz-project7.webp",
+      title: "Bathroom Small",
+      text: "Small Bathroom",
+      tags: ["all-works", "bathroom"],
+      href: "/project-details/project7",
+    },
+    {
+      id: 8,
+      image: "/diaz-project8.webp",
+      title: "Master Bedroom",
+      text: "Bedroom Renovation",
+      tags: ["all-works", "bedroom"],
+      href: "/project-details/project8",
+    },
+    {
+      id: 9,
+      image: "/diaz-project9.webp",
+      title: "Bathroom Suite",
+      text: "Suite Design",
+      tags: ["all-works", "bathroom"],
+      href: "/project-details/project9",
+    },
+    {
+      id: 10,
+      image: "/diaz-project10.webp",
+      title: "Expansive Home",
+      text: "Home Renovation",
+      tags: ["all-works", "Expansive Home"],
+      href: "/project-details/project10",
+    },
+    {
+      id: 11,
+      image: "/diaz-project11.webp",
+      title: "Expansive Room",
+      text: "Living Room",
+      tags: ["all-works", "Expansive Home"],
+      href: "/project-details/project11",
+    },
+    {
+      id: 12,
+      image: "/diaz-project12.webp",
+      title: "Custom Bedroom",
+      text: "Bedroom Design",
+      tags: ["all-works", "Expansive Home"],
+      href: "/project-details/project12",
+    },
   ];
 
   const availableTags = [
@@ -42,6 +106,8 @@ const ProjectsPortfolio = () => {
     { id: "bathroom", name: "BATHROOM" },
     { id: "kitchen", name: "KITCHEN" },
     { id: "closet", name: "CLOSET" },
+    { id: "laundry-room", name: "LAUNDRY ROOM" },
+    { id: "Expansive Home", name: "EXPANSIVE HOME" },
   ];
 
   const [activeTag, setActiveTag] = useState("all-works");
