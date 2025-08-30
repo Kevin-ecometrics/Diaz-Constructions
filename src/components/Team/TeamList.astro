@@ -45,7 +45,7 @@ const teamList = {
 const team = Object.entries(teamList).map(([key, value], index) => ({
   id: index + 1,
   ...value,
-  url: `http://localhost:4321/team-details/${key}/`,
+  url: `/team-details/${key}/`,
 }));
 ---
 
