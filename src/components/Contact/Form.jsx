@@ -120,7 +120,7 @@ const Form = () => {
       // Show loading toast
       const loadingToast = toast.loading("Sending form...");
 
-      await axios.post("http://localhost:3000/send-contact", formData);
+      await axios.post("https://diazconstructions.com/send-contact", formData);
 
       // Close loading toast and show success
       toast.dismiss(loadingToast);
