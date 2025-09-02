@@ -2,30 +2,48 @@
 import { FaShareAlt } from "react-icons/fa";
 import { FaBehance, FaYoutube, FaLinkedin, FaFacebookF } from "react-icons/fa";
 
-const team = [
+const teamList = [
   {
-    id: 1,
-    name: "Samuel Daniel",
-    position: "Constructor",
+    name: "Edgar Diaz",
+    role: "Founder & CEO (General Contractor)",
     image: "https://html.themewant.com/elever/assets/images/team/08.webp",
+    link: "/team-details/Edgar-Diaz/",
   },
   {
-    id: 2,
-    name: "Mekail Shen",
-    position: "Designer",
+    name: "Ivonne Sanchez",
+    role: "Project Manager & Sales Representative",
     image: "https://html.themewant.com/elever/assets/images/team/09.webp",
+    link: "/team-details/Ivonne-Sanchez/",
   },
   {
-    id: 3,
-    name: "William Daniel",
-    position: "Designer",
-    image: "https://html.themewant.com/elever/assets/images/team/10.webp",
+    name: "Gustavo Arreola",
+    role: "Foreman",
+    image: "/diaz-team2.webp",
+    link: "/team-details/Gustavo-Arreola/",
   },
   {
-    id: 4,
-    name: "Edward Thomas",
-    position: "Engineer",
-    image: "https://html.themewant.com/elever/assets/images/team/11.webp",
+    name: "Antonio Garcia",
+    role: "Foreman",
+    image: "/diaz-team1.webp",
+    link: "/team-details/Antonio-Garcia/",
+  },
+  {
+    name: "Juan Gonzalez",
+    role: "Master Plumber",
+    image: "https://html.themewant.com/elever/assets/images/team/12.webp",
+    link: "/team-details/Juan-Gonzalez/",
+  },
+  {
+    name: "Gilberto Garcia",
+    role: "Master Carpenter",
+    image: "https://html.themewant.com/elever/assets/images/team/13.webp",
+    link: "/team-details/Gilberto-Garcia/",
+  },
+  {
+    name: "Adrian Cortes",
+    role: "Electrician",
+    image: "https://html.themewant.com/elever/assets/images/team/14.webp",
+    link: "/team-details/Adrian-Cortes/",
   },
 ];
 ---
@@ -44,26 +62,28 @@ const team = [
     class="md:flex space-y-4 justify-between items-center w-[80%] mx-auto gap-5"
   >
     {
-      team.map((tm) => (
+      teamList.slice(0, 4).map((tm) => (
         <div class="group flex bg-white rounded-2xl text-black flex-col">
-          <figure class="overflow-hidden relative">
-            <img
-              src={tm.image}
-              alt={tm.name}
-              class="transition-transform group-hover:scale-105 duration-300"
-              title={tm.name}
-            />
+          <a href={tm.link} title={tm.name}>
+            <figure class="overflow-hidden relative">
+              <img
+                src={tm.image}
+                alt={tm.name}
+                class="transition-transform group-hover:scale-105 duration-300"
+                title={tm.name}
+              />
 
-            <div class="absolute right-8 bottom-0">
-              <div class="relative">
-                <img
-                  src="https://html.themewant.com/elever/assets/images/team/01.png"
-                  alt={tm.name}
-                  title={tm.name}
-                />
+              <div class="absolute right-8 bottom-0">
+                <div class="relative">
+                  <img
+                    src="https://html.themewant.com/elever/assets/images/team/01.png"
+                    alt={tm.name}
+                    title={tm.name}
+                  />
+                </div>
               </div>
-            </div>
-          </figure>
+            </figure>
+          </a>
 
           <div class="px-4 py-8 relative">
             {/* Íconos de redes sociales - aparecen con animación de abajo hacia arriba */}
@@ -91,10 +111,19 @@ const team = [
               </div>
             </div>
             <h2 class="text-2xl font-bold">{tm.name}</h2>
-            <p class="text-lg text-gray-500">{tm.position}</p>
+            <p class="text-lg text-gray-500">{tm.role}</p>
           </div>
         </div>
       ))
     }
+  </div>
+  <div class="text-center mt-8">
+    <a href="/team/">
+      <button
+        class="bg-background hover:cursor-pointer text-white px-6 py-3 rounded-full hover:bg-background/80 transition-colors"
+      >
+        View All Team
+      </button>
+    </a>
   </div>
 </section>
