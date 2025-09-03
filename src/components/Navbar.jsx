@@ -306,7 +306,7 @@ const Navbar = ({ url }) => {
             {/* <FiSearch className="text-gray-400 hover:text-background cursor-pointer transition-colors duration-300 w-5 h-5 hover:scale-110" /> */}
             <a
               title="Go to Page"
-              href="/contact"
+              href="/contact/"
               className="bg-background hover:bg-orange-600 py-2 px-6 text-sm font-semibold transition-colors duration-300 rounded cursor-pointer"
               onMouseEnter={(e) => handleButtonHover(e, true)}
               onMouseLeave={(e) => handleButtonHover(e, false)}

@@ -168,7 +168,7 @@ const TestimoniosCarrousel = ({ testimonials }) => {
         <div className="overflow-hidden py-2 md:py-4">
           <div
             ref={containerRef}
-            className="flex md:items-stretch transition-transform duration-500 ease-in-out"
+            className="flex items-start transition-transform duration-500 ease-in-out"
             style={{
               width: `${(100 / itemsPerView) * testimonials.length}%`,
             }}
