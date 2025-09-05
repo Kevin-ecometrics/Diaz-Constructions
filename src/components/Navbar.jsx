@@ -416,13 +416,14 @@ const Navbar = ({ url }) => {
                   </div>
                 </div>
 
-                <button
+                <a
+                  href="/contact/"
                   aria-label="Get a Quote"
                   onClick={closeMobileMenu}
-                  className="w-full bg-background hover:bg-orange-600 py-3 text-sm font-semibold transition-all duration-300 rounded hover:shadow-lg transform hover:scale-105"
+                  className="w-full bg-background hover:bg-orange-600 py-3 text-sm font-semibold transition-all duration-300 rounded hover:shadow-lg transform hover:scale-105 px-4"
                 >
                   Get a Quote
-                </button>
+                </a>
               </div>
             </div>
           </div>

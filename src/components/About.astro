@@ -2,6 +2,7 @@
 import Button from "@components/Button";
 import Letters from "./Letters";
 import Services from "./Services";
+import AboutInfo from "./AboutInfo";
 ---
 
 <section
@@ -69,55 +70,11 @@ import Services from "./Services";
         <h2 class="text-background text-lg font-semibold tracking-wide">
           About Diaz construction
         </h2>
-        <h3 class="text-xl sm:text-3xl font-bold leading-tight">
+        <h3 class="text-xl sm:text-4xl font-bold leading-tight">
           We're a family own business with big pride and values, delivering
           exceptional craftsmanship and the care your project deserves.
         </h3>
-        <div class="space-y-3 sm:space-y-4">
-          <p
-            class="text-gray-300 sm:text-gray-400 text-sm sm:text-base leading-relaxed"
-          >
-            Our core values of quality, efficiency and integrity drive us to
-            provide tailor made solutions for each client, completing projects
-            60% faster without compromising excellence and quality focus.
-          </p>
-          <p
-            class="text-gray-300 sm:text-gray-400 text-sm sm:text-base leading-relaxed"
-          >
-            Specializing in both soft and general construction, we handle very
-            aspect from permits and project management to safety permits and
-            final inspections, ensuring a seamless stress-free experience. Our
-            team works with meticulous attention to detail to guarantee your
-            satisfaction and high-quality results.
-          </p>
-          <p
-            class="text-gray-300 sm:text-gray-400 text-sm sm:text-base leading-relaxed"
-          >
-            Let's bring your vision to life through honest communication at
-            every step, with efficient execution and flawless finishes. Feel
-            free to get a quote or schedule a consultation. We´re fully
-            committed to helping make your new home or project an unforgettable
-            experience understanding your needs and making your dream space a
-            reality.
-          </p>
-          <p
-            class="text-gray-300 sm:text-gray-400 text-sm sm:text-base leading-relaxed"
-          >
-            We are here to help make your new home build an unforgettable
-            experience. We have 15 years of experience working with several
-            homeowners and have developed several projects ranging from kitchen
-            & bathroom remodels, landscaping, additions & more. Our team is
-            ready to tackle every part of your home.
-          </p>
-          <p
-            class="text-gray-300 sm:text-gray-400 text-sm sm:text-base leading-relaxed"
-          >
-            With a deep understanding of San Francsico and Bay Area styles and
-            building codes, we are commitment to help homeowners improve their
-            living spaces with top-quality materials and aesthetic results and
-            log lasting
-          </p>
-        </div>
+        <AboutInfo client:visible />
 
         <!-- Botón responsive -->
         <div class="pt-2 sm:pt-4">
