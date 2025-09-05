@@ -11,7 +11,7 @@ function AboutInfo() {
     "Specializing in both soft and general construction, we handle very aspect from permits and project management to safety permits and final inspections, ensuring a seamless stress-free experience. Our team works with meticulous attention to detail to guarantee your satisfaction and high-quality results.",
     "Let's bring your vision to life through honest communication at every step, with efficient execution and flawless finishes. Feel free to get a quote or schedule a consultation. We´re fully committed to helping make your new home or project an unforgettable experience understanding your needs and making your dream space a reality.",
     "We are here to help make your new home build an unforgettable experience. We have 15 years of experience working with several homeowners and have developed several projects ranging from kitchen & bathroom remodels, landscaping, additions & more. Our team is ready to tackle every part of your home.",
-    "With a deep understanding of San Francsico and Bay Area styles and building codes, we are commitment to help homeowners improve their living spaces with top-quality materials and aesthetic results and log lasting",
+    "With a deep understanding of San Francisco and Bay Area styles and building codes, we are commitment to help homeowners improve their living spaces with top-quality materials and aesthetic results and log lasting",
   ];
 
   // animaciones
