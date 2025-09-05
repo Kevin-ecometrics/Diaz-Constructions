@@ -47,9 +47,9 @@ const Navbar = ({ url }) => {
       href: "https://www.facebook.com/DiazConstructionCo",
       label: "Facebook",
     },
-    { icon: FaXTwitter, href: "#", label: "Twitter" },
-    { icon: FaInstagram, href: "#", label: "Instagram" },
-    { icon: FaLinkedin, href: "#", label: "LinkedIn" },
+    // { icon: FaXTwitter, href: "#", label: "Twitter" },
+    // { icon: FaInstagram, href: "#", label: "Instagram" },
+    // { icon: FaLinkedin, href: "#", label: "LinkedIn" },
     {
       icon: Yelp,
       href: "https://www.yelp.com/biz/diaz-construction-menlo-park-2",

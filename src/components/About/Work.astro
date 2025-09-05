@@ -11,11 +11,18 @@
       class="image-reveal-container relative w-full bg-gray-300 rounded-lg flex items-center justify-center overflow-hidden"
     >
       <img
-        src="https://html.themewant.com/elever/assets/images/service/01.webp"
+        src="/diaz-hero3.webp"
         alt="Work Image"
         title="Work Image"
-        class="w-full h-auto block"
+        class="block"
       />
+      <!-- Botón centrado al fondo -->
+      <button
+        aria-label="Watch Video"
+        class="watch-video-btn absolute bottom-6 right-4 rounded-tl-4xl bg-white text-background px-6 py-3 font-bold cursor-pointer transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg opacity-0"
+      >
+        Watch Video
+      </button>
 
       <!-- Overlay naranja que se desliza primero -->
       <div class="orange-overlay absolute inset-0 bg-background z-20"></div>
@@ -26,10 +33,8 @@
 
     <!-- Columna derecha: Texto -->
     <div class="space-y-6">
-      <h2 class="text-background text-lg font-bold">How We Works</h2>
-      <h3 class="text-[44px] font-bold">
-        How To Work With Elever Construction Builder
-      </h3>
+      <h2 class="text-background text-lg font-bold">The Diaz process</h2>
+      <h3 class="text-[44px] font-bold">How To Work With Diaz Construction</h3>
 
       <!-- Service 1 -->
       <div class="flex items-start gap-4">
@@ -53,11 +58,10 @@
           </div>
         </div>
         <div class="flex-1">
-          <h5 class="text-xl font-semibold mb-2">Consultation & Planning</h5>
-          <p class="text-gray-400">
-            We begin with a thorough consultation to understand your vision,
-            budget, and project goals. Our team works with you to develop a
-            tailored plan
+          <h5 class="text-xl font-semibold mb-2">Meeting and Planning</h5>
+          <p class="">
+            We start with a thorough discussion to understand your needs and
+            specifications. Our goal is to maximize the potential of your space.
           </p>
         </div>
       </div>
@@ -84,11 +88,12 @@
           </div>
         </div>
         <div class="flex-1">
-          <h5 class="text-xl font-semibold mb-2">Design & Pre-Construction</h5>
-          <p class="text-gray-400">
-            We begin with a thorough consultation to understand your vision,
-            budget, and project goals. Our team works with you to develop a
-            tailored plan
+          <h5 class="text-xl font-semibold mb-2">Design and Logistics</h5>
+          <p class="">
+            Our team includes an in-house engineer and designer, as well as a
+            soft contractor, who will ensure that everything is secure and
+            compliant with city permits and regulations. We focus on logistics
+            to deliver the best possible results in time as planned.
           </p>
         </div>
       </div>
@@ -115,11 +120,12 @@
           </div>
         </div>
         <div class="flex-1">
-          <h5 class="text-xl font-semibold mb-2">Construction & Delivery</h5>
-          <p class="text-gray-400">
-            We begin with a thorough consultation to understand your vision,
-            budget, and project goals. Our team works with you to develop a
-            tailored plan
+          <h5 class="text-xl font-semibold mb-2">
+            Bringing Construction to Reality
+          </h5>
+          <p class="">
+            We collaborate closely with you throughout the process, keeping you
+            informed from week one until the project is completed.
           </p>
         </div>
       </div>
@@ -140,8 +146,9 @@
     const container = document.querySelector(".image-reveal-container");
     const orangeOverlay = document.querySelector(".orange-overlay");
     const blackOverlay = document.querySelector(".black-overlay");
+    const button = document.querySelector(".watch-video-btn");
 
-    if (!container || !orangeOverlay || !blackOverlay) return;
+    if (!container || !orangeOverlay || !blackOverlay || !button) return;
 
     // Crear timeline
     const tl = gsap.timeline({
@@ -171,9 +178,23 @@
           ease: "power2.out",
         },
         "-=0.2"
-      );
+      )
+      // 3. Botón aparece con fade-in
+      .to(
+        button,
+        {
+          duration: 0.5,
+          opacity: 1,
+          y: 0,
+          ease: "power2.out",
+        },
+        "-=0.3"
+      ); // Inicia 0.3 segundos antes de que termine la animación anterior
   }
 
   // Inicializar cuando el DOM esté cargado
   document.addEventListener("DOMContentLoaded", initRevealAnimation);
+
+  // Para compatibilidad con navegación SPA (si usas ViewTransitions)
+  document.addEventListener("astro:page-load", initRevealAnimation);
 </script>

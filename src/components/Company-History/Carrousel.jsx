@@ -8,21 +8,19 @@ const Carousel = () => {
   const slides = [
     {
       title: "Leading The Way",
+      image: "https://html.themewant.com/elever/assets/images/about/01.jpg",
       description:
         "Varius dis malesuada nisi ligulavel senectus habitant aliquam, augue natoque sem nascetur quis himenaeos volutpat facilisis orco morbi mattis sagittis atu commodo pharetra fermentum. Primis risus diam himenaeos viverra rat habitant",
     },
     {
       title: "Innovation Excellence",
+      image: "https://html.themewant.com/elever/assets/images/about/05.jpg",
       description:
         "Transforming industries through cutting-edge technology and strategic partnerships. Our commitment to excellence drives us to deliver solutions that exceed expectations and create lasting value for our clients.",
     },
     {
-      title: "Building Tomorrow",
-      description:
-        "Pioneering sustainable construction practices that shape the future of urban development. Every project represents our dedication to quality, safety, and environmental responsibility in modern architecture.",
-    },
-    {
       title: "Professional Excellence",
+      image: "https://html.themewant.com/elever/assets/images/about/04.jpg",
       description:
         "Decades of experience combined with innovative approaches ensure project success. Our team of experts brings unmatched expertise and attention to detail to every construction challenge we undertake.",
     },
@@ -47,7 +45,7 @@ const Carousel = () => {
       const interval = setInterval(nextSlide, 5000);
       return () => clearInterval(interval);
     }
-  }, [isAutoPlaying, currentIndex]);
+  }, [isAutoPlaying]);
 
   const handleMouseEnter = () => {
     setIsAutoPlaying(false);
@@ -65,7 +63,7 @@ const Carousel = () => {
         <button
           aria-label="Previous Slide"
           onClick={prevSlide}
-          className="bg-orange-800/90 hover:bg-orange-800 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl flex-shrink-0"
+          className="bg-orange-600/90 hover:bg-orange-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl flex-shrink-0"
         >
           <FaChevronLeft className="text-2xl" />
         </button>
@@ -80,14 +78,14 @@ const Carousel = () => {
             {/* Slides Container Desktop */}
             <div
               className="flex transition-transform duration-700 ease-in-out h-full"
-              style={{ transform: `tranorangeX(-${currentIndex * 100}%)` }}
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {slides.map((slide, index) => (
                 <div key={index} className="w-full flex-shrink-0 flex">
                   {/* Image Section */}
                   <div className="w-1/2 relative overflow-hidden">
                     <img
-                      src="https://html.themewant.com/elever/assets/images/about/01.jpg"
+                      src={slide.image}
                       alt={slide.title}
                       title={slide.title}
                       className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
@@ -112,7 +110,7 @@ const Carousel = () => {
           </div>
 
           {/* Indicators Desktop */}
-          <div className="absolute bottom-4 left-1/2 transform -tranorange-x-1/2 flex space-x-3">
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3">
             {slides.map((_, index) => (
               <button
                 aria-label="Go to Slide"
@@ -120,7 +118,7 @@ const Carousel = () => {
                 onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? "bg-orange-800 scale-125 shadow-lg"
+                    ? "bg-orange-600 scale-125 shadow-lg"
                     : "bg-white/60 hover:bg-white/80"
                 }`}
               />
@@ -130,7 +128,7 @@ const Carousel = () => {
           {/* Progress Bar Desktop */}
           <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-200">
             <div
-              className="h-full bg-gradient-to-r from-orange-800 to-orange-600 transition-all duration-700 ease-out"
+              className="h-full bg-gradient-to-r from-orange-700 to-orange-600 transition-all duration-700 ease-out"
               style={{
                 width: `${((currentIndex + 1) / slides.length) * 100}%`,
               }}
@@ -142,7 +140,7 @@ const Carousel = () => {
         <button
           aria-label="Next Slide"
           onClick={nextSlide}
-          className="bg-orange-800/90 hover:bg-orange-800 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl flex-shrink-0"
+          className="bg-orange-600/90 hover:bg-orange-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl flex-shrink-0"
         >
           <FaChevronRight className="text-2xl" />
         </button>
@@ -160,14 +158,14 @@ const Carousel = () => {
             {/* Slides Container Mobile */}
             <div
               className="flex transition-transform duration-700 ease-in-out h-full"
-              style={{ transform: `tranorangeX(-${currentIndex * 100}%)` }}
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {slides.map((slide, index) => (
                 <div key={index} className="w-full flex-shrink-0 flex flex-col">
                   {/* Image Section Mobile */}
                   <div className="w-full h-48 relative overflow-hidden">
                     <img
-                      src="https://html.themewant.com/elever/assets/images/about/01.jpg"
+                      src={slide.image}
                       alt={slide.title}
                       title={slide.title}
                       className="w-full h-full object-cover"
@@ -208,7 +206,7 @@ const Carousel = () => {
           <button
             aria-label="Previous Slide"
             onClick={prevSlide}
-            className="bg-orange-800/90 hover:bg-orange-800 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
+            className="bg-orange-600/90 hover:bg-orange-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
           >
             <FaChevronLeft className="text-xl" />
           </button>
@@ -222,7 +220,7 @@ const Carousel = () => {
                 onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? "bg-orange-800 scale-125 shadow-lg"
+                    ? "bg-orange-600 scale-125 shadow-lg"
                     : "bg-gray-400 hover:bg-gray-600"
                 }`}
               />
@@ -233,7 +231,7 @@ const Carousel = () => {
           <button
             aria-label="Next Slide"
             onClick={nextSlide}
-            className="bg-orange-800/90 hover:bg-orange-800 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
+            className="bg-orange-600/90 hover:bg-orange-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
           >
             <FaChevronRight className="text-xl" />
           </button>

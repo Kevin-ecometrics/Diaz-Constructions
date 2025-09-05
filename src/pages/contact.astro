@@ -2,7 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import Hero from "@components/Utils/Hero.astro";
 import Form from "@components/Contact/Form";
-import Map from "@components/Contact/Map.astro";
+import Map from "@components/Contact/Map";
 ---
 
 <Layout title="Diaz Constructions | Contact">
@@ -13,6 +13,6 @@ import Map from "@components/Contact/Map.astro";
       image="/CONTACT Diaz Construction Construction Projects Across the Country, Construction, Remodeling and Renovation of Residential and Office Spaces.webp"
     />
     <Form client:visible />
-    <Map />
+    <Map client:load />
   </main>
 </Layout>

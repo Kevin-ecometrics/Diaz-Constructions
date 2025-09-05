@@ -1,0 +1,142 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Hero from "@components/Utils/Hero.astro";
+import Card from "@components/Service-Details/Card";
+import Work from "@components/Work.astro";
+
+export function getStaticPaths() {
+  return [
+    { params: { service: "new-home-builds" } },
+    { params: { service: "additions-adus" } },
+    { params: { service: "bathroom-and-kitchen-remodel" } },
+    { params: { service: "landscape-hardscape" } },
+    { params: { service: "outdoor-kitchen-bbq" } },
+    { params: { service: "flooring" } },
+  ];
+}
+
+const { service } = Astro.params;
+
+const ServiceList = {
+  "new-home-builds": {
+    image: "https://html.themewant.com/elever/assets/images/service/11.webp",
+    title: "New home builds",
+    description:
+      "Looking to build your dream home? Building a home starts with an idea we are here to push your ideas into visions and bring them to life ",
+    features: ["Custom design planning", "High-quality materials"],
+  },
+  "additions-adus": {
+    image: "https://html.themewant.com/elever/assets/images/service/12.webp",
+    title: "Additions/ ADUS",
+    description:
+      "Do you want to extend your home? Growing family and in need of an extra room, home office, laundry room whatever you need we manage to make the process as easy as possible for you. ",
+    features: ["Room extensions", "Custom home offices"],
+  },
+  "bathroom-and-kitchen-remodel": {
+    image: "https://html.themewant.com/elever/assets/images/service/13.webp",
+    title: "Bathroom and Kitchen remodel",
+    description:
+      "In need for an update? We do custom designs to combine functionality and style with high quality finishes and modern layouts for your specific needs",
+    features: ["Modern layouts", "High-quality finishes"],
+  },
+  "landscape-hardscape": {
+    image: "https://html.themewant.com/elever/assets/images/service/14.webp",
+    title: "Landscape/ hardscape",
+    description:
+      "Your outdoor living space should leave you speechless each time you step out the door. We can help with driveways, walkways, retaining walls, artificial turf, irrigation systems, pavers, concrete and decking.",
+    features: ["Driveways & walkways", "Artificial turf & irrigation"],
+  },
+  "outdoor-kitchen-bbq": {
+    image: "https://html.themewant.com/elever/assets/images/service/15.webp",
+    title: "Outdoor kitchen /BBQ",
+    description:
+      "The perfect outdoor space for relaxation, entertaining with all attention to detail to look like an harmonious extension of your house.",
+    features: ["Custom BBQ spaces", "Outdoor dining areas"],
+  },
+  flooring: {
+    image: "https://html.themewant.com/elever/assets/images/service/16.webp",
+    title: "Flooring",
+    description:
+      "Looking to upgrade your flooring? Hardwood, laminate or luxury vinyl planks whatever you choose we offer high quality finishes durability.",
+    features: ["Hardwood & laminate", "Luxury vinyl planks"],
+  },
+};
+
+const currentService = ServiceList[service as keyof typeof ServiceList];
+---
+
+<Layout title={`Diaz Constructions | ${currentService.title}`}>
+  <main class="text-white overflow-x-hidden bg-[#EFEBE7]">
+    <Hero
+      title={currentService.description}
+      text={currentService.title}
+      image="/SERVICES New room construction Diaz Construction – General Contractor, Comprehensive Construction and Remodeling Services for Residences and Buildings.webp"
+    />
+    <section class="mx-auto container p-4 md:p-0">
+      <figure>
+        <img
+          src="https://html.themewant.com/elever/assets/images/service/17.webp"
+          alt=""
+        />
+      </figure>
+    </section>
+    <section class="mx-auto container mt-10 text-black p-4 md:p-0">
+      <h2 class="text-4xl font-bold text-start mb-5 text-background">
+        Description Of The Service
+      </h2>
+      <p class="text-lg leading-8 text-gray-500">
+        Building a custom home is a dream for many, and at Elever, we believe
+        that the journey to achieving that dream should be as inspiring as the
+        end result. Our Custom Home Building service is designed with you in
+        mind, combining expert craftsmanship, the highest-quality materials, and
+        a commitment to excellence in every phase of construction. From the
+        initial concept discussions to the final touches, our dedicated team is
+        here to guide you through the process, ensuring your new home is a
+        reflection of your vision, lifestyle, and unique personality.
+        <br />
+        <br />
+        The journey to a custom home begins with understanding. We start each project
+        with an initial consultation to learn about your goals, ideas, and preferences.
+        During this stage, we take the time to listen carefully to your vision. Are
+        you seeking a sprawling estate with traditional details, or perhaps a modern,
+        minimalist design that emphasizes open spaces and natural light? We discuss
+        every aspect, from the overall structure to the small details that make a
+        house truly feel like home.
+      </p>
+    </section>
+    <div class="p-4 md:p-0">
+      <Card client:visible />
+    </div>
+    <section class="mx-auto container mt-10 md:mb-20 p-4 md:p-0">
+      <!-- Fondo con imagen -->
+      <div class="relative h-[400px] rounded-xl overflow-hidden">
+        <img
+          src="https://html.themewant.com/elever/assets/images/cta/03.webp"
+          alt="CTA Background"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+
+        <!-- Contenido -->
+        <div
+          class="relative z-10 p-4 md:p-16 md:w-1/2 flex justify-center items-start flex-col h-full"
+        >
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Ready to work together
+          </h2>
+          <p class="mb-6 text-white leading-relaxed">
+            Whether you have a project in mind and you’re looking for a reliable
+            construction partner or you’re looking to take the next step in your
+            career, we want to hear from you!
+          </p>
+          <a
+            href="/contact/"
+            class="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2 px-4 rounded transition-colors duration-300 text-sm md:text-base"
+          >
+            Make An Appointment
+          </a>
+        </div>
+      </div>
+    </section>
+    <Work />
+  </main>
+</Layout>

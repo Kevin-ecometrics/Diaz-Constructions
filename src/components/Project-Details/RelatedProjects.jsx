@@ -98,12 +98,18 @@ const ProjectSlider = ({ projectsList, currentProjectId }) => {
               } h-full flex-shrink-0`}
             >
               <div className="absolute inset-0">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  title={project.title}
-                  className="w-full h-full object-cover"
-                />
+                <a
+                  href={project.url}
+                  aria-label={project.title}
+                  className="cursor-pointer"
+                >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    title={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                </a>
               </div>
 
               <div className="absolute top-4 sm:top-8 left-4 sm:left-8 right-4 sm:right-auto text-white z-10">

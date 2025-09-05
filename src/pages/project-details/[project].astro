@@ -35,6 +35,7 @@ const projectsList = {
     location: "Location 1",
     price: "$30,000",
     client: "Client 1",
+    url: "/project-details/project1/",
     projectYear: "2023",
     duration: "3 months",
     image: "/diaz-project1.webp",
@@ -73,6 +74,7 @@ const projectsList = {
     location: "Location 2",
     price: "$35,000",
     client: "Client 2",
+    url: "/project-details/project2/",
     projectYear: "2023",
     duration: "4 months",
     image: "/diaz-project2.webp",
@@ -115,6 +117,7 @@ const projectsList = {
     subtitle: "Kitchen Renovation",
     location: "Location 3",
     price: "$50,000",
+    url: "/project-details/project3/",
     client: "Client 3",
     projectYear: "2023",
     duration: "5 months",
@@ -143,6 +146,7 @@ const projectsList = {
     subtitle: "Closet Custom Build",
     location: "Location 4",
     price: "$20,000",
+    url: "/project-details/project4/",
     client: "Client 4",
     projectYear: "2023",
     duration: "2 months",
@@ -161,6 +165,7 @@ const projectsList = {
     subtitle: "Utility Space",
     location: "Location 5",
     price: "$20,000",
+    url: "/project-details/project5/",
     client: "Client 5",
     projectYear: "2023",
     duration: "2 months",
@@ -184,6 +189,7 @@ const projectsList = {
     subtitle: "Outdoor Patio",
     location: "Location 6",
     price: "$25,000",
+    url: "/project-details/project6/",
     client: "Client 6",
     projectYear: "2023",
     duration: "2 months",
@@ -204,6 +210,7 @@ const projectsList = {
     price: "$15,000",
     client: "Client 7",
     projectYear: "2023",
+    url: "/project-details/project7/",
     duration: "1 month",
     image: "/diaz-project7.webp",
     images: [
@@ -221,6 +228,7 @@ const projectsList = {
     location: "Location 8",
     price: "$30,000",
     client: "Client 8",
+    url: "/project-details/project8/",
     projectYear: "2023",
     duration: "3 months",
     image: "/diaz-project8.webp",
@@ -238,6 +246,7 @@ const projectsList = {
     subtitle: "Suite Design",
     location: "Location 9",
     price: "$18,000",
+    url: "/project-details/project9/",
     client: "Client 9",
     projectYear: "2023",
     duration: "1 month",
@@ -255,6 +264,7 @@ const projectsList = {
     title: "Expansive Home",
     subtitle: "Home Renovation",
     location: "Location 10",
+    url: "/project-details/project10/",
     price: "$45,000",
     client: "Client 10",
     projectYear: "2023",
@@ -274,6 +284,7 @@ const projectsList = {
     subtitle: "Expansive Room",
     location: "Location 11",
     price: "$22,000",
+    url: "/project-details/project11/",
     client: "Client 11",
     projectYear: "2023",
     duration: "2 months",
@@ -303,6 +314,7 @@ const projectsList = {
     location: "Location 12",
     price: "$28,000",
     client: "Client 12",
+    url: "/project-details/project12/",
     projectYear: "2023",
     duration: "3 months",
     image: "/diaz-project12.webp",
@@ -332,7 +344,7 @@ const currentProject = projectsList[project as keyof typeof projectsList];
       image="/PROJECTS Diaz Construction Remodeling and Construction of Spaces, Buildings, and Residential Homes.webp"
     />
     <About images={currentProject.images} />
-    <Content />
+    <!-- <Content /> -->
     <Stats client:visible />
     <Accordion client:visible />
     <Related />

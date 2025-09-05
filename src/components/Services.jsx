@@ -13,6 +13,7 @@ const services = [
     title: "New home builds",
     description:
       "Looking to build your dream home? Building a home starts with an idea we are here to push your ideas into visions and bring them to life ",
+    url: "/service-details/new-home-builds/",
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ const services = [
     title: "Additions/ ADUS",
     description:
       "Do you want to extend your home? Growing family and in need of an extra room, home office, laundry room whatever you need we manage to make the process as easy as possible for you. ",
+    url: "/service-details/additions-adus/",
   },
   {
     id: 3,
@@ -29,6 +31,7 @@ const services = [
     title: "Bathroom and Kitchen remodel ",
     description:
       "In need for an update? We do custom designs to combine functionality and style with high quality finishes and modern layouts for your specific needs  ",
+    url: "/service-details/bathroom-kitchen-remodel/",
   },
   {
     id: 4,
@@ -37,6 +40,7 @@ const services = [
     title: "Landscape/ hardscape",
     description:
       "Your outdoor living space should leave you speechless each time you step out the door. We can help with driveways, walkways, retaining walls, artificial turf, Irrigation systems, pavers, concrete and decking. ",
+    url: "/service-details/landscape-hardscape/",
   },
   {
     id: 5,
@@ -45,6 +49,7 @@ const services = [
     title: "Outdoor kitchen /BBQ",
     description:
       "The perfect outdoor space for relaxation, entertaining with all attention to detail to look like an harmonious extension of your house  ",
+    url: "/service-details/outdoor-kitchen-bbq/",
   },
   {
     id: 6,
@@ -53,6 +58,7 @@ const services = [
     title: "Flooring ",
     description:
       " Looking to upgrade your flooring? Hardwood, laminate or luxury vinyl planks whatever you choose we offer high quality finishes durability  ",
+    url: "/service-details/flooring/",
   },
 ];
 
@@ -149,7 +155,7 @@ const ServicesCarousel = () => {
           </button>
 
           {/* Carousel Track */}
-          <div className="overflow-hidden md:block hidden">
+          <div className="overflow-hidden md:block hidden md:h-80">
             <div
               className="flex gap-8 transition-transform duration-500 will-change-transform"
               ref={sliderRef}
@@ -168,9 +174,12 @@ const ServicesCarousel = () => {
                       {service.label}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-background transition-colors duration-300">
-                    {service.title}
-                  </h3>
+                  <a href="#" className="group-hover:text-background">
+                    <h3 className="text-xl font-bold mb-3 group-hover:text-background transition-colors duration-300">
+                      {service.title}
+                    </h3>
+                  </a>
+
                   <p className="text-gray-300 mb-6 text-sm leading-relaxed">
                     {service.description}
                   </p>

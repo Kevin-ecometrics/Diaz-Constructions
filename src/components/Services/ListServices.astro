@@ -1,66 +1,80 @@
 ---
 const services = [
-    {
-        id: 1,
-        image: "https://html.themewant.com/elever/assets/images/service/11.webp",
-        title: "General Contracting",
-        description: "Every aspect of the project, from the foundation to the final touches, was completed with precision. They made sure to use the highest-quality materials.",
-        features: [
-            "Understand project scope, goals, and budget",
-            "Understand project scope, goals, and budget"
-        ]
-    },
-    {
-        id: 2,
-        image: "https://html.themewant.com/elever/assets/images/service/12.webp",
-        title: "Building Development",
-        description: "Every aspect of the project, from the foundation to the final touches, was completed with precision. They made sure to use the highest-quality materials.",
-        features: [
-            "Understand project scope, goals, and budget",
-            "Understand project scope, goals, and budget"
-        ]
-    },
-    {
-        id: 3,
-        image: "https://html.themewant.com/elever/assets/images/service/13.webp",
-        title: "Plumbing Installations",
-        description: "Every aspect of the project, from the foundation to the final touches, was completed with precision. They made sure to use the highest-quality materials.",
-        features: [
-            "Understand project scope, goals, and budget",
-            "Understand project scope, goals, and budget"
-        ]
-    },
-    {
-        id: 4,
-        image: "https://html.themewant.com/elever/assets/images/service/14.webp",
-        title: "Safety Inspections",
-        description: "Every aspect of the project, from the foundation to the final touches, was completed with precision. They made sure to use the highest-quality materials.",
-        features: [
-            "Understand project scope, goals, and budget",
-            "Understand project scope, goals, and budget"
-        ]
-    },
-    {
-        id: 5,
-        image: "https://html.themewant.com/elever/assets/images/service/15.webp",
-        title: "Roofing & Waterproofing",
-        description: "Every aspect of the project, from the foundation to the final touches, was completed with precision. They made sure to use the highest-quality materials.",
-        features: [
-            "Understand project scope, goals, and budget",
-            "Understand project scope, goals, and budget"
-        ]
-    },
-    {
-        id: 6,
-        image: "https://html.themewant.com/elever/assets/images/service/16.webp",
-        title: "Custom Home Building",
-        description: "Every aspect of the project, from the foundation to the final touches, was completed with precision. They made sure to use the highest-quality materials.",
-        features: [
-            "Understand project scope, goals, and budget",
-            "Understand project scope, goals, and budget"
-        ]
-    }
+  {
+    id: 1,
+    image: "https://html.themewant.com/elever/assets/images/service/11.webp",
+    title: "New home builds",
+    description:
+      "Looking to build your dream home? Building a home starts with an idea we are here to push your ideas into visions and bring them to life ",
+    features: [
+      "Custom design planning",
+      "High-quality materials",
+    ],
+    url: "/service-details/new-home-builds/",
+  },
+  {
+    id: 2,
+    image: "https://html.themewant.com/elever/assets/images/service/12.webp",
+    title: "Additions/ ADUS",
+    description:
+      "Do you want to extend your home? Growing family and in need of an extra room, home office, laundry room whatever you need we manage to make the process as easy as possible for you. ",
+    features: [
+      "Room extensions",
+      "Custom home offices",
+    ],
+    url: "/service-details/additions-adus/",
+  },
+  {
+    id: 3,
+    image: "https://html.themewant.com/elever/assets/images/service/13.webp",
+    title: "Bathroom and Kitchen remodel",
+    description:
+      "In need for an update? We do custom designs to combine functionality and style with high quality finishes and modern layouts for your specific needs  ",
+    features: [
+      "Modern layouts",
+      "High-quality finishes",
+    ],
+    url: "/service-details/bathroom-and-kitchen-remodel/",
+  },
+  {
+    id: 4,
+    image: "https://html.themewant.com/elever/assets/images/service/14.webp",
+    title: "Landscape/ hardscape",
+    description:
+      "Your outdoor living space should leave you speechless each time you step out the door. We can help with driveways, walkways, retaining walls, artificial turf, Irrigation systems, pavers, concrete and decking. ",
+    features: [
+      "Driveways & walkways",
+      "Artificial turf & irrigation",
+    ],
+    url: "/service-details/landscape-hardscape/",
+  },
+  {
+    id: 5,
+    image: "https://html.themewant.com/elever/assets/images/service/15.webp",
+    title: "Outdoor kitchen /BBQ",
+    description:
+      "The perfect outdoor space for relaxation, entertaining with all attention to detail to look like an harmonious extension of your house  ",
+    features: [
+      "Custom BBQ spaces",
+      "Outdoor dining areas",
+    ],
+    url: "/service-details/outdoor-kitchen-bbq/",
+  },
+  {
+    id: 6,
+    image: "https://html.themewant.com/elever/assets/images/service/16.webp",
+    title: "Flooring",
+    description:
+      "Looking to upgrade your flooring? Hardwood, laminate or luxury vinyl planks whatever you choose we offer high quality finishes durability  ",
+    features: [
+      "Hardwood & laminate",
+      "Luxury vinyl planks",
+    ],
+    url: "/service-details/flooring/",
+  },
 ];
+
+
 ---
 
 <section class="py-16 bg-gray-50">
@@ -69,6 +83,7 @@ const services = [
             {services.map((service) => (
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                     <!-- Image -->
+                    <a href="#">
                     <div class="relative overflow-hidden">
                         <img 
                             src={service.image} 
@@ -77,6 +92,7 @@ const services = [
                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                         />
                     </div>
+                    </a>
                     
                     <!-- Content -->
                     <div class="p-6">
