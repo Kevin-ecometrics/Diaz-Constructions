@@ -10,163 +10,158 @@ import RelatedProjects from "@components/Project-Details/RelatedProjects";
 
 export function getStaticPaths() {
   return [
-    { params: { project: "project1" } },
-    { params: { project: "project2" } },
-    { params: { project: "project3" } },
-    { params: { project: "project4" } },
-    { params: { project: "project5" } },
-    { params: { project: "project6" } },
-    { params: { project: "project7" } },
-    { params: { project: "project8" } },
-    { params: { project: "project9" } },
-    { params: { project: "project10" } },
-    { params: { project: "project11" } },
-    { params: { project: "project12" } },
+    { params: { project: "modern-bathroom" } },
+    { params: { project: "renovation-bathroom" } },
+    { params: { project: "luxury-kitchen" } },
+    { params: { project: "custom-closet" } },
+    { params: { project: "laundry-room" } },
+    { params: { project: "bathroom-suite" } },
+    { params: { project: "bathroom-small" } },
+    { params: { project: "master-bedroom" } },
+    { params: { project: "bathroom-luxury" } },
+    { params: { project: "expansive-home" } },
+    { params: { project: "room-expansion" } },
+    { params: { project: "bedroom-interior" } },
   ];
 }
 
 const { project } = Astro.params;
 
 const projectsList = {
-  project1: {
+  "modern-bathroom": {
     id: 1,
-    title: "Modern Bathroom 1",
+    title: "Modern Bathroom",
     subtitle: "Bathroom Design",
     location: "Location 1",
     price: "$30,000",
     client: "Client 1",
-    url: "/project-details/project1/",
+    url: "/project-details/modern-bathroom/",
     projectYear: "2023",
     duration: "3 months",
     image: "/diaz-project1.webp",
     images: [
       {
         src: "/diaz-project1.1.webp",
-        alt: "Project 1 Image 1",
+        alt: "Modern Bathroom 1 Image 1",
         title: "Modern Bathroom 1",
       },
       {
         src: "/diaz-project1.2.webp",
-        alt: "Project 1 Image 2",
+        alt: "Modern Bathroom 1 Image 2",
         title: "Modern Bathroom 1",
       },
       {
         src: "/diaz-project1.3.webp",
-        alt: "Project 1 Image 3",
+        alt: "Modern Bathroom 1 Image 3",
         title: "Modern Bathroom 1",
       },
       {
         src: "/diaz-project1.4.webp",
-        alt: "Project 1 Image 4",
+        alt: "Modern Bathroom 1 Image 4",
         title: "Modern Bathroom 1",
       },
       {
         src: "/diaz-project1.5.webp",
-        alt: "Project 1 Image 5",
+        alt: "Modern Bathroom 1 Image 5",
         title: "Modern Bathroom 1",
       },
     ],
   },
-  project2: {
+  "renovation-bathroom": {
     id: 2,
-    title: "Modern Bathroom 2",
-    subtitle: "Bathroom Renovation",
+    title: "Renovation Bathroom",
+    subtitle: "Renovation Design",
     location: "Location 2",
     price: "$35,000",
     client: "Client 2",
-    url: "/project-details/project2/",
+    url: "/project-details/renovation-bathroom/",
     projectYear: "2023",
     duration: "4 months",
     image: "/diaz-project2.webp",
     images: [
       {
         src: "/diaz-project2.1.webp",
-        alt: "Project 2 Image 1",
+        alt: "Modern Bathroom 2 Image 1",
         title: "Modern Bathroom 2",
       },
       {
         src: "/diaz-project2.2.webp",
-        alt: "Project 2 Image 2",
+        alt: "Modern Bathroom 2 Image 2",
         title: "Modern Bathroom 2",
       },
       {
         src: "/diaz-project2.3.webp",
-        alt: "Project 2 Image 3",
+        alt: "Modern Bathroom 2 Image 3",
         title: "Modern Bathroom 2",
       },
       {
         src: "/diaz-project2.4.webp",
-        alt: "Project 2 Image 4",
+        alt: "Modern Bathroom 2 Image 4",
         title: "Modern Bathroom 2",
       },
       {
         src: "/diaz-project2.5.webp",
-        alt: "Project 2 Image 5",
+        alt: "Modern Bathroom 2 Image 5",
         title: "Modern Bathroom 2",
       },
       {
         src: "/diaz-project2.6.webp",
-        alt: "Project 2 Image 6",
+        alt: "Modern Bathroom 2 Image 6",
         title: "Modern Bathroom 2",
       },
     ],
   },
-  project3: {
+  "luxury-kitchen": {
     id: 3,
     title: "Luxury Kitchen",
     subtitle: "Kitchen Renovation",
     location: "Location 3",
     price: "$50,000",
-    url: "/project-details/project3/",
     client: "Client 3",
+    url: "/project-details/luxury-kitchen/",
     projectYear: "2023",
     duration: "5 months",
     image: "/diaz-project3.webp",
     images: [
       {
         src: "/diaz-project3.1.webp",
-        alt: "Project 3 Image 1",
+        alt: "Luxury Kitchen Image 1",
         title: "Luxury Kitchen",
       },
       {
         src: "/diaz-project3.2.webp",
-        alt: "Project 3 Image 2",
-        title: "Luxury Kitchen",
-      },
-      {
-        src: "/diaz-project3.3.webp",
-        alt: "Project 3 Image 3",
+        alt: "Luxury Kitchen Image 2",
         title: "Luxury Kitchen",
       },
     ],
   },
-  project4: {
+  "custom-closet": {
     id: 4,
     title: "Custom Closet",
     subtitle: "Closet Custom Build",
     location: "Location 4",
     price: "$20,000",
-    url: "/project-details/project4/",
     client: "Client 4",
+    url: "/project-details/custom-closet/",
     projectYear: "2023",
     duration: "2 months",
     image: "/diaz-project4.webp",
     images: [
       {
         src: "/diaz-project4.1.webp",
-        alt: "Project 4 Image 1",
+        alt: "Custom Closet Image 1",
         title: "Custom Closet",
       },
     ],
   },
-  project5: {
+  "laundry-room": {
     id: 5,
     title: "Laundry Room",
     subtitle: "Utility Space",
     location: "Location 5",
     price: "$20,000",
-    url: "/project-details/project5/",
     client: "Client 5",
+    url: "/project-details/laundry-room/",
     projectYear: "2023",
     duration: "2 months",
     image: "/diaz-project5.webp",
@@ -183,34 +178,34 @@ const projectsList = {
       },
     ],
   },
-  project6: {
+  "bathroom-suite": {
     id: 6,
     title: "Bathroom Suite",
-    subtitle: "Outdoor Patio",
+    subtitle: "Suite Design",
     location: "Location 6",
     price: "$25,000",
-    url: "/project-details/project6/",
     client: "Client 6",
+    url: "/project-details/bathroom-suite/",
     projectYear: "2023",
     duration: "2 months",
     image: "/diaz-project6.webp",
     images: [
       {
-        src: "/diaz-project6.1.webp",
+        src: "/diaz-project6-1.webp",
         alt: "Bathroom Suite Image 1",
         title: "Bathroom Suite",
       },
     ],
   },
-  project7: {
+  "bathroom-small": {
     id: 7,
     title: "Bathroom Small",
     subtitle: "Small Bathroom",
     location: "Location 7",
     price: "$15,000",
     client: "Client 7",
+    url: "/project-details/bathroom-small/",
     projectYear: "2023",
-    url: "/project-details/project7/",
     duration: "1 month",
     image: "/diaz-project7.webp",
     images: [
@@ -221,14 +216,14 @@ const projectsList = {
       },
     ],
   },
-  project8: {
+  "master-bedroom": {
     id: 8,
     title: "Master Bedroom",
     subtitle: "Bedroom Renovation",
     location: "Location 8",
     price: "$30,000",
     client: "Client 8",
-    url: "/project-details/project8/",
+    url: "/project-details/master-bedroom/",
     projectYear: "2023",
     duration: "3 months",
     image: "/diaz-project8.webp",
@@ -240,13 +235,13 @@ const projectsList = {
       },
     ],
   },
-  project9: {
+  "bathroom-luxury": {
     id: 9,
-    title: "Bathroom Suite",
-    subtitle: "Suite Design",
+    title: "Bathroom Luxury",
+    subtitle: "Luxury Suite",
     location: "Location 9",
     price: "$18,000",
-    url: "/project-details/project9/",
+    url: "/project-details/bathroom-luxury/",
     client: "Client 9",
     projectYear: "2023",
     duration: "1 month",
@@ -259,14 +254,14 @@ const projectsList = {
       },
     ],
   },
-  project10: {
+  "expansive-home": {
     id: 10,
     title: "Expansive Home",
     subtitle: "Home Renovation",
-    location: "Location 10",
-    url: "/project-details/project10/",
+    location: "Location 9",
     price: "$45,000",
     client: "Client 10",
+    url: "/project-details/expansive-home/",
     projectYear: "2023",
     duration: "4 months",
     image: "/diaz-project10.webp",
@@ -278,56 +273,56 @@ const projectsList = {
       },
     ],
   },
-  project11: {
+  "room-expansion": {
     id: 11,
     title: "Room Expansion",
     subtitle: "Expansive Room",
     location: "Location 11",
     price: "$22,000",
-    url: "/project-details/project11/",
     client: "Client 11",
+    url: "/project-details/room-expansion/",
     projectYear: "2023",
     duration: "2 months",
     image: "/diaz-project11.webp",
     images: [
       {
         src: "/diaz-project11.1.webp",
-        alt: "Outdoor Patio Image 1",
-        title: "Outdoor Patio",
+        alt: "Room Expansion Image 1",
+        title: "Room Expansion",
       },
       {
         src: "/diaz-project11.2.webp",
-        alt: "Outdoor Patio Image 2",
-        title: "Outdoor Patio",
+        alt: "Room Expansion Image 2",
+        title: "Room Expansion",
       },
       {
         src: "/diaz-project11.3.webp",
-        alt: "Outdoor Patio Image 3",
-        title: "Outdoor Patio",
+        alt: "Room Expansion Image 3",
+        title: "Room Expansion",
       },
     ],
   },
-  project12: {
+  "bedroom-interior": {
     id: 12,
     title: "Bedroom Interior",
     subtitle: "Custom Bedroom",
     location: "Location 12",
     price: "$28,000",
     client: "Client 12",
-    url: "/project-details/project12/",
+    url: "/project-details/bedroom-interior/",
     projectYear: "2023",
     duration: "3 months",
     image: "/diaz-project12.webp",
     images: [
       {
         src: "/diaz-project12.1.webp",
-        alt: "Home Office Image 1",
-        title: "Home Office",
+        alt: "Bedroom Interior Image 1",
+        title: "Bedroom Interior",
       },
       {
         src: "/diaz-project12.2.webp",
-        alt: "Home Office Image 2",
-        title: "Home Office",
+        alt: "Bedroom Interior Image 2",
+        title: "Bedroom Interior",
       },
     ],
   },
@@ -346,8 +341,8 @@ const currentProject = projectsList[project as keyof typeof projectsList];
     <About images={currentProject.images} />
     <!-- <Content /> -->
     <Stats client:visible />
-    <Accordion client:visible />
-    <Related />
+    <!-- <Accordion client:visible />
+    <Related /> -->
     <RelatedProjects
       client:visible
       projectsList={projectsList}
@@ -355,3 +350,4 @@ const currentProject = projectsList[project as keyof typeof projectsList];
     />
   </main>
 </Layout>
+"

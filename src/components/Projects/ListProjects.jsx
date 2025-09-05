@@ -6,18 +6,18 @@ const ProjectsPortfolio = () => {
     {
       id: 1,
       image: "/diaz-project1.webp",
-      title: "Modern Bathroom 1",
+      title: "Modern Bathroom",
       text: "Bathroom Design",
       tags: ["all-works", "bathroom"],
-      href: "/project-details/project1",
+      href: "/project-details/modern-bathroom/",
     },
     {
       id: 2,
       image: "/diaz-project2.webp",
-      title: "Modern Bathroom 2",
+      title: "Renovated Bathroom",
       text: "Bathroom Renovation",
       tags: ["all-works", "bathroom"],
-      href: "/project-details/project2",
+      href: "/project-details/renovation-bathroom/",
     },
     {
       id: 3,
@@ -25,7 +25,7 @@ const ProjectsPortfolio = () => {
       title: "Luxury Kitchen",
       text: "Kitchen Renovation",
       tags: ["all-works", "kitchen"],
-      href: "/project-details/project3",
+      href: "/project-details/luxury-kitchen/",
     },
     {
       id: 4,
@@ -33,7 +33,7 @@ const ProjectsPortfolio = () => {
       title: "Custom Closet",
       text: "Closet Custom Build",
       tags: ["all-works", "closet"],
-      href: "/project-details/project4",
+      href: "/project-details/custom-closet/",
     },
     {
       id: 5,
@@ -41,7 +41,7 @@ const ProjectsPortfolio = () => {
       title: "Laundry Room",
       text: "Utility Space",
       tags: ["all-works", "laundry-room"],
-      href: "/project-details/project5",
+      href: "/project-details/laundry-room/",
     },
     {
       id: 6,
@@ -49,7 +49,7 @@ const ProjectsPortfolio = () => {
       title: "Bathroom Suite",
       text: "Outdoor Patio",
       tags: ["all-works", "bathroom"],
-      href: "/project-details/project6",
+      href: "/project-details/bathroom-suite/",
     },
     {
       id: 7,
@@ -57,7 +57,7 @@ const ProjectsPortfolio = () => {
       title: "Bathroom Small",
       text: "Small Bathroom",
       tags: ["all-works", "bathroom"],
-      href: "/project-details/project7",
+      href: "/project-details/bathroom-small/",
     },
     {
       id: 8,
@@ -65,15 +65,15 @@ const ProjectsPortfolio = () => {
       title: "Master Bedroom",
       text: "Bedroom Renovation",
       tags: ["all-works", "bedroom"],
-      href: "/project-details/project8",
+      href: "/project-details/master-bedroom/",
     },
     {
       id: 9,
       image: "/diaz-project9.webp",
-      title: "Bathroom Suite",
+      title: "Bathroom Luxury",
       text: "Suite Design",
       tags: ["all-works", "bathroom"],
-      href: "/project-details/project9",
+      href: "/project-details/bathroom-luxury/",
     },
     {
       id: 10,
@@ -81,7 +81,7 @@ const ProjectsPortfolio = () => {
       title: "Expansive Home",
       text: "Home Renovation",
       tags: ["all-works", "Expansive Home"],
-      href: "/project-details/project10",
+      href: "/project-details/expansive-home/",
     },
     {
       id: 11,
@@ -89,7 +89,7 @@ const ProjectsPortfolio = () => {
       title: "Expansive Room",
       text: "Living Room",
       tags: ["all-works", "Expansive Home"],
-      href: "/project-details/project11",
+      href: "/project-details/room-expansion/",
     },
     {
       id: 12,
@@ -97,7 +97,7 @@ const ProjectsPortfolio = () => {
       title: "Custom Bedroom",
       text: "Bedroom Design",
       tags: ["all-works", "Expansive Home"],
-      href: "/project-details/project12",
+      href: "/project-details/bedroom-interior/",
     },
   ];
 

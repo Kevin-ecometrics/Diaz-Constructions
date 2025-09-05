@@ -229,7 +229,7 @@ const HeroCarrousel = () => {
               background="white"
               textColor="orange"
               hoverTextColor="white"
-              href="/services/"
+              href="#"
               border={false}
             />
           </div>
@@ -266,7 +266,8 @@ const HeroCarrousel = () => {
                 transition: "opacity 0.3s ease",
               }}
             >
-              <Home width={20} height={20} />
+              <div>{index + 1 < 10 ? `${index + 1}` : index + 1}</div>
+              {/* <Home width={20} height={20} /> */}
             </button>
           ))}
         </div>
